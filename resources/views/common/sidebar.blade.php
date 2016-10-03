@@ -24,23 +24,23 @@
 		{{--<li >--}}
 			{{--<a href="/loss/type"><i class="fa fa-anchor"></i>Type of Loss</a>--}}
 		{{--</li>--}}
-		<li class="has_sub">
-			<a href="#"><i class="fa fa-file-o"></i> Administration <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+		{{--<li class="has_sub">--}}
+			{{--<a href="#"><i class="fa fa-file-o"></i> Administration <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>--}}
 
-			<ul>
+			{{--<ul>--}}
 
-				<li class="current"><a href="">Users</a></li>
-				<li class="current"><a href="">Roles</a></li>
-				<li class="current"><a href="">Permissions</a></li>
-
-
+				{{--<li class="current"><a href="">Users</a></li>--}}
+				{{--<li class="current"><a href="">Roles</a></li>--}}
+				{{--<li class="current"><a href="">Permissions</a></li>--}}
 
 
 
 
 
-			</ul>
-		</li>
+
+
+			{{--</ul>--}}
+		{{--</li>--}}
 
 	</ul>
 
