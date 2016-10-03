@@ -104,27 +104,27 @@
                                             <tbody>
                                             @foreach($loss_calculations as $loss_calculation)
                                                 <tr role="row" class="even">
-                                                    <td>$loss_calculation->id</td>
-                                                    <td>$loss_calculation->farmer_id</td>
-                                                    <td>$loss_calculation->user_id</td>
-                                                    <td>$loss_calculation->cause_of_loss_id</td>
-                                                    <td>$loss_calculation->type_of_loss</td>
-                                                    <td>$loss_calculation->farm_id</td>
-                                                    <td>$loss_calculation->average_useful_sa</td>
-                                                    <td>$loss_calculation->normal_leaf_sa</td>
-                                                    <td>$loss_calculation->average-leaves_no</td>
-                                                    <td>$loss_calculation->normal_leaves_no</td>
-                                                    <td>$loss_calculation->average_plant_no</td>
-                                                    <td>$loss_calculation->established_plant_no</td>
-                                                    <td>$loss_calculation->leaf_stage</td>
-                                                    <td>$loss_calculation->agricultural_practices</td>
-                                                    <td>$loss_calculation->area_staff_comment</td>
-                                                    <td>$loss_calculation->crop_inspector_comment</td>
-                                                    <td>$loss_calculation->longitude</td>
-                                                    <td>$loss_calculation->latitude</td>
-                                                    <td>$loss_calculation->is_confirmed</td>
-                                                    <td>$loss_calculation->percentage_lo</td>
-                                                    <td>$loss_calculation->inspection_date</td>
+                                                    <td>{{$loss_calculation->id}}</td>
+                                                    <td>{{$loss_calculation->farmer_id}}</td>
+                                                    <td>{{$loss_calculation->user_id}}</td>
+                                                    <td>{{$loss_calculation->cause_of_loss_id}}</td>
+                                                    <td>{{$loss_calculation->type_of_loss}}</td>
+                                                    <td>{{$loss_calculation->farm_id}}</td>
+                                                    <td>{{$loss_calculation->average_useful_sa}}</td>
+                                                    <td>{{$loss_calculation->normal_leaf_sa}}</td>
+                                                    <td>{{$loss_calculation->average-leaves_no}}</td>
+                                                    <td>{{$loss_calculation->normal_leaves_no}}</td>
+                                                    <td>{{$loss_calculation->average_plant_no}}</td>
+                                                    <td>{{$loss_calculation->established_plant_no}}</td>
+                                                    <td>{{$loss_calculation->leaf_stage}}</td>
+                                                    <td>{{$loss_calculation->agricultural_practices}}</td>
+                                                    <td>{{$loss_calculation->area_staff_comment}}</td>
+                                                    <td>{{$loss_calculation->crop_inspector_comment}}</td>
+                                                    <td>{{$loss_calculation->longitude}}</td>
+                                                    <td>{{$loss_calculation->latitude}}</td>
+                                                    <td>{{$loss_calculation->is_confirmed}}</td>
+                                                    <td>{{$loss_calculation->percentage_lo}}</td>
+                                                    <td>{{$loss_calculation->inspection_date}}</td>
                                                 </tr>
                                             @endforeach
                                             </tbody>

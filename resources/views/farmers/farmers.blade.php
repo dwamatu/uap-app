@@ -47,48 +47,48 @@
                                             <tr>
                                                 <th>Id</th>
                                                 <th>Account Number</th>
-                                                <th>Season Id</th>
-                                                <th>Id Number</th>
+                                                {{--<th>Season Id</th>--}}
+                                                {{--<th>Id Number</th>--}}
                                                 <th>Farmer Name</th>
                                                 <th>Cell Group</th>
                                                 <th>Cell Leader</th>
                                                 <th>Farmer Zone</th>
                                                 <th>Area Staff</th>
                                                 <th>Alm Manager</th>
-                                                <th>Category</th>
+                                                {{--<th>Category</th>--}}
                                                 <th>Target</th>
                                                 <th>Target Planted Land</th>
                                                 <th>Plant Count</th>
                                                 <th>Planted Land</th>
                                                 <th>Ltay</th>
                                                 <th>Expected Kg</th>
-                                                <th>User Status Id</th>
-                                                <th>Deleted</th>
-                                                <th>Creation Date</th>
+                                                {{--<th>User Status Id</th>--}}
+                                                {{--<th>Deleted</th>--}}
+                                                {{--<th>Creation Date</th>--}}
                                             </tr>
                                             </thead>
                                             <tfoot>
                                             <tr>
                                                 <th>Id</th>
                                                 <th>Account Number</th>
-                                                <th>Season Id</th>
-                                                <th>Id Number</th>
+                                                {{--<th>Season Id</th>--}}
+                                                {{--<th>Id Number</th>--}}
                                                 <th>Farmer Name</th>
                                                 <th>Cell Group</th>
                                                 <th>Cell Leader</th>
                                                 <th>Farmer Zone</th>
                                                 <th>Area Staff</th>
                                                 <th>Alm Manager</th>
-                                                <th>Category</th>
+                                                {{--<th>Category</th>--}}
                                                 <th>Target</th>
                                                 <th>Target Planted Land</th>
                                                 <th>Plant Count</th>
                                                 <th>Planted Land</th>
                                                 <th>Ltay</th>
                                                 <th>Expected Kg</th>
-                                                <th>User Status Id</th>
-                                                <th>Deleted</th>
-                                                <th>Creation Date</th>
+                                                {{--<th>User Status Id</th>--}}
+                                                {{--<th>Deleted</th>--}}
+                                                {{--<th>Creation Date</th>--}}
                                             </tr>
                                             </tfoot>
                                             <tbody>
@@ -96,24 +96,24 @@
                                                 <tr role="row" class="even">
                                                     <td>{{$farmer->id}}</td>
                                                     <td>{{$farmer->account_number}}</td>
-                                                    <td>{{$farmer->season_id}}</td>
-                                                    <td>{{$farmer->id_number}}</td>
+                                                    {{--<td>{{$farmer->season_id}}</td>--}}
+                                                    {{--<td>{{$farmer->id_number}}</td>--}}
                                                     <td>{{$farmer->farmer_name}}</td>
                                                     <td>{{$farmer->cell_group}}</td>
                                                     <td>{{$farmer->cell_leader}}</td>
                                                     <td>{{$farmer->farmer_zone}}</td>
                                                     <td>{{$farmer->area_staff}}</td>
                                                     <td>{{$farmer->alm_manager}}</td>
-                                                    <td>{{$farmer->category}}</td>
+                                                    {{--<td>{{$farmer->category}}</td>--}}
                                                     <td>{{$farmer->target}}</td>
                                                     <td>{{$farmer->target_planted_land}}</td>
                                                     <td>{{$farmer->plant_count}}</td>
                                                     <td>{{$farmer->planted_land}}</td>
                                                     <td>{{$farmer->ltay}}</td>
                                                     <td>{{$farmer->expected_kg}}</td>
-                                                    <td>{{$farmer->user_status_id}}</td>
-                                                    <td>{{$farmer->deleted}}</td>
-                                                    <td>{{$farmer->creation_date}}</td>
+                                                    {{--<td>{{$farmer->user_status_id}}</td>--}}
+                                                    {{--<td>{{$farmer->deleted}}</td>--}}
+                                                    {{--<td>{{$farmer->creation_date}}</td>--}}
                                                 </tr>
 
 
