@@ -1,0 +1,65 @@
+/* CSS styles for map display of waether points in the Pricing Portal */
+
+.marker {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #088;
+    border-radius: 10px;
+    background-color: red;
+    opacity: 0.8;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.map-wrap {
+    padding-top: 15px !important;
+    margin: 0 !important;
+    height: 500px;
+}
+
+.map {
+    border: 1px solid #024f68;
+    height: 100%;
+    width: 100%;
+}
+
+.weather-station-marker {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #088;
+    background-color: #00e1e1;
+    opacity: 0.5;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.allocated-weather-point-marker {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    background-color: yellow;
+    opacity: 0.5;
+    cursor: pointer;
+    z-index: 0;
+}
+
+.marker:hover,
+.weather-station-marker:hover {
+    opacity: 1;
+}
+
+.popover {
+    color:#000;
+    font-size: .9em;
+    width: 300px;
+}
+
+.marker + .popover {
+    background-color: #00bdbd;
+    color:#fff;
+    font-weight: bold;
+}
+
+.marker + .popover.top .arrow:after {
+  border-top-color: #00bdbd;
+}
