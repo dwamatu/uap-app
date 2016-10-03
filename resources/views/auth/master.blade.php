@@ -133,11 +133,11 @@
     }
 
     .login-content .panel-heading {
-        background-color: #FBECD4;
+        background-color: #4f4f2f;
         border: 2px solid #667687;
         /*border: 2px solid #FBECD4;*/
         border-bottom: 0 none;
-        color: #667687;
+        color: #ffffff;
         padding: 8px 15px 8px;
         border-radius: 10px 10px 0 0;
     }
@@ -335,18 +335,18 @@
 
         <div class="info">
             <div class="wrap">
-                <div class="logo"><h1 class="text-hide"><a href="/">Acre Africa</a></h1></div>
+                <div class="logo"></div>
                 <div class="info-content">
 
-                    <h2 class="info-title">UAP Africa Portal</h2>
+                    <h2 class="info-title">UAP Old Mutual Portal</h2>
                     <p>This website provides secure access to features and information provided by the Pricing Engine software.</p>
                     <p>Log in with the credentials assigned to you to access the system.</p>
                 </div>
 
                 <footer class="footer">
                     <div class="footer-content">
-                        <p class="rights">© 2016 UAP Africa</p>
-                        <p class="partner">Powered by Netcen Interactives Limited.</p>
+                        <p class="rights">© 2016 UAP Old Mutual</p>
+                        <p class="partner">Powered by Netcen Group.</p>
                     </div>
                 </footer>
             </div>

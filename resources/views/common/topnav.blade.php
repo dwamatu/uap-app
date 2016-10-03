@@ -12,7 +12,7 @@
 				</div>
 				<div class="col-md-2
 				 col-md-offset-3">
-					<div class="app-title">UAP AFRICA </div>
+					<div class="app-title">UAP Old Mutual </div>
 				</div>
 				@if(Auth::check())
 				<div class="col-md-3 col-md-offset-2">
