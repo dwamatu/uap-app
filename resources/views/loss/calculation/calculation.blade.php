@@ -52,8 +52,8 @@
                                             <thead>
                                             <tr>
                                                 <th>Id</th>
-                                                <th>Farmer Id</th>
-                                                <th>User Id</th>
+                                                {{--<th>Farmer Id</th>--}}
+                                                {{--<th>User Id</th>--}}
                                                 <th>Cause Of Loss Id</th>
                                                 <th>Type Of Loss</th>
                                                 <th>Farm Id</th>
@@ -78,8 +78,8 @@
                                             <tfoot>
                                             <tr>
                                                 <th>Id</th>
-                                                <th>Farmer Id</th>
-                                                <th>User Id</th>
+                                                {{--<th>Farmer Id</th>--}}
+                                                {{--<th>User Id</th>--}}
                                                 <th>Cause Of Loss Id</th>
                                                 <th>Type Of Loss</th>
                                                 <th>Farm Id</th>
@@ -105,8 +105,8 @@
                                             @foreach($loss_calculations as $loss_calculation)
                                                 <tr role="row" class="even">
                                                     <td>{{$loss_calculation->id}}</td>
-                                                    <td>{{$loss_calculation->farmer_id}}</td>
-                                                    <td>{{$loss_calculation->user_id}}</td>
+                                                    {{--<td>{{$loss_calculation->farmer_id}}</td>--}}
+                                                    {{--<td>{{$loss_calculation->user_id}}</td>--}}
                                                     <td>{{$loss_calculation->cause_of_loss_id}}</td>
                                                     <td>{{$loss_calculation->type_of_loss}}</td>
                                                     <td>{{$loss_calculation->farm_id}}</td>
