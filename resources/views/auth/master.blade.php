@@ -22,7 +22,7 @@
     }
 
     .info {
-        background-color: rgba(86, 155, 46, 0.88);
+        background-color: rgba(79, 79, 47, 0.88);
         height:100%;
         width:21%;
         float: left;
@@ -133,7 +133,7 @@
     }
 
     .login-content .panel-heading {
-        background-color: #4f4f2f;
+        background-color: #a60e33;
         border: 2px solid #667687;
         /*border: 2px solid #FBECD4;*/
         border-bottom: 0 none;
@@ -145,7 +145,7 @@
     .login-content .panel-title {
         font-weight: 500;
         letter-spacing: .5px;
-        color: #4C5866;
+        color: #FFFFFF;
     }
 
     .login-content .panel-body {
