@@ -94,26 +94,26 @@
                                             <tbody>
                                             @foreach($farmers as $farmer)
                                                 <tr role="row" class="even">
-                                                    <td>$farmer->id</td>
-                                                    <td>$farmer->account_number</td>
-                                                    <td>$farmer->season_id</td>
-                                                    <td>$farmer->id_number</td>
-                                                    <td>$farmer->farmer_name</td>
-                                                    <td>$farmer->cell_group</td>
-                                                    <td>$farmer->cell_leader</td>
-                                                    <td>$farmer->farmer_zone</td>
-                                                    <td>$farmer->area_staff</td>
-                                                    <td>$farmer->alm_manager</td>
-                                                    <td>$farmer->category</td>
-                                                    <td>$farmer->target</td>
-                                                    <td>$farmer->target_planted_land</td>
-                                                    <td>$farmer->plant_count</td>
-                                                    <td>$farmer->planted_land</td>
-                                                    <td>$farmer->ltay</td>
-                                                    <td>$farmer->expected_kg</td>
-                                                    <td>$farmer->user_status_id</td>
-                                                    <td>$farmer->deleted</td>
-                                                    <td>$farmer->creation_date</td>
+                                                    <td>{{$farmer->id}}</td>
+                                                    <td>{{$farmer->account_number}}</td>
+                                                    <td>{{$farmer->season_id}}</td>
+                                                    <td>{{$farmer->id_number}}</td>
+                                                    <td>{{$farmer->farmer_name}}</td>
+                                                    <td>{{$farmer->cell_group}}</td>
+                                                    <td>{{$farmer->cell_leader}}</td>
+                                                    <td>{{$farmer->farmer_zone}}</td>
+                                                    <td>{{$farmer->area_staff}}</td>
+                                                    <td>{{$farmer->alm_manager}}</td>
+                                                    <td>{{$farmer->category}}</td>
+                                                    <td>{{$farmer->target}}</td>
+                                                    <td>{{$farmer->target_planted_land}}</td>
+                                                    <td>{{$farmer->plant_count}}</td>
+                                                    <td>{{$farmer->planted_land}}</td>
+                                                    <td>{{$farmer->ltay}}</td>
+                                                    <td>{{$farmer->expected_kg}}</td>
+                                                    <td>{{$farmer->user_status_id}}</td>
+                                                    <td>{{$farmer->deleted}}</td>
+                                                    <td>{{$farmer->creation_date}}</td>
                                                 </tr>
 
 
