@@ -20,7 +20,7 @@
 						<li class="dropdown pull-right">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="fa fa-user"></i> <b class="caret"></b></a> <!-- Dropdown menu -->
 							<ul class="dropdown-menu">
-								<li><a href="/auth/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+								{{--<li><a href="{{route('logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>--}}
 							</ul>
 						</li>
 					</ul>

@@ -46,8 +46,8 @@
 
 	<div id="sidebar-copy-content">
 		<div class="copy-content">
-			<p class="rights">© 2016 Acre Africa</p>
-			<p class="partner">Powered by Netcen Interactives Limited.</p>
+			<p class="rights">© 2016 UAP Old Mutual Africa</p>
+			<p class="partner">Powered by Netcen Group.</p>
 		</div>
 	</div>
 </div>

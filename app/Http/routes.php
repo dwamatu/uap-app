@@ -14,10 +14,15 @@
 Route::get('/', function () {
     return view('auth.login');
 });
+
+Route::post('/auth/login', ['uses' => 'UserController@postSignIn', 'as' => 'signin']);
+
+Route::get('/logout',[  'uses'=> 'UserController@getLogout',    'as' => 'logout']);
+
 Route::get('/farms','FarmController@getFarms');
 
 
-Route::get('/farmers' , 'FarmersController@getFarmers');
+Route::get('/farmers' ,[ 'uses' => 'FarmersController@getFarmers' , 'as' => 'farmers']);
 
 Route::get('/status','UserStatusController@getUserStatuses');
 

@@ -22,7 +22,7 @@
 	<!-- Font awesome icon -->
 	<link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">
 
-	{{--@unless ( ! Auth::check() )--}}
+	@unless ( ! Auth::check() )
 	<!-- jQuery UI -->
 	<link rel="stylesheet" href="{{ URL::asset('css/jquery-ui.css') }}">
 	<!-- Calendar -->
@@ -42,7 +42,7 @@
 
 	<script src="{{ URL::asset('js/respond.min.js') }}"></script>
 
-	{{--@endunless--}}
+	@endunless
 
 	<!-- Main stylesheet -->
 	<link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
@@ -62,13 +62,13 @@
 
 <body>
 
-	{{--@unless(! Auth::check())--}}
+	@unless(! Auth::check())
 
 	@include('common.topnav')
 
 	<div id="content"> @include('common.sidebar') @yield('content')</div>
 
-	{{--@endunless--}}
+	@endunless
 
 	@yield('login-content')
 
