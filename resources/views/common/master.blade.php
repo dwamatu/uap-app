@@ -21,6 +21,9 @@
 
 	<!-- Font awesome icon -->
 	<link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/jquery.dataTables.css')}}">
+	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.dataTables.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
 
 	@unless ( ! Auth::check() )
 	<!-- jQuery UI -->
@@ -33,6 +36,7 @@
 	<link rel="stylesheet" href="{{ URL::asset('css/rateit.css') }}">
 	<!-- Date picker -->
 	<link rel="stylesheet" href="{{ URL::asset('css/bootstrap-datetimepicker.min.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('css/dataTables.bootstrap.min.css') }}">
 	<!-- CLEditor -->
 	<link rel="stylesheet" href="{{ URL::asset('css/jquery.cleditor.css') }}">
 	<!-- Bootstrap toggle -->
@@ -50,8 +54,8 @@
 	<!--[if lt IE 9]>
 	<script src="{{ URL::asset('js/html5shiv.js') }}"></script>
 	<![endif]-->
-<!--[if lt IE 9]>
-	<script src="{{ URL::asset('js/jquery.min.js') }}"></script>
+
+	<script src="//code.jquery.com/jquery-1.12.3.js"></script>
 	{{--custom Javascript--}}
 	<script src="{{ URL::asset('js/custom.js') }}"></script>
 
@@ -76,5 +80,17 @@
 
 	@include('common.footer')
 
+
+	<script src="{{URL::to('js/jquery.dataTables.min.js')}}"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>--}}
+	{{--<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>--}}
+	{{--<script src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js"></script>--}}
+	{{--<script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.flash.min.js"></script>--}}
+	{{--<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>--}}
+	{{--<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>--}}
+	{{--<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>--}}
+	{{--<script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js"></script>--}}
+	<script src="{{URL::to('js/dataTables.js')}}"></script>
 </body>
 </html>

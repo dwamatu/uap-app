@@ -45,7 +45,7 @@
 
                                 <div class="padd">
                                     <div class="row">
-                                        <table id="example" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%">
+                                        <table id="typeLossTable" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%">
                                             <thead>
                                             <tr>
                                                 <th>Id</th>

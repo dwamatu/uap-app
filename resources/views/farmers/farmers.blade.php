@@ -42,10 +42,10 @@
 
                                     <div class="padd">
                                     <div class="row">
-                                        <table id="example" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%">
+                                        <table id="farmersTable" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%">
                                             <thead>
                                             <tr>
-                                                <th>Id</th>
+                                                {{--<th>Id</th>--}}
                                                 <th>Account Number</th>
                                                 {{--<th>Season Id</th>--}}
                                                 {{--<th>Id Number</th>--}}
@@ -69,7 +69,7 @@
                                             </thead>
                                             <tfoot>
                                             <tr>
-                                                <th>Id</th>
+                                                {{--<th>Id</th>--}}
                                                 <th>Account Number</th>
                                                 {{--<th>Season Id</th>--}}
                                                 {{--<th>Id Number</th>--}}
@@ -94,7 +94,7 @@
                                             <tbody>
                                             @foreach($farmers as $farmer)
                                                 <tr role="row" class="even">
-                                                    <td>{{$farmer->id}}</td>
+                                                    {{--<td>{{$farmer->id}}</td>--}}
                                                     <td>{{$farmer->account_number}}</td>
                                                     {{--<td>{{$farmer->season_id}}</td>--}}
                                                     {{--<td>{{$farmer->id_number}}</td>--}}
@@ -140,6 +140,7 @@
         </div>
 
         <!-- Matter ends -->
+
 
     </div>
 @endsection
