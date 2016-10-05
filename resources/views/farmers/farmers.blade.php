@@ -50,11 +50,11 @@
                                                 {{--<th>Season Id</th>--}}
                                                 {{--<th>Id Number</th>--}}
                                                 <th>Farmer Name</th>
-                                                <th>Cell Group</th>
-                                                <th>Cell Leader</th>
+                                                {{--<th>Cell Group</th>--}}
+                                                {{--<th>Cell Leader</th>--}}
                                                 <th>Farmer Zone</th>
                                                 <th>Area Staff</th>
-                                                <th>Alm Manager</th>
+                                                {{--<th>Alm Manager</th>--}}
                                                 {{--<th>Category</th>--}}
                                                 <th>Target</th>
                                                 <th>Target Planted Land</th>
@@ -74,11 +74,11 @@
                                                 {{--<th>Season Id</th>--}}
                                                 {{--<th>Id Number</th>--}}
                                                 <th>Farmer Name</th>
-                                                <th>Cell Group</th>
-                                                <th>Cell Leader</th>
+                                                {{--<th>Cell Group</th>--}}
+                                                {{--<th>Cell Leader</th>--}}
                                                 <th>Farmer Zone</th>
                                                 <th>Area Staff</th>
-                                                <th>Alm Manager</th>
+                                                {{--<th>Alm Manager</th>--}}
                                                 {{--<th>Category</th>--}}
                                                 <th>Target</th>
                                                 <th>Target Planted Land</th>
@@ -99,11 +99,11 @@
                                                     {{--<td>{{$farmer->season_id}}</td>--}}
                                                     {{--<td>{{$farmer->id_number}}</td>--}}
                                                     <td>{{$farmer->farmer_name}}</td>
-                                                    <td>{{$farmer->cell_group}}</td>
-                                                    <td>{{$farmer->cell_leader}}</td>
+                                                    {{--<td>{{$farmer->cell_group}}</td>--}}
+                                                    {{--<td>{{$farmer->cell_leader}}</td>--}}
                                                     <td>{{$farmer->farmer_zone}}</td>
                                                     <td>{{$farmer->area_staff}}</td>
-                                                    <td>{{$farmer->alm_manager}}</td>
+                                                    {{--<td>{{$farmer->alm_manager}}</td>--}}
                                                     {{--<td>{{$farmer->category}}</td>--}}
                                                     <td>{{$farmer->target}}</td>
                                                     <td>{{$farmer->target_planted_land}}</td>
