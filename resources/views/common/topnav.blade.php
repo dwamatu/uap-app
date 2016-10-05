@@ -14,13 +14,13 @@
 				 col-md-offset-3">
 					<div class="app-title">UAP Old Mutual </div>
 				</div>
-				@if(Auth::check())
+				@if( Auth::check())
 				<div class="col-md-3 col-md-offset-2">
 					<ul class="nav navbar-nav pull-right">
 						<li class="dropdown pull-right">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="fa fa-user"></i> <b class="caret"></b></a> <!-- Dropdown menu -->
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="fa fa-user"> {{Auth::user()->first_name." ".Auth::user()->last_name}}</i> <b class="caret"></b></a> <!-- Dropdown menu -->
 							<ul class="dropdown-menu">
-								{{--<li><a href="{{route('logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>--}}
+								<li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
 							</ul>
 						</li>
 					</ul>

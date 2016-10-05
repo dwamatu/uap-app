@@ -67,11 +67,11 @@
                                             <tbody>
                                             @foreach($losstypes as $loss)
                                             <tr>
-                                            <td>$loss->id</td>
-                                            <td>$loss->loss_name</td>
-                                            <td>$loss->loss_description</td>
-                                            <td>$loss->deleted</td>
-                                            <td>$loss->creation_date</td>
+                                            <td>{{$loss->id}}</td>
+                                            <td>{{$loss->loss_name}}</td>
+                                            <td>{{$loss->loss_description}}</td>
+                                            <td>{{$loss->deleted}}</td>
+                                            <td>{{$loss->creation_date}}</td>
                                             </tr>
                                             @endforeach
                                             </tbody>

@@ -7,12 +7,10 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddSpecialRoleColumn' => $baseDir . '/database/migrations/2015_12_04_003040_add_special_role_column.php',
-    'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePermissionRoleTable' => $baseDir . '/database/migrations/2015_01_24_080433_create_permission_role_table.php',
     'CreatePermissionsTable' => $baseDir . '/database/migrations/2015_01_24_080208_create_permissions_table.php',
     'CreateRoleUserTable' => $baseDir . '/database/migrations/2015_01_20_084525_create_role_user_table.php',
     'CreateRolesTable' => $baseDir . '/database/migrations/2015_01_20_084450_create_roles_table.php',
-    'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
@@ -519,4 +517,5 @@ return array(
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'WatchtowerTableSeeder' => $baseDir . '/database/seeds/WatchtowerTableSeeder.php',
 );

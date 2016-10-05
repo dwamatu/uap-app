@@ -12,10 +12,10 @@ class UserStoreRequest extends Request
     public function all() {
         $atts = parent::all();
         
-        if ($atts['Password'] === $atts['Password_confirmation']) {
-            $crypted = bcrypt( $atts['Password'] );
-            $atts['Password'] = $crypted;
-            $atts['Password_confirmation'] = $crypted;
+        if ($atts['password'] === $atts['password_confirmation']) {
+            $crypted = bcrypt( $atts['password'] );
+            $atts['password'] = $crypted;
+            $atts['password_confirmation'] = $crypted;
         }
         
         return $atts;
@@ -41,13 +41,14 @@ class UserStoreRequest extends Request
     {
   
        $rules = array_merge([
-            'Firstname' => 'required|max:40',
-            'Lastname' => 'required|max:40',
-            'Email' => 'required|email|unique:users',
-            'Password' => 'required|confirmed|min:4',
-            'Deleted'=>'0',
-            'IDRoles'=>'27',
-            'CreationDate'=>Carbon::now(),
+            'first_name' => 'required|max:40',
+            'last_name' => 'required|max:40',
+            'username' => 'required|max:40',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|confirmed|min:4',
+            'deleted'=> 'f',
+            'role_id'=>'required',
+            'creation_date'=>Carbon::now(),
         ], config('watchtower.user.rules.store') );
 
        return $rules;

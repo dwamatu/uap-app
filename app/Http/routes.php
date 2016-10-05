@@ -20,6 +20,8 @@ Route::post('/auth/login', ['uses' => 'UserController@postSignIn', 'as' => 'sign
 Route::get('/logout',[  'uses'=> 'UserController@getLogout',    'as' => 'logout']);
 
 Route::get('/farms','FarmController@getFarms');
+//Get Streets
+Route::get('/getRoles', ['uses' => 'DataController@getRoles', 'as' => 'check.role']);
 
 
 Route::get('/farmers' ,[ 'uses' => 'FarmersController@getFarmers' , 'as' => 'farmers']);

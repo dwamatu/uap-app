@@ -339,7 +339,7 @@
                 <div class="info-content">
 
                     <h2 class="info-title">UAP Old Mutual Portal</h2>
-                    <p>This website provides secure access to features and information provided by the Pricing Engine software.</p>
+                    <p>This website provides secure access to features and information provided by the UAP Pricing software.</p>
                     <p>Log in with the credentials assigned to you to access the system.</p>
                 </div>
 

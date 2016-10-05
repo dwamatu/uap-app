@@ -1,4 +1,3 @@
-
 <div id="flash-overlay-modal" class="modal fade {{ $modalClass or '' }}">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -9,7 +8,7 @@
             </div>
 
             <div class="modal-body">
-                <p>{{ $body }}</p>
+                <p>{{ $body }} </p>
             </div>
 
             <div class="modal-footer">

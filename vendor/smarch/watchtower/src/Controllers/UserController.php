@@ -49,11 +49,11 @@ class UserController extends Controller
   		if ( Shinobi::can( config('watchtower.acl.user.index', false) ) ) {
 			if ( $request->has('search_value') ) {
 				$value = $request->get('search_value');
-				$users = $this->model->where('name', 'LIKE', '%'.$value.'%')
-					->orderBy('name')->paginate( config('watchtower.pagination.users', 15) );
+				$users = $this->model->where('first_name', 'LIKE', '%'.$value.'%')
+					->orderBy('first_name')->paginate( config('watchtower.pagination.users', 15) );
 				session()->flash('search_value', $value);
 			} else {
-				$users = $this->model->orderBy('name')->paginate( config('watchtower.pagination.users', 15) );
+				$users = $this->model->orderBy('first_name')->paginate( config('watchtower.pagination.users', 15) );
 				session()->forget('search_value');	
 			}
 			
@@ -237,7 +237,7 @@ class UserController extends Controller
 	{
   		if ( Shinobi::can( config('watchtower.acl.user.viewmatrix', false) ) ) {
 			$roles = Role::all();
-			$users = $this->model->orderBy('name')->get();
+			$users = $this->model->orderBy('first_name')->get();
 			$us = DB::table('role_user')->select('role_id as r_id','user_id as u_id')->get();
 
 			$pivot = [];

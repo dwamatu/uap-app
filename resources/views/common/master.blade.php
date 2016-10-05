@@ -50,6 +50,8 @@
 	<!--[if lt IE 9]>
 	<script src="{{ URL::asset('js/html5shiv.js') }}"></script>
 	<![endif]-->
+<!--[if lt IE 9]>
+	<script src="{{ URL::asset('js/jquery.min.js') }}"></script>
 	{{--custom Javascript--}}
 	<script src="{{ URL::asset('js/custom.js') }}"></script>
 

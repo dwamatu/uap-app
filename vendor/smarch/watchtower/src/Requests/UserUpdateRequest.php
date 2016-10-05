@@ -39,9 +39,10 @@ class UserUpdateRequest extends Request
     {
   
        $rules = array_merge([
-            'name' => 'required|max:255|unique:users,name,'.$this->user,
+            'first_name' => 'required|max:40,'.$this->user,
+           'last_name' => 'required|max:40,'.$this->user,
             'email' => 'required|email|unique:users,email,'.$this->user,
-            'password' => 'confirmed|min:6',
+            'password' => 'confirmed|min:4',
         ], config('watchtower.user.rules.update') );
 
        return $rules;
