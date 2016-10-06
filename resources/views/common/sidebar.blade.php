@@ -24,14 +24,14 @@
 		{{--<li >--}}
 			{{--<a href="/loss/type"><i class="fa fa-anchor"></i>Type of Loss</a>--}}
 		{{--</li>--}}
-		<li class="has_sub">
+		<li class="has_sub {!! Route::is('watchtower.user.index') || Route::is('watchtower.user.create') || Route::is('watchtower.user.edit')  ? 'open' : null !!} ||  {!! Route::is('watchtower.role.index') || Route::is('watchtower.partials.create') || Route::is('watchtower.partials.edit')  ? 'open' : null !!} || {!! Route::is('watchtower.permission.index') || Route::is('watchtower.partials.create') || Route::is('watchtower.partials.edit')  ? 'open' : null !!} || {!! Route::is('get.loss.types') ? 'open' :null !!} ">
 			<a href="#"><i class="fa fa-file-o"></i> Administration <span class="pull-right"><i
 							class="fa fa-chevron-right"></i></span></a>
 			<ul>
-				<li><a href="/watchtower/user">Users</a></li>
-				<li><a href="/watchtower/role">Roles</a></li>
-				<li><a href="/watchtower/permission">Permissions</a></li>
-				<li><a href="/loss/type"></i>Type of Loss</a></li>
+				<li {!! Route::is('watchtower.user.index') || Route::is('watchtower.user.create') || Route::is('watchtower.user.edit')  ? 'class="current"' : null !!} ><a href="{{url::route('watchtower.user.index')}}">Users</a></li>
+				<li  {!! Route::is('watchtower.role.index') || Route::is('watchtower.partials.create') || Route::is('watchtower.partials.edit')  ? 'class="current"' : null !!}><a href="{{url::route('watchtower.role.index')}}">Roles</a></li>
+				<li  {!! Route::is('watchtower.permission.index') || Route::is('watchtower.partials.create') || Route::is('watchtower.partials.edit')  ? 'class="current"' : null !!}><a href="{{url::route('watchtower.permission.index')}}">Permissions</a></li>
+				<li {!! Route::is('get.loss.types') ?  'class="current"' :null !!} ><a href="{{url::route('get.loss.types') }}"></i>Type of Loss</a></li>
 
 
 			</ul>

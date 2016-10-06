@@ -35,7 +35,7 @@ Route::get('/loss', 'LossCauseController@getCauses');
 Route::get('/loss/calculation','LossCalculationController@getLossCalculations');
 
 
-Route::get('/loss/type','LossTypeController@getLossTypes');
+Route::get('/loss/type','LossTypeController@getLossTypes')->name('get.loss.types');
 
 
 Route::get('/seasons','SeasonController@getSeasons');

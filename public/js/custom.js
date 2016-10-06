@@ -19,67 +19,6 @@
   });
 })();
 
-  $(document).ready(function() {
-
-    /* Autohide non-important alert messages */
-
-    $('.alert').delay(5000).slideUp(300);
-
-    $('.input-daterange input').each(function() {
-      $(this).datepicker();
-    });
-
-    $("#upload-multiple-locations-btn").click(function(e) {
-      e.preventDefault();
-      var file_data = $('#multipleLocationsFile').prop('files')[0];
-
-      var form_data = new FormData();
-      form_data.append('file', file_data);
-      // alert(form_data);
-
-      $.ajax({
-        url: '/data/allocateWeatherPoint/multiple/uploadLocations',
-        type: "post",
-        data: form_data,
-        dataType: 'json',
-        cache: false,
-        contentType: false,
-        processData: false,
-        success: function(data) {
-          var status = '';
-          var message = '';
-          var errors = '';
-
-          $.each(data, function(index, element) {
-            if (index === 'status') {
-              status = element;
-            }
-
-            if (index === 'message') {
-              message = element;
-            }
-
-            if (index === 'errors') {
-              errors = element;
-            }
-          });
-
-          if (status === 'success') {
-
-            $('#uploadResultSuccess').css('display', 'block');
-            $('#uploadResultSuccess').append('<p>' + message + '<p>');
-
-          } else if (status === 'error') {
-
-            $('#uploadResultError').css('display', 'block');
-            $('#uploadResultError').append('<p>' + message + '<p>');
-            $('#uploadResultError').append('<p>' + errors + '<p>');
-
-          }
-        }
-      });
-    });
-  });
 
 
   /*

@@ -112,7 +112,7 @@
                                                     <td>{{$loss_calculation->farm_id}}</td>
                                                     <td>{{$loss_calculation->average_useful_sa}}</td>
                                                     <td>{{$loss_calculation->normal_leaf_sa}}</td>
-                                                    <td>{{$loss_calculation->average-leaves_no}}</td>
+                                                    <td>{{$loss_calculation->average_leaves_no}}</td>
                                                     <td>{{$loss_calculation->normal_leaves_no}}</td>
                                                     <td>{{$loss_calculation->average_plant_no}}</td>
                                                     <td>{{$loss_calculation->established_plant_no}}</td>
