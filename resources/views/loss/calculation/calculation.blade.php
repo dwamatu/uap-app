@@ -130,7 +130,7 @@
                                                     <td>{{$loss_calculation->latitude}}</td>
                                                     {{--<td>{{$loss_calculation->is_confirmed}}</td>--}}
                                                     <td>{{$loss_calculation->percentage_loss}}%</td>
-                                                    <td>{{$loss_calculation->inspection_date}}</td>
+                                                    <td>{{date('d-M-Y',strtotime($loss_calculation->inspection_date))}}</td>
                                                     <td>
                                                         <div class="btn-group">
                                                             <button data-toggle="dropdown"

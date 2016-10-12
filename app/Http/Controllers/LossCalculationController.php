@@ -100,7 +100,7 @@ class LossCalculationController extends Controller
 
         <td>A._________________________</td>
         <td>Inspection Dates</td>
-        <td>A.'. ($assessment->inspection_date).'</td>
+        <td>A.'. date('d-M-Y',strtotime($assessment->inspection_date)).'</td>
 
     </tr>
     <tr>
@@ -212,10 +212,10 @@ class LossCalculationController extends Controller
             Hectares
         </td>
 
-        <td style="outline: thin solid"> A '. ($assessment-> farm->size_with_tobacco).'</td>
-        <td style="outline: thin solid"> B</td>
-        <td style="outline: thin solid"> C</td>
-        <td style="outline: thin solid"> D</td>
+        <td style="outline: thin solid"> </td>
+        <td style="outline: thin solid"> </td>
+        <td style="outline: thin solid"> </td>
+         <td style="outline: thin solid"> '. ($assessment-> farm->size_with_tobacco).' hectares</td>
 
 
     </tr>
