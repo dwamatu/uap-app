@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
 Route::post('/auth/login', ['uses' => 'UserController@postSignIn', 'as' => 'signin']);
 
 Route::get('/logout',[  'uses'=> 'UserController@getLogout',    'as' => 'logout']);
@@ -32,7 +36,9 @@ Route::get('/status','UserStatusController@getUserStatuses');
 Route::get('/loss', 'LossCauseController@getCauses');
 
 
-Route::get('/loss/calculation','LossCalculationController@getLossCalculations');
+Route::get('/loss/calculation','LossCalculationController@getLossCalculations')->name('loss.calculation');
+
+Route::get('/downloadLossAssessment/{assessment_id}','LossCalculationController@downloadLossAssessment')->name('assessnote.download');
 
 
 Route::get('/loss/type','LossTypeController@getLossTypes')->name('get.loss.types');

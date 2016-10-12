@@ -69,11 +69,11 @@
                                             <tbody>
                                             @foreach($statuses as $status)
                                                 <tr>
-                                                    <td>$status->id</td>
-                                                    <td>$status->status_name</td>
-                                                    <td>$status->staus_description</td>
-                                                    <td>$status->deleted</td>
-                                                    <td>$status->creation_date</td>
+                                                    <td>{{$status->id}}</td>
+                                                    <td>{{$status->status_name}}</td>
+                                                    <td>{{$status->staus_description}}</td>
+                                                    <td>{{$status->deleted}}</td>
+                                                    <td>{{$status->creation_date}}</td>
                                                 </tr>
 
 

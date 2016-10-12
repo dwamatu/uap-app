@@ -47,7 +47,7 @@
                                     <div class="row">
 
 
-                                        <table id="lossCalculationTable"
+                                        <table id="loss-grid"
                                                class="table table-striped table-bordered dataTable" cellspacing="0"
                                                width="100%">
                                             <thead>
@@ -56,7 +56,7 @@
                                                 <th>Farmer BAT Code</th>
                                                 <th>Farmer Name</th>
                                                 <th>User Id</th>
-                                                <th>Cause Of Loss</th>
+                                                <th>Cause Of Loss Id</th>
                                                 {{--<th>Type Of Loss</th>--}}
                                                 {{--<th>Farm Id</th>--}}
                                                 {{--<th>Average Useful Sa</th>--}}
@@ -84,7 +84,7 @@
                                                 <th>Farmer BAT Code</th>
                                                 <th>Farmer Name</th>
                                                 <th>User Id</th>
-                                                <th>Cause Of Loss</th>
+                                                <th>Cause Of Loss Id</th>
                                                 {{--<th>Type Of Loss</th>--}}
                                                 {{--<th>Farm Id</th>--}}
                                                 {{--<th>Average Useful Sa</th>--}}
@@ -106,57 +106,7 @@
 
                                             </tr>
                                             </tfoot>
-                                            <tbody>
-                                            @foreach($loss_calculations as $loss_calculation)
-                                                <tr role="row" class="even">
-                                                    {{--<td>{{$loss_calculation->id}}</td>--}}
-                                                    <td>{{$loss_calculation->farmer->account_number}}</td>
-                                                    <td>{{$loss_calculation->farmer->farmer_name}}</td>
-                                                    <td>{{$loss_calculation->user->first_name. ' '.$loss_calculation->user->last_name}}</td>
-                                                    <td>{{$loss_calculation->cause_of_loss_id}}</td>
-                                                    {{--<td>{{$loss_calculation->type_of_loss}}</td>--}}
-                                                    {{--<td>{{$loss_calculation->farm->farm_name}}</td>--}}
-                                                    {{--<td>{{$loss_calculation->average_useful_sa}}</td>--}}
-                                                    {{--<td>{{$loss_calculation->normal_leaf_sa}}</td>--}}
-                                                    {{--<td>{{$loss_calculation->average_leaves_no}}</td>--}}
-                                                    {{--<td>{{$loss_calculation->normal_leaves_no}}</td>--}}
-                                                    {{--<td>{{$loss_calculation->average_plant_no}}</td>--}}
-                                                    {{--<td>{{$loss_calculation->established_plant_no}}</td>--}}
-                                                    {{--<td>{{$loss_calculation->leaf_stage}}</td>--}}
-                                                    {{--<td>{{$loss_calculation->agricultural_practices}}</td>--}}
-                                                    {{--<td>{{$loss_calculation->area_staff_comment}}</td>--}}
-                                                    {{--<td>{{$loss_calculation->crop_inspector_comment}}</td>--}}
-                                                    <td>{{$loss_calculation->longitude}}</td>
-                                                    <td>{{$loss_calculation->latitude}}</td>
-                                                    {{--<td>{{$loss_calculation->is_confirmed}}</td>--}}
-                                                    <td>{{$loss_calculation->percentage_loss}}%</td>
-                                                    <td>{{$loss_calculation->inspection_date}}</td>
-                                                    <td>
-                                                        <div class="btn-group">
-                                                            <button data-toggle="dropdown"
-                                                                    class="btn btn-link btn-sm dropdown-toggle "
-                                                                    href="#"> Action <i class="fa fa-caret-down"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu">
 
-                                                                <li>
-
-                                                                    <a href="{{route('assessnote.download',['assessment_id'=>$loss_calculation->id])}}" class="download_las" data-lossid="{{$loss_calculation->id}} ">Download LAS</a>
-
-                                                                </li>
-
-                                                                <li>
-
-                                                                    <a href="#" class="scanned_las">Scanned LAS</a>
-                                                                </li>
-
-
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                            </tbody>
                                         </table>
 
 
@@ -179,4 +129,8 @@
         <!-- Matter ends -->
 
     </div>
+
+
+    </script>
+
 @endsection

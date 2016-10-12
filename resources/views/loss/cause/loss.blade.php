@@ -64,11 +64,11 @@
                                             <tbody>
                                             @foreach($causes as $cause)
                                             <tr>
-                                            <td>$cause->id</td>
-                                            <td>$cause->loss_name</td>
-                                            <td>$cause->description</td>
-                                            <td>$cause->deleted</td>
-                                            <td>$cause->creation_date</td>
+                                            <td>{{$cause->id}}</td>
+                                            <td>{{$cause->loss_name}}</td>
+                                            <td>{{$cause->description}}</td>
+                                            <td>{{$cause->deleted}}</td>
+                                            <td>{{$cause->creation_date}}</td>
                                             </tr>
 
 

@@ -153,6 +153,7 @@ return [
         Caffeinated\Shinobi\ShinobiServiceProvider::class, // For RBAC
         Collective\Html\HtmlServiceProvider::class, // For Watchtower Forms to function
         Smarch\Watchtower\WatchtowerServiceProvider::class, // For Watchtower
+        Barryvdh\DomPDF\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -213,6 +214,7 @@ return [
         'HTML'     => Collective\Html\HtmlFacade::class,   // required for Watchtower Forms
         'Shinobi'  => Caffeinated\Shinobi\Facades\Shinobi::class, // For RBAC functions
         //'Watchtower'=> Smarch\Watchtower\WatchtowerFacade::class, // not required, but available
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 

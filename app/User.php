@@ -34,4 +34,7 @@ class User extends Model implements AuthenticatableContract,
     protected $hidden = [
         'Password', 'remember_token',
     ];
+    public function losscalculation(){
+        return $this ->belongsTo('App\LossCalculation');
+    }
 }

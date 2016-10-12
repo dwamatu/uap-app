@@ -61,7 +61,7 @@
                                             </thead>
                                             <tfoot>
                                             <tr>
-                                                <th>Id</th>
+                                                {{--<th>Id</th>--}}
                                                 <th>Farm Name</th>
                                                 <th>Size With Tobacco</th>
                                                 <th>Planting Date</th>
@@ -75,14 +75,14 @@
                                             <tbody>
                                             @foreach($farms as $farm)
                                                 <tr role="row" class="even">
-                                                    <td>$farms->id</td>
-                                                    <td>$farms->farm_name</td>
-                                                    <td>$farms->size_with_tobacco</td>
-                                                    <td>$farms->planting_date</td>
-                                                    <td>$farms->farmer_id</td>
-                                                    <td>$farms->season_id</td>
-                                                    <td>$farms->deleted</td>
-                                                    <td>$farms->creation_date</td>
+                                                    <td>{{$farm->id}}</td>
+                                                    <td>{{$farm->farm_name}}</td>
+                                                    <td>{{$farm->size_with_tobacco}}</td>
+                                                    <td>{{$farm->planting_date}}</td>
+                                                    <td>{{$farm->farmer_id}}</td>
+                                                    <td>{{$farm->season_id}}</td>
+                                                    <td>{{$farm->deleted}}</td>
+                                                    <td>{{$farm->creation_date}}</td>
 
                                                 </tr>
 
