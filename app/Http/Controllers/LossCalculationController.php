@@ -31,7 +31,7 @@ class LossCalculationController extends Controller
         $dompdf->loadHtml($loss_html);
 
 // (Optional) Setup the paper size and orientation
-        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->setPaper('A4', 'portrait');
 
 // Render the HTML as PDF
         $dompdf->render();
@@ -68,6 +68,14 @@ class LossCalculationController extends Controller
                                 min-width: 2em;
                                 min-height: 2em;
                             }
+                            .my_footer{
+                            page-break-after: always;
+
+                        }
+                            img{
+                            width: 200px;
+                            height: 250px;
+                            }
                         
                         </style>
                         ';
@@ -75,125 +83,58 @@ class LossCalculationController extends Controller
         $the_header ='<table>
 
     <tr>
-        <td>Farmers Name</td>
+        <td><b>Farmers Name</b></td>
         <td colspan="2">'. ($assessment->farmer->farmer_name).'</td>
-        <td>ID no</td>
+        <td><b>ID no</b></td>
         <td>'. ($assessment->farmer->id_number).'</td>
 
     </tr>
     <tr>
-        <td>Farmers Zone</td>
+        <td><b>Farmers Zone</b></td>
         <td colspan="2">'. ($assessment->farmer->farmer_zone).'</td>
-        <td>A/C no</td>
+        <td><b>A/C no</b></td>
         <td>'. ($assessment->farmer->account_number).'</td>
 
     </tr>
     <tr>
-        <td>Staff Name</td>
+        <td><b>Staff Name</b></td>
         <td colspan="3">'. ($assessment->user->first_name).' '.($assessment->user->last_name).'</td>
 
 
     </tr>
     <tr>
 
-        <td>Planting Dates</td>
+        <td><b>Planting Dates</b></td>
 
-        <td>A._________________________</td>
-        <td>Inspection Dates</td>
-        <td>A.'. date('d-M-Y',strtotime($assessment->inspection_date)).'</td>
-
-    </tr>
-    <tr>
-        <td></td>
-        <td>B._________________________</td>
-        <td></td>
-        <td>B._________________________</td>
+        <td>_________________________</td>
+        <td><b>Inspection Dates</b></td>
+        <td colspan="2">'. date('d-M-Y',strtotime($assessment->inspection_date)).'</td>
 
     </tr>
     <tr>
         <td></td>
-        <td>C._________________________</td>
         <td></td>
-        <td>C._________________________</td>
+        <td></td>
+        <td></td>
 
     </tr>
     <tr>
-        <td>Inspection no.</td>
-        <td>
-            <table border="1" style="border-collapse: collapse">
-                <tr>
-                    <td>First</td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table border="1" style="border-collapse: collapse">
-                <tr>
-                    <td>Second</td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table border="1" style="border-collapse: collapse">
-                <tr>
-                    <td>Third</td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table border="1" style="border-collapse: collapse">
-                <tr>
-                    <td>Fourth</td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table border="1" style="border-collapse: collapse">
-                <tr>
-                    <td>Fifth</td>
-                </tr>
-            </table>
-        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+    </tr>
+    <tr>
+        <td><b>Inspection no.</b></td>
+        <td></td>
 
 
     </tr>
     <tr>
-        <td>Cause of Loss:</td>
-        <td>
-            <table border="1" style="border-collapse: collapse">
-                <tr>
-                    <td>Hail</td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table border="1" style="border-collapse: collapse">
-                <tr>
-                    <td>Drought</td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table border="1" style="border-collapse: collapse">
-                <tr>
-                    <td>Excessive Rain</td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table border="1" style="border-collapse: collapse">
-                <tr>
-                    <td>Diseases and Pests</td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table border="1" style="border-collapse: collapse">
-                <tr>
-                    <td>Flood</td>
-                </tr>
-            </table>
-        </td>
+        <td><b>Cause of Loss:</b></td>
+         <td></td>
+       
 
 
     </tr>
@@ -214,8 +155,7 @@ class LossCalculationController extends Controller
 
         <td style="outline: thin solid"> </td>
         <td style="outline: thin solid"> </td>
-        <td style="outline: thin solid"> </td>
-         <td style="outline: thin solid"> '. ($assessment-> farm->size_with_tobacco).' hectares</td>
+         <td colspan="2" style="outline: thin solid"> '. ($assessment-> farm->size_with_tobacco).' hectares</td>
 
 
     </tr>
@@ -227,19 +167,19 @@ class LossCalculationController extends Controller
     <tr style="outline: thin solid">
         <td  style="outline: thin solid" colspan="2">Average useful surface area <b>(a)</b></td>
 
-        <td style="outline: thin solid"> '. ($assessment-> average_useful_sa).'</td>
+     
         <td style="outline: thin solid"></td>
         <td style="outline: thin solid"></td>
-        <td style="outline: thin solid"></td>
+          <td colspan="2" style="outline: thin solid"> '. ($assessment-> average_useful_sa).'</td>
 
     </tr>
     <tr style="outline: thin solid">
         <td  style="outline: thin solid" colspan="2">Normal leaf surface area <b>(b)</b></td>
 
-        <td style="outline: thin solid">'. ($assessment-> normal_leaf_sa).'</td>
+       
         <td  style="outline: thin solid"></td>
         <td style="outline: thin solid"></td>
-        <td  style="outline: thin solid"></td>
+         <td colspan="2" style="outline: thin solid">'. ($assessment-> normal_leaf_sa).'</td>
     </tr>
     <tr style="outline: thin solid">
         <td  style="outline: thin solid" colspan="6"><b> Plant Damage(number of leaves damaged on the plant)</b></td>
@@ -247,17 +187,19 @@ class LossCalculationController extends Controller
     </tr>
     <tr style="outline: thin solid">
         <td  style="outline: thin solid" colspan="2">Average no. of leaves on the plant <b>(c)</b></td>
-        <td style="outline: thin solid"> '. ($assessment->average_leaves_no).'</td>
+       
         <td  style="outline: thin solid"></td>
         <td style="outline: thin solid"></td>
-        <td  style="outline: thin solid"></td>
+     
+          <td colspan="2" style="outline: thin solid"> '. ($assessment->average_leaves_no).'</td>
     </tr>
     <tr style="outline: thin solid">
         <td  style="outline: thin solid" colspan="2"> Normal no. leaves on the plant <b>(d)</b></td>
-        <td style="outline: thin solid"> '. ($assessment->normal_leaves_no).'</td>
+      
         <td style="outline: thin solid"></td>
         <td style="outline: thin solid"></td>
-        <td  style="outline: thin solid"></td>
+        
+            <td colspan="2" style="outline: thin solid"> '. ($assessment->normal_leaves_no).'</td>
     </tr>
     <tr style="outline: thin solid">
         <td style="outline: thin solid" colspan="6"><b> Land damage (number of plants damaged on the land parcel)</b></td>
@@ -265,31 +207,35 @@ class LossCalculationController extends Controller
     </tr>
     <tr style="outline: thin solid">
         <td style="outline: thin solid" colspan="2">Average no. of plants on the land <b>(e)</b></td>
-        <td style="outline: thin solid"> '. ($assessment->average_plant_no).'</td>
+       
         <td style="outline: thin solid"></td>
         <td style="outline: thin solid"></td>
-        <td style="outline: thin solid"></td>
+        
+           <td colspan="2"style="outline: thin solid"> '. ($assessment->average_plant_no).'</td>
     </tr>
     <tr style="outline: thin solid">
     <td  style="outline: thin solid" colspan="2">Established no. of plants <b>(f)</b></td>
-        <td style="outline: thin solid">'. ($assessment->established_plant_no).'</td>
+       
         <td  style="outline: thin solid"></td>
         <td style="outline: thin solid"></td>
-        <td  style="outline: thin solid"></td>
+      
+         <td colspan="2" style="outline: thin solid">'. ($assessment->established_plant_no).'</td>
     </tr>
     <tr style="outline: thin solid">
         <td  style="outline: thin solid" colspan="2"><b>Percentage Loss (%)</b></td>
-        <td style="outline: thin solid"> '. ($assessment->percentage_loss).'</td>
+       
         <td  style="outline: thin solid"></td>
         <td style="outline: thin solid"></td>
-        <td  style="outline: thin solid"></td>
+      
+        <td colspan="2" style="outline: thin solid"> '. ($assessment->percentage_loss).'%</td>
     </tr>
     <tr style="outline: thin solid">
         <td  style="outline: thin solid" colspan="2"> <b>Leaf stage of the plant</b></td>
-        <td style="outline: thin solid"> '. ($assessment->leaf_stage).'</td>
+       
         <td  style="outline: thin solid"></td>
         <td style="outline: thin solid"></td>
-        <td  style="outline: thin solid"></td>
+       
+         <td colspan="2" style="outline: thin solid"> '. ($assessment->leaf_stage).'</td>
     </tr>
 
 
@@ -330,9 +276,17 @@ class LossCalculationController extends Controller
         <td colspan="2"><b>Farmer\'s Signature:</b>_________________________</td>
         <td>______________________________________</td>
     </tr>
-</table>'
-                                        ;
-        $the_html =$the_style . '<div class="bordered">' . $the_title . $the_header . '</div>';
+</table>';
+
+        $the_imgs = '<div class="container" style="margin:20px;">
+                        <span style="float:left;"><img src="img/cow.jpg" style="align:left;"></span>
+                        <span></span>
+                        <span style="float: right;"><img src="img/cow.jpg" style="align:right;"></span>
+                          <span></span>
+                    </div>';
+
+        $the_footer = '<table class="my_footer"><tr><td></td></tr></table>';
+        $the_html =$the_style . '<div class="bordered">' . $the_title . $the_header .$the_imgs. $the_footer .  '</div>';
         return $the_html;
     }
 

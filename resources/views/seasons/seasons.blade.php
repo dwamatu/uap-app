@@ -64,11 +64,11 @@
                                             <tbody>
                                             @foreach($seasons as $season)
                                                 <tr>
-                                                    <td>$season->id</td>
-                                                    <td>$season->start_date</td>
-                                                    <td>$season->end_date</td>
-                                                    <td>$season->deleted</td>
-                                                    <td>$season->creation_date</td>
+                                                    <td>{{$season->id}}</td>
+                                                    <td>{{$season->start_date}}</td>
+                                                    <td>{{$season->end_date}}</td>
+                                                    <td>{{$season->deleted}}</td>
+                                                    <td>{{$season->creation_date}}</td>
                                                 </tr>
 
 
