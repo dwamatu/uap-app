@@ -161,42 +161,42 @@ class LossCalculationController extends Controller
             in case of drought</th>
                             </tr>
                             <tr>
-                                <th>Average useful surface area <b>(a)</b></th><td colspan="3">'. ($assessment-> average_useful_sa).'</td>
+                                 <th style=" text-indent: 30px;">Average useful surface area <b>(a)</b></th><td style=" text-indent: 80px;" colspan="3">'. ($assessment-> average_useful_sa).'</td>
                             
                             </tr>
                              <tr>
                                
-                                <th>Normal leaf surface area <b>(b)</b></th><td colspan="3">'. ($assessment-> normal_leaf_sa).'</td>
+                                <th style=" text-indent: 30px;">Normal leaf surface area <b>(b)</b></th><td style=" text-indent: 80px;"  colspan="3">'. ($assessment-> normal_leaf_sa).'</td>
                             </tr>
                               <tr style="background-color:#DFDFDF;">
                                 <th colspan="4">Plant Damage(number of leaves damaged on the plant)</b></th>
                             </tr>
                             <tr>
-                                <th>Average no. of leaves on the plant <b>(c)</b></th><td colspan="3">'. ($assessment->average_leaves_no).'</td>
+                                 <th style=" text-indent: 30px;">Average no. of leaves on the plant <b>(c)</b></th> <td style=" text-indent: 80px;" colspan="3">'. ($assessment->average_leaves_no).'</td>
                             
                             </tr>
                              <tr>
                                
-                                <th>Normal no. leaves on the plant <b>(d)</b></th><td colspan="3">'. ($assessment-> normal_leaves_no).'</td>
+                                <th style=" text-indent: 30px;">Normal no. leaves on the plant <b>(d)</b></th><td style=" text-indent: 80px;"  colspan="3">'. ($assessment-> normal_leaves_no).'</td>
                             </tr>
                             </tr>
                               <tr style="background-color:#DFDFDF;">
                                 <th colspan="4">Land damage (number of plants damaged on the land parcel)</th>
                             </tr>
                             <tr>
-                                <th>Average no. of plants on the land <b>(e)</b></th><td colspan="3">'. ($assessment->average_plant_no).'</td>
+                                <th style=" text-indent: 30px;">Average no. of plants on the land <b>(e)</b></th><td style=" text-indent: 80px;"  colspan="3">'. ($assessment->average_plant_no).'</td>
                             
                             </tr>
                              <tr>
                                
-                                <th>Established no. of plants <b>(f)</b></th><td colspan="3">'. ($assessment-> established_plant_no).'</td>
+                                 <th style=" text-indent: 30px;">Established no. of plants <b>(f)</b></th><td style=" text-indent: 80px;"  colspan="3">'. ($assessment-> established_plant_no).'</td>
                             </tr>
                             <tr>
-                                <th>Percentage Loss (%)</th><td colspan="3">'. ($assessment-> percentage_loss).'</td>
+                                <th>Percentage Loss (%)</th><td style=" text-indent: 80px;" colspan="3">'. ($assessment-> percentage_loss).'</td>
                             
                             </tr>
                             <tr>
-                                <th>Leaf stage of the plant</th><td colspan="3">'. ($assessment-> leaf_stage).'</td>
+                                <th>Leaf stage of the plant</th><td style=" text-indent: 80px;" colspan="3">'. ($assessment-> leaf_stage).'</td>
                             
                             </tr>
                             
@@ -204,12 +204,12 @@ class LossCalculationController extends Controller
                         </table>
                          <br />
                                 <div style="margin:10px auto;clear:both;">
-                                    <span style="margin:auto auto;width:95%; display: block;"><strong>Good Agricultural Practices</strong> _______________________________________________________________________________________</span>
+                                    <span style="margin:auto auto;width:95%; display: block;"><strong>Good Agricultural Practices</strong> '. ($assessment->agricultural_practices).'</span>
                                     <br />
-                                    <span style="margin:auto auto;width:95%; display: block;"><strong>Area Staff Comment:</strong> ______________________________________________________________________________________ <br> Signature: ____________________ Date: ________________</span>
+                                    <span style="margin:auto auto;width:95%; display: block;"><strong>Area Staff Comment:</strong> '. ($assessment->area_staff_comment).' <br> Signature: ____________________ Date: ________________</span>
                                     <br />
                                     <br />
-                                    <span style="margin:auto auto;width:95%; display: block;"><strong>UAP Crop Inspector\'s </strong>______________________________________________________________________________________ <br> Signature: ____________________ Date: ________________</span>
+                                    <span style="margin:auto auto;width:95%; display: block;"><strong>UAP Crop Inspector\'s Comment:</strong>______________________________________________________________________________________ <br> Signature: ____________________ Date: ________________</span>
                                     <br />
                                     <br />
                                     <span style="margin:auto auto;width:95%; display: block;"><strong>ALM Comment:</strong>______________________________________________________________________________________ <br> Signature: ____________________ Date: ________________</span>
