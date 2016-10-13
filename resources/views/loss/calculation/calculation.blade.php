@@ -141,7 +141,7 @@
 
                                                                 <li>
 
-                                                                    <a href="{{route('assessnote.download',['assessment_id'=>$loss_calculation->id])}}" class="download_las" data-lossid="{{$loss_calculation->id}} ">Download LAS</a>
+                                                                    <a href="{{route('assessnote.download',['assessment_id'=>$loss_calculation->id])}}" class="download_las" target="_blank" data-lossid="{{$loss_calculation->id}} ">Download LAS</a>
 
                                                                 </li>
 

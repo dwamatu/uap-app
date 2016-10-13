@@ -3,13 +3,13 @@
 	<!--- Sidebar navigation -->
 	<!-- If the main navigation has sub navigation, then add the class "has_sub" to "li" of main navigation. -->
 	<ul id="nav">
-		<li >
+		{{--<li >
 			<a href="/dashboard"><i class="fa fa-home"></i>Dashboard</a>
-		</li>
+		</li>--}}
 		<li >
 			<a href="/farmers"><i class="fa fa-th-list"></i>Farmers</a>
 		</li>
-		<li >
+	{{--	<li >
 			<a href="/farms"><i class="fa fa-th-list"></i>Farms</a>
 		</li>
 		<li >
@@ -17,13 +17,13 @@
 		</li>
 		<li >
 			<a href="/loss"><i class="fa fa-anchor"></i>Loss</a>
-		</li>
+		</li>--}}
 		<li >
 			<a href="/loss/calculation"><i class="fa fa-anchor"></i>Loss Assessment</a>
 		</li>
-		<li >
-			<a href="/seasons"><i class="fa fa-anchor"></i>Seasons</a>
-		</li>
+		{{--<li >--}}
+			{{--<a href="/seasons"><i class="fa fa-anchor"></i>Seasons</a>--}}
+		{{--</li>--}}
 		{{--<li >--}}
 			{{--<a href="/loss/type"><i class="fa fa-anchor"></i>Type of Loss</a>--}}
 		{{--</li>--}}

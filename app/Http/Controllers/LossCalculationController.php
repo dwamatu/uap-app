@@ -37,7 +37,7 @@ class LossCalculationController extends Controller
         $dompdf->render();
 
 // Output the generated PDF to Browser
-        $dompdf->stream();
+        $dompdf->stream('Loss Assessment Report',array('Attachment'=>0));
     }
 
     public function makeLossAssessmentnote($assessment_id)
@@ -46,6 +46,7 @@ class LossCalculationController extends Controller
         $the_style = '<style>
                                 @page {
                                     margin: 0.9%;
+                                    font-family: CenturyGothic !important;
                                 }
                                 td {
                                     font-size: 80%;
@@ -96,7 +97,7 @@ class LossCalculationController extends Controller
 
                         </style>
                         ';
-        $the_title = '<center><h2>LOSS ASSESSMENT NOTE</h2></center>';
+        $the_title = '<center><h2>LOSS ASSESSMENT REPORT</h2></center>';
         $the_header ='<table class="ze_head" border=1 cellspacing=0 cellpadding="4" align="center">
                             <tr style="background-color:#DFDFDF;">
                                 <th colspan="4">A. FARMER DETAILS</th>
