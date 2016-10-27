@@ -85,7 +85,7 @@
                                                             <td>{{ $item->id }}</td>
 
                                                             <td>
-                                                                <a href="{{ route('watchtower.user.show', $item->id) }}">{{ $item->first_name }} {{$item->last_name }}</a>
+                                                                <a href="{{ route('watchtower.user.show', $item->id) }}">{{ $item->firstname }} {{$item->last_name }}</a>
                                                             </td>
 
                                                             <td>

@@ -28,7 +28,9 @@ Route::get('/farms','FarmController@getFarms');
 Route::get('/getRoles', ['uses' => 'DataController@getRoles', 'as' => 'check.role']);
 
 
-Route::get('/farmers' ,[ 'uses' => 'FarmersController@getFarmers' , 'as' => 'farmers']);
+Route::get('/farmers' ,[ 'uses' => 'FarmersController@viewFarmers' , 'as' => 'farmers']);
+
+Route::get('/fetch/farmers' ,[ 'uses' => 'FarmersController@getFarmers' , 'as' => 'fetch_farmers']);
 
 Route::get('/status','UserStatusController@getUserStatuses');
 
@@ -36,7 +38,9 @@ Route::get('/status','UserStatusController@getUserStatuses');
 Route::get('/loss', 'LossCauseController@getCauses');
 
 
-Route::get('/loss/calculation','LossCalculationController@getLossCalculations')->name('loss.calculation');
+Route::get('/loss/calculation','LossCalculationController@viewLossCalculations')->name('loss.calculation');
+
+Route::get('fetch/loss/calculation','LossCalculationController@getLossCalculations')->name('fetch_loss_calculation');
 
 Route::get('/downloadLossAssessment/{assessment_id}','LossCalculationController@downloadLossAssessment')->name('assessnote.download');
 
@@ -54,4 +58,6 @@ Route::auth();
 
 
 Route::get('/home', 'HomeController@index');
+
+
 

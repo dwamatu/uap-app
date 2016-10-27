@@ -13,12 +13,48 @@ use Dompdf\Dompdf;
 
 class LossCalculationController extends Controller
 {
+    public function viewLossCalculations()    {
+        return view('loss.calculation.calculation');
+    }
+
+    /**
+     * @return Loss Calculations as Json
+     */
     public function getLossCalculations()
     {
-        $loss_calculations = LossCalculation::all();
+        $curl = curl_init();
 
+        curl_setopt_array($curl, array(
+            CURLOPT_PORT => "28080",
+            CURLOPT_URL => "http://uapapp.netcengroup.com:28080/UAP/getLossReport",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                "postman-token: b14f4a6c-92f8-0460-bbe1-8128855fd912"
+            ),
+        ));
 
-        return view('loss.calculation.calculation', ['loss_calculations' => $loss_calculations]);
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+
+            $loss_calc_array = json_decode($response,true);
+
+            $loss_calc = array("data" => $loss_calc_array);
+//            dd($farmers);
+            echo json_encode($loss_calc);
+
+        }
     }
 
     public function downloadLossAssessment($assessment_id)

@@ -18,7 +18,7 @@
 				<div class="col-md-3 col-md-offset-2">
 					<ul class="nav navbar-nav pull-right">
 						<li class="dropdown pull-right">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="fa fa-user"> {{Auth::user()->first_name." ".Auth::user()->last_name}}</i> <b class="caret"></b></a> <!-- Dropdown menu -->
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="fa fa-user"> {{Auth::user()->firstname." ".Auth::user()->secondname}}</i> <b class="caret"></b></a> <!-- Dropdown menu -->
 							<ul class="dropdown-menu">
 								<li><a href="{{ url( config('watchtower.auth_routes.logout') ) }}"><i class="fa fa-sign-out"></i> Logout</a></li>
 							</ul>

@@ -3,9 +3,9 @@
 	<!--- Sidebar navigation -->
 	<!-- If the main navigation has sub navigation, then add the class "has_sub" to "li" of main navigation. -->
 	<ul id="nav">
-		{{--<li >
+		<li >
 			<a href="/dashboard"><i class="fa fa-home"></i>Dashboard</a>
-		</li>--}}
+		</li>
 		<li >
 			<a href="/farmers"><i class="fa fa-th-list"></i>Farmers</a>
 		</li>
@@ -37,7 +37,7 @@
 				<li {!! Route::is('watchtower.user.index') || Route::is('watchtower.user.create') || Route::is('watchtower.user.edit')  ? 'class="current"' : null !!} ><a href="{{url::route('watchtower.user.index')}}">Users</a></li>
 				<li  {!! Route::is('watchtower.role.index') || Route::is('watchtower.partials.create') || Route::is('watchtower.partials.edit')  ? 'class="current"' : null !!}><a href="{{url::route('watchtower.role.index')}}">Roles</a></li>
 				<li  {!! Route::is('watchtower.permission.index') || Route::is('watchtower.partials.create') || Route::is('watchtower.partials.edit')  ? 'class="current"' : null !!}><a href="{{url::route('watchtower.permission.index')}}">Permissions</a></li>
-				<li {!! Route::is('get.loss.types') ?  'class="current"' :null !!} ><a href="{{url::route('get.loss.types') }}"></i>Type of Loss</a></li>
+				{{--<li {!! Route::is('get.loss.types') ?  'class="current"' :null !!} ><a href="{{url::route('get.loss.types') }}"></i>Type of Loss</a></li>--}}
 
 
 			</ul>

@@ -4,12 +4,13 @@
 <script src="{{ URL::asset('js/datatables.min.js') }}"></script>
 <script src="{{ URL::asset('js/moment.min.js') }}"></script>
 <script src="{{ URL::asset('js/bootstrap-datetimepicker.min.js') }}"></script>
-<script src="{{ URL::asset('js/daterangefilter.js') }}"></script>
+{{--<script src="{{ URL::asset('js/daterangefilter.js') }}"></script>--}}
 
-@unless ( ! Auth::check() )
+{{--@unless ( ! Auth::check() )--}}
 
 <script src="{{ URL::asset('js/custom.js') }}"></script> <!-- Custom codes -->
 
 @stack('scripts')
+{{--
 
-@endunless
+@endunless--}}
