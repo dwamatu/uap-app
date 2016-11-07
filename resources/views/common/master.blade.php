@@ -50,7 +50,8 @@
 
 	<!-- Main stylesheet -->
 	<link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
-
+	<!-- Main stylesheet -->
+	<link href="{{ URL::asset('css/dashboard.css') }}" rel="stylesheet">
 	<!--[if lt IE 9]>
 	<script src="{{ URL::asset('js/html5shiv.js') }}"></script>
 	<![endif]-->

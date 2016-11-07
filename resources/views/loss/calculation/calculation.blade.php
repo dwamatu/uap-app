@@ -35,11 +35,11 @@
                                 <th>Farmer Name</th>
                                 <th>Crop Inspector</th>
                                 <th>Cause Of Loss</th>
-                                <th>Longitude</th>
                                 <th>Latitude</th>
+                                <th>Longitude</th>
                                 <th>Percentage Loss</th>
                                 <th>Inspection Date</th>
-                                <th>Action</th>
+                                {{--<th>Action</th>--}}
                             </tr>
                             </thead>
 
@@ -49,11 +49,11 @@
                                 <th>Farmer Name</th>
                                 <th>Crop Inspector</th>
                                 <th>Cause Of Loss</th>
-                                <th>Longitude</th>
                                 <th>Latitude</th>
+                                <th>Longitude</th>
                                 <th>Percentage Loss</th>
                                 <th>Inspection Date</th>
-                                <th>Action</th>
+                                {{--<th>Action</th>--}}
                             </tr>
                             </tfoot>
                         </table>
@@ -79,16 +79,18 @@
         var dataTable = $('#farmers-table').DataTable({
             dom: "<'row table-controls'<'col-sm-4 col-md-2 page-length'l><'col-sm-4 col-md-8 search'f><'col-sm-4 col-md-2 text-right'B>><'row'<'col-md-12'rt>><'row space-up-10'<'col-md-6'i><'col-md-6'p>>",
             processing: true,
-            serverSide: true,
+            serverSide: false,
             language: {"search": ""},
             ajax: '{!! route("fetch_loss_calculation") !!}',
             "columns": [
-                {data: 'id', visible:'false'},
-                {data: 'accountNumber'},
-                {data: 'farmerName'},
-                {data: 'farmerZone'},
-                {data: 'almManager'},
-                {data: 'expectedKg'}
+                {data: 'bat_acc_no'},
+                {data: 'farmer_name'},
+                {data: 'crop_inspector_name'},
+                {data: 'cause_of_loss'},
+                {data: 'latitude'},
+                {data: 'longitude'},
+                {data: 'inspection_date'},
+                {data: 'percentage_loss'}
             ],
             order: [[1, "asc"]],
             buttons: [
@@ -117,17 +119,14 @@
                 }],
             "columnDefs": [{
                 render: function (data, type, row) {
-                    var accountNumber = row.accountNumber;
-                    var output = null !== accountNumber && 'undefined' !== accountNumber && $.trim(accountNumber) ? accountNumber : "<span class='text-missing'>Account  No. not Set</span>";
-
-                    return output;
+                    return "<a class='btn btn-link link btn-xs' href='/download/loss/assessment/" + row.loss_assessment_id + "'>" + row.bat_acc_no + "</a>";
                 },
-                "targets": 1
+                "targets": 0
             },
                 {
                     render: function (data, type, row) {
-                        var farmerName = row.farmerName;
-                        var output = null !== farmerName && 'undefined' !== farmerName && $.trim(farmerName) ? farmerName : "<span class='text-missing'>Farmer Name. not Set</span>";
+                        var crop_inspector = row.crop_inspector_name;
+                        var output = null !== crop_inspector && 'undefined' !== crop_inspector && $.trim(crop_inspector) ? crop_inspector : "<span class='text-missing'>Crop Inspector. not Set</span>";
 
                         return output;
                     },
@@ -135,8 +134,8 @@
                 },
                 {
                     render: function (data, type, row) {
-                        var farmerZone = row.farmerZone;
-                        var output = null !== farmerZone && 'undefined' !== farmerZone && $.trim(farmerZone) ? farmerZone : "<span class='text-missing'>Farmer Zone. not set</span>";
+                        var typeOfLoss = row.cause_of_loss;
+                        var output = null !== typeOfLoss && 'undefined' !== typeOfLoss && $.trim(typeOfLoss) ? typeOfLoss : "<span class='text-missing'>Cause of Loss                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          . not set</span>";
 
                         return output;
                     },
@@ -144,21 +143,40 @@
                 },
                 {
                     render: function (data, type, row) {
-                        var almManager = row.almManager;
-                        var output = null !== almManager && 'undefined' !== almManager && $.trim(almManager) ? almManager : "<span class='text-missing'>Alm Manager. not Set</span>";
+                        var latitude = row.latitude;
+                        var output = null !== latitude && 'undefined' !== latitude && $.trim(latitude) ? latitude : "<span class='text-missing'>Latitude. not Set</span>";
 
                         return output;
                     },
                     "targets": 4
                 },
+
                 {
                     render: function (data, type, row) {
-                        var expectedKg = row.expectedKg;
-                        var output = null !== expectedKg && 'undefined' !== expectedKg && $.trim(expectedKg) ? expectedKg : "<span class='text-missing'>Expected Kg. not Set</span>";
+                        var longitude = row.longitude;
+                        var output = null !== longitude && 'undefined' !== longitude && $.trim(longitude) ? longitude : "<span class='text-missing'>Longitude. not Set</span>";
 
                         return output;
                     },
                     "targets": 5
+                },
+                {
+                    render: function (data, type, row) {
+                        var percentageLoss = row.percentage_loss;
+                        var output = null !== percentageLoss && 'undefined' !== percentageLoss && $.trim(percentageLoss) ? percentageLoss : "<span class='text-missing'>Percentage Loss. not Set</span>";
+
+                        return output;
+                    },
+                    "targets": 6
+                },
+                {
+                    render: function (data, type, row) {
+                        var inspectionDate = row.inspection_date;
+                        var output = null !== inspectionDate && 'undefined' !== inspectionDate && $.trim(inspectionDate) ? inspectionDate : "<span class='text-missing'>Inspection Date. not Set</span>";
+
+                        return output;
+                    },
+                    "targets": 7
                 }]
         });
 

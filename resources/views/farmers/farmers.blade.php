@@ -30,24 +30,22 @@
                     <div class="col-md-12">
                         <table id="farmers-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
-                            <tr><th></th>
+                            <tr>
                                 <th class="first">Farmer BAT Account No.</th>
                                 <th> Farmer Name</th>
                                 <th>Farmer Zone</th>
                                 <th>ALM Manger</th>
-
                                 <th class="last"> Expected KG</th>
                             </tr>
                             </thead>
 
                             <tfoot>
                             <tr>
-                                <th></th>
+
                                 <th class="first">Farmer BAT Account No.</th>
                                 <th> Farmer Name</th>
                                 <th>Farmer Zone</th>
                                 <th>ALM Manger</th>
-
                                 <th class="last"> Expected KG</th>
                             </tr>
                             </tfoot>
@@ -78,14 +76,13 @@
             language: {"search": ""},
             ajax: '{!! route("fetch_farmers") !!}',
             "columns": [
-                {data: 'id', visible:'false'},
-                {data: 'accountNumber'},
+                {data: 'bataccountNumber'},
                 {data: 'farmerName'},
                 {data: 'farmerZone'},
-                {data: 'almManager'},
+                {data: 'almmanager'},
                 {data: 'expectedKg'}
             ],
-            order: [[1, "asc"]],
+//            order: [[1, "asc"]],
             buttons: [
                 {
                     extend: 'collection',
@@ -113,12 +110,12 @@
 
             "columnDefs": [{
                 render: function (data, type, row) {
-                    var accountNumber = row.accountNumber;
+                    var accountNumber = row.bataccountNumber;
                     var output = null !== accountNumber && 'undefined' !== accountNumber && $.trim(accountNumber) ? accountNumber : "<span class='text-missing'>Account  No. not Set</span>";
 
                     return output;
                 },
-                "targets": 1
+                "targets": 0
             },
                 {
                     render: function (data, type, row) {
@@ -127,7 +124,7 @@
 
                         return output;
                     },
-                    "targets": 2
+                    "targets": 1
                 },
                 {
                     render: function (data, type, row) {
@@ -136,16 +133,16 @@
 
                         return output;
                     },
-                    "targets": 3
+                    "targets": 2
                 },
                 {
                     render: function (data, type, row) {
-                        var almManager = row.almManager;
+                        var almManager = row.almmanager;
                         var output = null !== almManager && 'undefined' !== almManager && $.trim(almManager) ? almManager : "<span class='text-missing'>Alm Manager. not Set</span>";
 
                         return output;
                     },
-                    "targets": 4
+                    "targets": 3
                 },
                 {
                     render: function (data, type, row) {
@@ -154,7 +151,7 @@
 
                         return output;
                     },
-                    "targets": 5
+                    "targets": 4
                 }]
                 });
 

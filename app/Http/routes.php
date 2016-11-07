@@ -42,7 +42,7 @@ Route::get('/loss/calculation','LossCalculationController@viewLossCalculations')
 
 Route::get('fetch/loss/calculation','LossCalculationController@getLossCalculations')->name('fetch_loss_calculation');
 
-Route::get('/downloadLossAssessment/{assessment_id}','LossCalculationController@downloadLossAssessment')->name('assessnote.download');
+Route::get('/download/loss/assessment/{assessment_id}','LossCalculationController@downloadLossAssessment')->name('assessnote.download');
 
 
 Route::get('/loss/type','LossTypeController@getLossTypes')->name('get.loss.types');
