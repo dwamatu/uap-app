@@ -15,9 +15,8 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::get('/dashboard',['uses' => 'DataController@getDashboard'])->name('dashboard');
+Route::get('/fetch/locations',['uses' => 'DataController@getLocations'])->name('fetch.locations');
 
 Route::post('/auth/login', ['uses' => 'UserController@postSignIn', 'as' => 'signin']);
 

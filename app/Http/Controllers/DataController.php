@@ -3,16 +3,34 @@
 namespace App\Http\Controllers;
 
 
+use App\Utilities\DashboardUtilities;
 use DB;
 
 
 class DataController extends Controller
 {
-    public function getRoles (){
-        $roles = json_encode(DB::table('roles')->get());
+    /**
+     * @return string
+     */
+    public function getDashboard()
+    {
+        $dashboardDetails = (DashboardUtilities::getDashboardDetails());
+        $Data = collect([]);
+
+        $Data = $dashboardDetails;
 
 
-        echo $roles;
+         ($pageData =(($Data)));
+
+        return view('dashboard', ['pageData' => $pageData]);
+
+
     }
+    public function getLocations()
+    {
+        return collect(DashboardUtilities::getLocations())->toJson();
+
+    }
+
 
 }

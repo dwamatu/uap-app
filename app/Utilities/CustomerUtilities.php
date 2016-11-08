@@ -6,10 +6,7 @@ use App\Utilities\ApiUtilities;
 
 class CustomerUtilities
 {
-    public static function getFarmerCrops()
-    {
-        return json_decode(ApiUtilities::IssueGETRequest("http://api.dct.netcengroup.com/index.php/products"), true)['results'];
-    }
+
 
     public static function updateAggregator($content)
     {
