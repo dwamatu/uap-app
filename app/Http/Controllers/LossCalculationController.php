@@ -14,8 +14,13 @@ class LossCalculationController extends Controller
 {
     public function viewLossCalculations()
     {
-        return view('loss.calculation.calculation');
+        return view('loss.calculation.list');
     }
+    public function viewLossReports()
+    {
+        return view('reports.list');
+    }
+
 
     /**
      * @return Loss Calculations as Json

@@ -74,12 +74,13 @@
 <script src="{{ URL::asset('vendor/datatables/buttons.server-side.js') }}"></script>
 <script src="{{ URL::asset('js/bootstrap-select.min.js') }}"></script>
 <script src="{{ URL::asset('js/utilities.js') }}"></script>
+<script src="{{ URL::asset('js/moment.min.js') }}"></script>
 <script>
     $(document).ready(function () {
         var dataTable = $('#farmers-table').DataTable({
             dom: "<'row table-controls'<'col-sm-4 col-md-2 page-length'l><'col-sm-4 col-md-8 search'f><'col-sm-4 col-md-2 text-right'B>><'row'<'col-md-12'rt>><'row space-up-10'<'col-md-6'i><'col-md-6'p>>",
             processing: true,
-            serverSide: false,
+            serverSide: true,
             language: {"search": ""},
             ajax: '{!! route("fetch_loss_calculation") !!}',
             "columns": [
@@ -90,8 +91,8 @@
                 {data: 'cause_of_loss'},
                 {data: 'latitude'},
                 {data: 'longitude'},
-                {data: 'inspection_date'},
                 {data: 'percentage_loss'},
+                {data: 'inspection_date'},
                 {data: 'loss_assessment_id'}
             ],
             order: [[1, "asc"]],
@@ -124,7 +125,13 @@
                     return "<a  target='_blank' class='btn btn-primary btn-block' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>";
                 },
                 "targets": 8
-            }]
+            },{
+            render: function (data,type,row) {
+                data = row.inspection_date
+                return (moment(data).format('LL'));
+            },
+            "targets": 7
+        }]
         });
 
         // Add placeholder to search box

@@ -20,10 +20,10 @@ a:hover, a:active, a:focus {
 
 
 .small-box {
-    border-radius: 2px;
+    border-radius: 7px;
     position: relative;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1)
 }
 
@@ -3539,4 +3539,6 @@ table.text-center, table.text-center td, table.text-center th {
     .table-responsive > .table tr th, .table-responsive > .table tr td {
         white-space: normal !important
     }
+
+
 }

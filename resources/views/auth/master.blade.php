@@ -22,7 +22,7 @@
     }
 
     .info {
-        background-color: rgba(79, 79, 47, 0.88);
+        background-color: #00575A;
         height:100%;
         width:21%;
         float: left;

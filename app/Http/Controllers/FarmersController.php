@@ -13,7 +13,7 @@ class FarmersController extends Controller
 {
     public function viewFarmers()
     {
-        return view('farmers.farmers');
+        return view('farmers.list');
     }
 
     /**

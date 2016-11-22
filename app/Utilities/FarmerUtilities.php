@@ -8,7 +8,7 @@ class FarmerUtilities
     public static function getFarmers()
     {
 
-        return (array("data" => json_decode(ApiUtilities::IssueGETRequest("http://uapapp.netcengroup.com:28080/UAP/farmerAPI"), true)));
+        return (array("data" => json_decode(ApiUtilities::IssueGETRequest("http://localhost:8080/UAP/fetch/farmers"), true)));
 
     }
 }

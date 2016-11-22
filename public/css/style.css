@@ -2,11 +2,27 @@
 /* Website : http://responsivewebinc.com
 ****************************/
 
+.chartWrapper {
+	position: relative;
+}
+
+.chartWrapper > canvas {
+	position: absolute;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+}
+
+.chartAreaWrapper {
+	width: 15000px;
+	overflow-x: scroll !important;
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 12px;
 	line-height: 22px;
-	color: #404040;
+	color: #00575a;
 	background: #f0f2f5;
 	/* padding-top: 37px; */
 	-webkit-font-smoothing: antialiased;
@@ -475,7 +491,7 @@ header .header-data .hdata em {
 	color: #777;
 	position: fixed;
 	height: 100%;
-	background: #4f4f2f;
+	background: #00575A;
 	top: 53px;
 }
 
@@ -547,7 +563,7 @@ header .header-data .hdata em {
 }
 
 .sidebar #nav>li>a {
-	background: #4f4f2f;
+	background: #00575A;
 	border-bottom: 1px solid #7c7e81;
 	color: #fafafa;
 	display: block;

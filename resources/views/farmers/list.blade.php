@@ -76,11 +76,11 @@
             language: {"search": ""},
             ajax: '{!! route("fetch_farmers") !!}',
             "columns": [
-                {data: 'bataccountNumber'},
-                {data: 'farmerName'},
-                {data: 'farmerZone'},
-                {data: 'almmanager'},
-                {data: 'expectedKg'}
+                {data: 'bat_acc_no'},
+                {data: 'farmer_name'},
+                {data: 'farmer_zone'},
+                {data: 'alm_manager'},
+                {data: 'expected_kg'}
             ],
 //            order: [[1, "asc"]],
             buttons: [
@@ -106,53 +106,9 @@
                             title: 'Employees'
                         }
                     ]
-                }],
-
-            "columnDefs": [{
-                render: function (data, type, row) {
-                    var accountNumber = row.bataccountNumber;
-                    var output = null !== accountNumber && 'undefined' !== accountNumber && $.trim(accountNumber) ? accountNumber : "<span class='text-missing'>Account  No. not Set</span>";
-
-                    return output;
-                },
-                "targets": 0
-            },
-                {
-                    render: function (data, type, row) {
-                        var farmerName = row.farmerName;
-                        var output = null !== farmerName && 'undefined' !== farmerName && $.trim(farmerName) ? farmerName : "<span class='text-missing'>Farmer Name. not Set</span>";
-
-                        return output;
-                    },
-                    "targets": 1
-                },
-                {
-                    render: function (data, type, row) {
-                        var farmerZone = row.farmerZone;
-                        var output = null !== farmerZone && 'undefined' !== farmerZone && $.trim(farmerZone) ? farmerZone : "<span class='text-missing'>Farmer Zone. not set</span>";
-
-                        return output;
-                    },
-                    "targets": 2
-                },
-                {
-                    render: function (data, type, row) {
-                        var almManager = row.almmanager;
-                        var output = null !== almManager && 'undefined' !== almManager && $.trim(almManager) ? almManager : "<span class='text-missing'>Alm Manager. not Set</span>";
-
-                        return output;
-                    },
-                    "targets": 3
-                },
-                {
-                    render: function (data, type, row) {
-                        var expectedKg = row.expectedKg;
-                        var output = null !== expectedKg && 'undefined' !== expectedKg && $.trim(expectedKg) ? expectedKg : "<span class='text-missing'>Expected Kg. not Set</span>";
-
-                        return output;
-                    },
-                    "targets": 4
                 }]
+
+
                 });
 
         // Add placeholder to search box

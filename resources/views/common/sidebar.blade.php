@@ -21,6 +21,9 @@
 		<li >
 			<a href="/loss/calculation"><i class="fa fa-anchor"></i>Loss Assessment</a>
 		</li>
+		<li >
+			<a href="/loss/report"><i class="fa fa-anchor"></i>Report</a>
+		</li>
 		{{--<li >--}}
 			{{--<a href="/seasons"><i class="fa fa-anchor"></i>Seasons</a>--}}
 		{{--</li>--}}
