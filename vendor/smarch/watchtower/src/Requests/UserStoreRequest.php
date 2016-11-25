@@ -41,15 +41,11 @@ class UserStoreRequest extends Request
     {
   
        $rules = array_merge([
-            'first_name' => 'required|max:40',
-            'last_name' => 'required|max:40',
-            'username' => 'required|max:40',
+            'firstname' => 'required|max:40',
+            'secondname' => 'required|max:40',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed|min:4',
-            'deleted'=> 'f',
-            'role_id'=>'required',
-            'creation_date'=>Carbon::now(),
-        ], config('watchtower.user.rules.store') );
+       ], config('watchtower.user.rules.store') );
 
        return $rules;
        

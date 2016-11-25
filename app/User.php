@@ -1,29 +1,23 @@
 <?php
+
 namespace App;
 
+use Caffeinated\Shinobi\Traits\ShinobiTrait;
 use Illuminate\Auth\Authenticatable;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 
-use Caffeinated\Shinobi\Traits\ShinobiTrait;
-
-class User extends Model implements AuthenticatableContract,
+class User extends Eloquent implements AuthenticatableContract,
     CanResetPasswordContract
 {
     use Authenticatable, CanResetPassword, ShinobiTrait;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     *
-     */
-    protected $table = 'users';
+    protected $fillable = ['firstname', 'secondname', 'email', 'password'];
 
-    protected $fillable = [
-        'first_name','second_name', 'email', 'password','role_id','deleted','creation_date',
+    protected $hidden = [
+        'password', 'remember_token',
     ];
 
     /**
@@ -31,9 +25,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $hidden = [
-        'Password', 'remember_token',
-    ];
+
     public function losscalculation(){
         return $this ->belongsTo('App\LossCalculation');
     }

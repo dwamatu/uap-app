@@ -109,7 +109,7 @@
                                                                                 class="glyphicon glyphicon-link"></span>
                                                                     </button>
                                                                 </a>
-                                                                {{ $u->first_name .' '. $u->last_name }}
+                                                                {{ $u->firstname .' '. $u->secondname }}
                                                             </th>
                                                             @for ($i=0; $i < $roles->count(); $i++ )
                                                                 <td data-container="body" data-trigger="focus"

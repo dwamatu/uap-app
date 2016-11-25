@@ -56,24 +56,24 @@
 
                                             </div>
 
-                                            <h1>Edit '{{ $resource->first_name }}'</h1>
+                                            <h1>Edit '{{ $resource->firstname }}'</h1>
                                             <hr/>
 
                                             {!! Form::model($resource, ['method' => 'PATCH', 'route' => [ 'watchtower.user.update', $resource->id ], 'class' => 'form-horizontal']) !!}
 
-                                            <div class="form-group {{ $errors->has('first_name') ? 'has-error' : ''}}">
-                                                {!! Form::label('first_name', 'First Name: ', ['class' => 'col-sm-3 control-label']) !!}
+                                            <div class="form-group {{ $errors->has('firstname') ? 'has-error' : ''}}">
+                                                {!! Form::label('firstname', 'First Name: ', ['class' => 'col-sm-3 control-label']) !!}
                                                 <div class="col-sm-6">
-                                                    {!! Form::text('first_name', null, ['class' => 'form-control']) !!}
+                                                    {!! Form::text('firstname', null, ['class' => 'form-control']) !!}
                                                 </div>
-                                                {!! $errors->first('first_name', '<div class="col-sm-6 col-sm-offset-3 text-danger">:message</div>') !!}
+                                                {!! $errors->first('firstname', '<div class="col-sm-6 col-sm-offset-3 text-danger">:message</div>') !!}
                                             </div>
-                                            <div class="form-group {{ $errors->has('last_name') ? 'has-error' : ''}}">
-                                                {!! Form::label('last_name', 'Last Name: ', ['class' => 'col-sm-3 control-label']) !!}
+                                            <div class="form-group {{ $errors->has('secondname') ? 'has-error' : ''}}">
+                                                {!! Form::label('secondname', 'Second Name: ', ['class' => 'col-sm-3 control-label']) !!}
                                                 <div class="col-sm-6">
-                                                    {!! Form::text('last_name', null, ['class' => 'form-control']) !!}
+                                                    {!! Form::text('secondname', null, ['class' => 'form-control']) !!}
                                                 </div>
-                                                {!! $errors->first('last_name', '<div class="col-sm-6 col-sm-offset-3 text-danger">:message</div>') !!}
+                                                {!! $errors->first('secondname', '<div class="col-sm-6 col-sm-offset-3 text-danger">:message</div>') !!}
                                             </div>
 
                                             <div class="form-group {{ $errors->has('email') ? 'has-error' : ''}}">

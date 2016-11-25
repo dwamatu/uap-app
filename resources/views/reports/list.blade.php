@@ -126,6 +126,8 @@
 <script src="{{ URL::asset('vendor/datatables/buttons.server-side.js') }}"></script>
 <script src="{{ URL::asset('js/bootstrap-select.min.js') }}"></script>
 <script src="{{ URL::asset('js/utilities.js') }}"></script>
+<script src="https://cdn.datatables.net/buttons/1.1.0/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.1.0/js/buttons.print.min.js"></script>
 <script src="{{ URL::asset('js/bootstrap-slider.js') }}"></script>
 <script src="{{ URL::asset('js/reportFieldSelectInputs.js') }}"></script>
 <script src="{{ URL::asset('js/moment.min.js') }}"></script>
@@ -188,19 +190,28 @@
                                 {
                                     extend: 'excel',
                                     text: 'Export as Excel',
-                                    title: 'Employees'
+                                    title: 'Loss Assessment Reports',
+                                    exportOptions: {
+                                        columns: [0,1,2,3,4,5,6,7]
+                                    }
                                 },
                                 {
                                     extend: 'pdf',
                                     text: 'Export as PDF',
-                                    title: 'Employees',
+                                    title: 'Loss Assessment Reports',
                                     download: 'open',
-                                    orientation: 'landscape'
+                                    orientation: 'landscape',
+                                    exportOptions: {
+                                        columns: [0,1,2,3,4,5,6,7]
+                                    }
                                 },
                                 {
                                     extend: 'csv',
                                     text: 'Export as CSV',
-                                    title: 'Employees'
+                                    title: 'Loss Assessment Reports',
+                                    exportOptions: {
+                                        columns: [0,1,2,3,4,5,6,7]
+                                    }
                                 }
                             ]
                         }],

@@ -73,12 +73,15 @@
 <script src="{{ URL::asset('js/datatables.min.js') }}"></script>
 <script src="{{ URL::asset('vendor/datatables/buttons.server-side.js') }}"></script>
 <script src="{{ URL::asset('js/bootstrap-select.min.js') }}"></script>
+<script src="https://cdn.datatables.net/buttons/1.1.0/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.1.0/js/buttons.print.min.js"></script>
+
 <script src="{{ URL::asset('js/utilities.js') }}"></script>
 <script src="{{ URL::asset('js/moment.min.js') }}"></script>
 <script>
     $(document).ready(function () {
         var dataTable = $('#farmers-table').DataTable({
-            dom: "<'row table-controls'<'col-sm-4 col-md-2 page-length'l><'col-sm-4 col-md-8 search'f><'col-sm-4 col-md-2 text-right'B>><'row'<'col-md-12'rt>><'row space-up-10'<'col-md-6'i><'col-md-6'p>>",
+            dom: "<'row table-controls'<'col-sm-4 col-md-3 page-length'l><'col-sm-4 col-md-6 text-center search'f><'col-sm-4 col-md-3 text-right'B>><'row'<'col-md-12'rt>><'row space-up-10'<'col-md-6'i><'col-md-6'p>>",
             processing: true,
             serverSide: true,
             language: {"search": ""},
@@ -104,19 +107,27 @@
                         {
                             extend: 'excel',
                             text: 'Export as Excel',
-                            title: 'Employees'
-                        },
+                            title: 'Loss Assessment Details',
+                            exportOptions: {
+                                columns: [0,1,2,3,4,5,6,7]
+                            }                        },
                         {
                             extend: 'pdf',
                             text: 'Export as PDF',
-                            title: 'Employees',
+                            title: 'Loss Assessment Details',
                             download: 'open',
-                            orientation: 'landscape'
+                            orientation: 'landscape',
+                            exportOptions: {
+                                columns: [0,1,2,3,4,5,6,7]
+                            }
                         },
                         {
                             extend: 'csv',
                             text: 'Export as CSV',
-                            title: 'Employees'
+                            title: 'Loss Assessment Details',
+                            exportOptions: {
+                                columns: [0,1,2,3,4,5,6,7]
+                            }
                         }
                     ]
                 }],

@@ -25,7 +25,7 @@
 			<a href="/loss/report"><i class="fa fa-anchor"></i>Report</a>
 		</li>
 		{{--<li >--}}
-			{{--<a href="/seasons"><i class="fa fa-anchor"></i>Seasons</a>--}}
+			{{--<a href="/home"><i class="fa fa-anchor"></i>Home</a>--}}
 		{{--</li>--}}
 		{{--<li >--}}
 			{{--<a href="/loss/type"><i class="fa fa-anchor"></i>Type of Loss</a>--}}

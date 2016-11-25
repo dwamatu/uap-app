@@ -65,13 +65,10 @@
             </div>
             <div class="row">
 
-                <div class="col-md-6 canvas_section">
 
-                    <div class="chartWrapper">
-                        <div class="chartAreaWrapper">
-                            <canvas id="myChart" height="400" width="15000"></canvas>
-                        </div>
-                    </div>
+                <div class="col-md-6">
+
+                    <svg width="500" height="450"></svg>
 
                 </div>
 
@@ -93,10 +90,12 @@
             </div>
         </div>
     </div>
+
+
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?libraries=drawing,geometry&key=AIzaSyAHSZHfNanEI64wMO0M6URymVBIGOh3wSA&callback=initMap">
     </script>
     <script src="{{URL::to('/js/map.js')}}"></script>
-    <script src="{{url::to('/js/Chart.bundle.js')}}"></script>
+    <script src="{{ URL::to('/js/d3.min.js') }}"></script> <!-- jQuery -->
     <script src="{{url::to('/js/barGraph.js')}}"></script>
 @endsection

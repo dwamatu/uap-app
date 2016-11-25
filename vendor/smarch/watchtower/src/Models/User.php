@@ -1,5 +1,4 @@
 <?php
-namespace App;
 
 namespace Smarch\Watchtower\Models;
 
@@ -14,15 +13,12 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 class User extends Eloquent implements AuthenticatableContract,
     CanResetPasswordContract
 {
-
     use Authenticatable, CanResetPassword, ShinobiTrait;
-
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    public $timestamps = false;
     protected $table = 'users';
 
     /**
@@ -30,7 +26,7 @@ class User extends Eloquent implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['first_name','last_name', 'email','username','role_id', 'password','deleted', 'creation_date'];
+    protected $fillable = ['firstname','secondname', 'email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.

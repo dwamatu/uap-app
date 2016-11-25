@@ -129,14 +129,14 @@
                                                                     </a>
                                                                 @endif
 
-                                                                @if ( Shinobi::can( config('watchtower.acl.role.destroy', false)) )
-                                                                    {!! Form::open(['method'=>'delete','route'=> [ config('watchtower.route.as') .'role.destroy',$item->id], 'style' => 'display:inline']) !!}
-                                                                    <button type="submit" class="btn btn-danger btn-xs">
-                                                                        <i class="fa fa-trash-o fa-lg"></i>
-                                                                        <span class="hidden-xs hidden-sm">Delete</span>
-                                                                    </button>
-                                                                    {!! Form::close() !!}
-                                                                @endif
+                                                                {{--@if ( Shinobi::can( config('watchtower.acl.role.destroy', false)) )--}}
+                                                                    {{--{!! Form::open(['method'=>'delete','route'=> [ config('watchtower.route.as') .'role.destroy',$item->id], 'style' => 'display:inline']) !!}--}}
+                                                                    {{--<button type="submit" class="btn btn-danger btn-xs">--}}
+                                                                        {{--<i class="fa fa-trash-o fa-lg"></i>--}}
+                                                                        {{--<span class="hidden-xs hidden-sm">Delete</span>--}}
+                                                                    {{--</button>--}}
+                                                                    {{--{!! Form::close() !!}--}}
+                                                                {{--@endif--}}
                                                             </td>
                                                         </tr>
 
