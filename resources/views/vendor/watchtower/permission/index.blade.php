@@ -61,14 +61,14 @@
                                                         </a>
                                                     @endif
 
-                                                    @if ( Shinobi::can( config('watchtower.acl.permission.create', false) ) )
-                                                        <a href="{{ route( config('watchtower.route.as') .'permission.create') }}">
-                                                            <button type="button" class="btn btn-info">
-                                                                <i class="fa fa-plus fa-fw"></i>
-                                                                <span class="hidden-xs hidden-sm">Add New Permission</span>
-                                                            </button>
-                                                        </a>
-                                                    @endif
+                                                    {{--@if ( Shinobi::can( config('watchtower.acl.permission.create', false) ) )--}}
+                                                        {{--<a href="{{ route( config('watchtower.route.as') .'permission.create') }}">--}}
+                                                            {{--<button type="button" class="btn btn-info">--}}
+                                                                {{--<i class="fa fa-plus fa-fw"></i>--}}
+                                                                {{--<span class="hidden-xs hidden-sm">Add New Permission</span>--}}
+                                                            {{--</button>--}}
+                                                        {{--</a>--}}
+                                                    {{--@endif--}}
                                                 </div>
                                             </h1>
 

@@ -23,7 +23,7 @@
 
             <div class="widget">
                 <div class="widget-head">
-                    <div class="pull-left"><h4>View</h4></div>
+                    <div class="pull-left"><h4>view</h4></div>
                     <div class="widget-icons pull-right">
                         <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
                         <a href="#" class="wclose"><i class="fa fa-times"></i></a>
@@ -36,7 +36,7 @@
                         <div class="row taller-10">
                             <div class="col-md-6">
 
-                                <a class="btn btn-primary" id="create_street" href="/watchtower/user">Back To Users</a>
+                                <a class="btn btn-primary" id="create_street" href="/watchtower/user">back to users</a>
                             </div>
                         </div>
 
@@ -46,26 +46,26 @@
                             <div class="col-md-12">
                                 <div class="padd">
                                     <div>
-                                        <!-- Table Page -->
+                                        <!-- table page -->
                                         <div class="page-tables">
-                                            <!-- Table -->
+                                            <!-- table -->
                                             <div class="container">
                                                 @include(config('watchtower.views.layouts.flash'))
 
 
                                             </div>
 
-                                            <h1>'{{ $user->first_name }}' Roles</h1>
+                                            <h1>'{{ $user->first_name }}' roles</h1>
                                             <hr/>
 
-                                            {!! Form::model($user, [ 'route' => [ 'watchtower.user.role.update', $user->id ], 'class' => 'form-horizontal']) !!}
+                                            {!! form::model($user, [ 'route' => [ 'watchtower.user.role.update', $user->id ], 'class' => 'form-horizontal']) !!}
 
                                             <div class="row">
                                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                                     <div class="panel panel-primary">
                                                         <div class="panel-heading clearfix">
                                                             <h2 class="panel-title"><i class="fa fa-lg fa-users"></i>
-                                                                Current Roles
+                                                                current roles
                                                                 <small>({{$roles->count()}})</small>
                                                             </h2>
                                                         </div>
@@ -89,7 +89,7 @@
                                                                 @endforeach
                                                             @empty
                                                                 <span class="text-warning"><i
-                                                                            class="fa fa-warning text-warning"></i> This user does not have any defined roles.</span>
+                                                                            class="fa fa-warning text-warning"></i> this user does not have any defined roles.</span>
                                                             @endforelse
                                                         </div>
                                                     </div>
@@ -101,7 +101,7 @@
                                                     <div class="panel panel-primary">
                                                         <div class="panel-heading clearfix">
                                                             <h2 class="panel-title">
-                                                                <i class="fa fa-users"></i> Available Roles
+                                                                <i class="fa fa-users"></i> available roles
                                                                 <small>({{$available_roles->count()}})</small>
                                                             </h2>
                                                         </div>
@@ -124,7 +124,7 @@
                                                                 @endforeach
                                                             @empty
                                                                 <span class="text-danger"><i
-                                                                            class="fa fa-warning text-danger"></i> There aren't any available roles.</span>
+                                                                            class="fa fa-warning text-danger"></i> there aren't any available roles.</span>
                                                             @endforelse
                                                         </div>
                                                     </div>
@@ -133,27 +133,27 @@
 
                                             <div class="form-group">
                                                 <div class="col-sm-3">
-                                                    {!! Form::submit('Update Roles', ['class' => 'btn btn-primary form-control']) !!}
+                                                    {!! form::submit('update roles', ['class' => 'btn btn-primary form-control']) !!}
                                                 </div>
                                                 <div class="col-sm-9">
                                                     <button class="btn btn-info pull-right" type="button"
                                                             data-toggle="collapse"
-                                                            data-target="#collapsePermissions" aria-expanded="false"
-                                                            aria-controls="collapsePermissions">
-                                                        Toggle Permissions
+                                                            data-target="#collapsepermissions" aria-expanded="false"
+                                                            aria-controls="collapsepermissions">
+                                                        toggle permissions
                                                     </button>
                                                 </div>
                                             </div>
 
-                                            {!! Form::close() !!}
+                                            {!! form::close() !!}
 
-                                            <div class="row panel-collapse collapse" id="collapsePermissions">
+                                            <div class="row panel-collapse collapse" id="collapsepermissions">
                                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                                     <div class="panel panel-info">
                                                         <div class="panel-heading clearfix">
                                                             <h2 class="panel-title"><i
                                                                         class="fa fa-key"></i> {{$user->name}}'s
-                                                                Permissions (from current
+                                                                permissions (from current
                                                                 roles)</small></h2>
                                                         </div>
 
@@ -166,19 +166,19 @@
                                                                             @if ($prole->special == 'all-access')
                                                                                 <li>
                                                                                     <i class="fa fa-fw fa-star text-success"></i>
-                                                                                    All Access
+                                                                                    all access
                                                                                 </li>
                                                                             @elseif ($prole->special == 'no-access')
                                                                                 <li>
                                                                                     <i class="fa fa-fw fa-ban text-danger"></i>
-                                                                                    No Access
+                                                                                    no access
                                                                                 </li>
                                                                             @else
                                                                                 @forelse($prole->permissions as $p)
                                                                                     <li>{{$p->name}} <em>({{ $p->slug }}
                                                                                             )</em></li>
                                                                                 @empty
-                                                                                    <li>This role has no defined
+                                                                                    <li>this role has no defined
                                                                                         permissions
                                                                                     </li>
                                                                                 @endforelse
@@ -186,7 +186,7 @@
                                                                         </ul>
                                                                     @empty
                                                                         <span class="text-danger"><i
-                                                                                    class="fa fa-warning text-danger"></i> There are no permissions defined for this user.</span>
+                                                                                    class="fa fa-warning text-danger"></i> there are no permissions defined for this user.</span>
                                                                     @endforelse
                                                                 </ul>
                                                             </div>

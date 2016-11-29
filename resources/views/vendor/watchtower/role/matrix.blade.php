@@ -74,7 +74,7 @@
                                                 <table class="table table-bordered table-striped table-hover"
                                                        style=" margin-bottom:0">
                                                     <thead>
-                                                    <tr class="alert-warning">
+                                                    <tr class="alert-info">
                                                         <th class="text-center">
                     <span class="pull-left"><span class="sr-only">Permissions</span>
                       <i class="fa fa-arrow-down"></i>
@@ -102,7 +102,7 @@
                                                     <tbody>
                                                     @foreach($perms as $p)
                                                         <tr>
-                                                            <th class="alert-warning">
+                                                            <th >
                                                                 <a href="{{ route('watchtower.permission.show',$p->id) }}">
                                                                     <button type="button"
                                                                             class="btn btn-warning btn-xs"><span

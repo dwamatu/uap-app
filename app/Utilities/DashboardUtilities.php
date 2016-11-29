@@ -129,4 +129,10 @@ class DashboardUtilities
         return ($array);
 
     }
+
+    public static function getRoles()
+    {
+        $data = json_decode(ApiUtilities::IssueGETRequest("http://localhost:8080/UAP/fetch/roles"));
+        return $data;
+    }
 }

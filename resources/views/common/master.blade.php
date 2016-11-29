@@ -18,6 +18,7 @@
 
 	<!-- Roboto Font -->
 	<link rel="stylesheet" href="{{ URL::asset('fonts/Roboto/roboto.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/ionicons.min.css') }}">
 
 	<!-- Font awesome icon -->
 	<link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">

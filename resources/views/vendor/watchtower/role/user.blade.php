@@ -79,7 +79,7 @@
                                                                                title="{{ $u->slug }}">
                                                                             <input type="checkbox" name="slug[]"
                                                                                    value="{{$u->id}}"
-                                                                                   checked=""> {{ $u->first_name }}
+                                                                                   checked=""> {{ $u->firstname }}
                                                                         </label>
                                                                     </div>
                                                                 @endforeach
@@ -109,7 +109,7 @@
                                                                         <label class="checkbox-inline"
                                                                                title="{{ $au->slug }}">
                                                                             <input type="checkbox" name="slug[]"
-                                                                                   value="{{$au->id}}"> {{ $au->first_name }}
+                                                                                   value="{{$au->id}}"> {{ $au->firstname }}
                                                                         </label>
                                                                     </div>
                                                                 @endforeach

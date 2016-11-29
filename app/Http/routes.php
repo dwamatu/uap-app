@@ -22,6 +22,7 @@ Route::get('/fetch/loss/causes',['uses' => 'DataController@getLossCauses'])->nam
 Route::get('/fetch/zones',['uses' => 'DataController@getZones'])->name('fetch.zones');
 
 Route::get('/fetch/seasons',['uses' => 'DataController@getSeasons'])->name('fetch.seasons');
+Route::get('/fetch/roles',['uses' => 'DataController@getRoles'])->name('fetch.roles');
 
 Route::get('/fetch/users',['uses' => 'DataController@getUsers'])->name('fetch.users');
 
@@ -40,6 +41,19 @@ Route::post('/post/report/data',['uses' => 'DataController@postReportData'])->na
 
 //Get Streets
 Route::get('/getRoles', ['uses' => 'DataController@getRoles', 'as' => 'check.role']);
+
+/* View Crop Inspectors*/
+Route::get('/inspectors',['uses'=> 'InspectorController@viewInspectors','as'=>'inspectors']);
+Route::get('/fetch/inspectors',['uses'=> 'InspectorController@getCropInspectors','as'=>'fetch.inspectors']);
+Route::get('/inspector/details/{id}', ['as' => 'view_inspector_details', 'uses' => 'InspectorController@viewInspectorDetails']);
+/* Create Crop Inspectors*/
+Route::get('/inspector/create', ['as' => 'inspector.create', 'uses' => 'InspectorController@createInspectors']);
+Route::post('/inspector/create', ['as' => 'inspector.add', 'uses' => 'InspectorController@addInspector']);
+/* Update Crop Inspectors*/
+Route::post('/inspector/individual/details/update', ['as' => 'inspector.update', 'uses' => 'InspectorController@UpdateInspectorDetails']);
+/* Session Flags Crop Inspectors*/
+Route::get('/inspector/individual/edit/{id}', ['as' => 'employees.individual.details.edit', 'uses' => 'InspectorController@editIndividualInspectorDetails']);
+Route::get('/inspector/individual/edit/cancel/{id}', ['as' => 'employees.individual.details.edit.cancel', 'uses' => 'InspectorController@cancelEditIndividualInspectorDetails']);
 
 
 Route::get('/farmers' ,[ 'uses' => 'FarmersController@viewFarmers' , 'as' => 'farmers']);

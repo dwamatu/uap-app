@@ -8,12 +8,12 @@
                     <!-- small box -->
                     <div class="small-box bg-aqua">
                         <div class="inner">
-                            <h3 class="center">#{!! $pageData['total_no_farmers'] !!} </h3>
+                            <h3>#{!! $pageData['total_no_farmers'] !!} </h3>
 
-                            <p class="center">Total Number of Farmers</p>
+                            <p>Total Farmers</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-bag"></i>
+                            <i class="ion ion-android-funnel"></i>
                         </div>
                         <p class="small-box-footer" style="padding: 6%"> <i class=""></i></p>                    </div>
                 </div>
@@ -22,9 +22,9 @@
                     <!-- small box -->
                     <div class="small-box bg-green">
                         <div class="inner">
-                            <h3 class="center">#{!! $pageData['total_no_claims'] !!}</h3>
+                            <h3 >#{!! $pageData['total_no_claims'] !!}</h3>
 
-                            <p class="center"> Total Reported Losses</p>
+                            <p > Total Losses</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
@@ -36,13 +36,14 @@
                     <!-- small box -->
                     <div class="small-box bg-yellow">
                         <div class="inner">
-                            <h3 class="center">{!! $pageData['average_loss'] !!} %</h3>
+                            <h3 >{!! $pageData['average_loss'] !!} %</h3>
 
 
-                            <p class="center">Average % Loss</p>
+
+                            <p >Average % Loss</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-person-add"></i>
+                            <i class="ion ion-android-globe"></i>
                         </div>
                         <p class="small-box-footer" style="padding: 6%"> <i class=""></i></p>                    </div>
                 </div>
@@ -51,9 +52,9 @@
                     <!-- small box -->
                     <div class="small-box bg-red">
                         <div class="inner">
-                            <h3 class="center">{!! $pageData['highest_loss'] !!} %</h3>
+                            <h3>{!! $pageData['highest_loss'] !!} %</h3>
 
-                            <p class="center">Highest % Loss</p>
+                            <p>Highest % Loss</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>

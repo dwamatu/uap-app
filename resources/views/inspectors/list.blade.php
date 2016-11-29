@@ -9,12 +9,12 @@
 
     <div class="mainbar content">
         <div class="page-head">
-            <h2 class="pull-left">Farmers</h2>
+            <h2 class="pull-left">Inspectors</h2>
 
             <div class="bread-crumb pull-right">
                 <a href="{{ URL::route('dashboard') }}"><i class="fa fa-home"></i> Home</a>
                 <span class="divider">/</span>
-                <a href="{{ URL::route('farmers') }}">Farmers</a>
+                <a href="{{ URL::route('inspectors') }}">Inspectors</a>
             </div>
 
             <div class="clearfix"></div>
@@ -23,36 +23,34 @@
         <div class="matter">
             <div class="container">
                 <div class="row tools-table">
+                    <div class="col-xs-6 col-md-6">
+
+                                            <a id="add-company" class="btn btn-primary" href="{{ url('/inspector/create') }}">Add Inspector</a>
+
+                    </div>
 
                 </div>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <table id="farmers-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <table id="crop-inspectors-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                             <tr>
-                                <th>Farmer BAT Code</th>
-                                <th>Farmer Name</th>
-                                <th>Crop Inspector</th>
-                                <th>Cause Of Loss</th>
-                                <th>Latitude</th>
-                                <th>Longitude</th>
-                                <th>Percentage Loss</th>
-                                <th>Inspection Date</th>
+                                <th>Inspector Name</th>
+                                <th>Username</th>
+                                <th>Email</th>
+
+                                <th>Role</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
 
                             <tfoot>
                             <tr>
-                                <th>Farmer BAT Code</th>
-                                <th>Farmer Name</th>
-                                <th>Crop Inspector</th>
-                                <th>Cause Of Loss</th>
-                                <th>Latitude</th>
-                                <th>Longitude</th>
-                                <th>Percentage Loss</th>
-                                <th>Inspection Date</th>
+                                <th>Inspector Name</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Role</th>
                                 <th>Action</th>
                             </tr>
                             </tfoot>
@@ -80,23 +78,20 @@
 <script src="{{ URL::asset('js/moment.min.js') }}"></script>
 <script>
     $(document).ready(function () {
-        var dataTable = $('#farmers-table').DataTable({
+        var dataTable = $('#crop-inspectors-table').DataTable({
             dom: "<'row table-controls'<'col-sm-4 col-md-3 page-length'l><'col-sm-4 col-md-6 text-center search'f><'col-sm-4 col-md-3 text-right'B>><'row'<'col-md-12'rt>><'row space-up-10'<'col-md-6'i><'col-md-6'p>>",
             processing: true,
             serverSide: false,
             language: {"search": ""},
-            ajax: '{!! route("fetch_loss_calculation") !!}',
+            ajax: '{!! route("fetch.inspectors") !!}',
             "columns": [
 
-                {data: 'bat_acc_no'},
-                {data: 'farmer_name'},
-                {data: 'crop_inspector_name'},
-                {data: 'cause_of_loss'},
-                {data: 'latitude'},
-                {data: 'longitude'},
-                {data: 'percentage_loss'},
-                {data: 'inspection_date'},
-                {data: 'loss_assessment_id'}
+                {data: 'first_name'},
+                {data: 'username'},
+                {data: 'email'},
+                {data: 'role_id'},
+                {data: 'username'}
+
             ],
             order: [[1, "asc"]],
             buttons: [
@@ -131,18 +126,13 @@
                         }
                     ]
                 }],
-            "columnDefs": [{
+            "columnDefs": [
+                    {
                 render: function (data, type, row) {
-                    return "<a  target='_blank' class='btn btn-primary btn-block' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>";
+                    return "<a  target='_blank' class='btn btn-primary btn-block' href='/inspector/details/" + row.id + "'>Update Details</a>";
                 },
-                "targets": 8
-            },{
-            render: function (data,type,row) {
-                data = row.inspection_date
-                return (moment(data).format('LL'));
-            },
-            "targets": 7
-        }]
+                "targets": 4
+            }]
         });
 
         // Add placeholder to search box

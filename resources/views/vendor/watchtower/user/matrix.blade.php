@@ -74,7 +74,7 @@
                                                 <table class="table table-bordered table-striped table-hover"
                                                        style=" margin-bottom:0">
                                                     <thead>
-                                                    <tr class="alert-warning">
+                                                    <tr class="alert-infro">
                                                         <th class="text-center">
                     <span class="pull-left"><span class="sr-only">Users</span>
                       <i class="fa fa-arrow-down"></i>
@@ -102,7 +102,7 @@
                                                     <tbody>
                                                     @foreach($users as $u)
                                                         <tr>
-                                                            <th class="alert-warning">
+                                                            <th >
                                                                 <a href="{{ route('watchtower.user.show',$u->id) }}">
                                                                     <button type="button"
                                                                             class="btn btn-warning btn-xs"><span

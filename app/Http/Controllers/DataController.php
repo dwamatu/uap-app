@@ -58,7 +58,13 @@ class DataController extends Controller
     {
         return collect(DashboardUtilities::getSeasons())->toJson();
     }
-
+    /**
+     * @return Get All Roles with End Date
+     */
+    public function getRoles()
+    {
+        return collect(DashboardUtilities::getRoles())->toJson();
+    }
     /**
      * @return string
      */
