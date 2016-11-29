@@ -129,7 +129,7 @@
             "columnDefs": [
                     {
                 render: function (data, type, row) {
-                    return "<a  target='_blank' class='btn btn-primary btn-block' href='/inspector/details/" + row.id + "'>Update Details</a>";
+                    return "<a git  class='btn btn-primary btn-block' href='/inspector/details/" + row.id + "'>Update Details</a>";
                 },
                 "targets": 4
             }]
