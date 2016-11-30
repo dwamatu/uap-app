@@ -119,7 +119,7 @@
                                 <label class="col-sm-4 form-control-label text-right">E-Mail Address</label>
 
                                 <div class="col-sm-6">
-                                    <input name="email" type="text" class="form-control" id="email" value="{{ old('email') }}">
+                                    <input name="email" type="email" class="form-control" id="email" value="{{ old('email') }}">
 
                                     @if ($errors->has('email'))
                                     <span class="help-block">
@@ -129,21 +129,6 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <label class="col-sm-4 form-control-label text-right">Role</label>
-
-                                <div class="col-sm-6">
-                                    <select name="role_id" id="role_id" class="form-control">
-
-                                    </select>
-
-                                    @if ($errors->has('role_id'))
-                                    <span class="help-block">
-                                        <strong class="text-danger">{{ $errors->first('role_id') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
 
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right">Password</label>

@@ -13,14 +13,14 @@ class DashboardUtilities
 {
     public static function getDashboardDetails()
     {
-        $data = (array("data" => json_decode(ApiUtilities::IssueGETRequest("http://localhost:8080/UAP/dashboard/data"), true)));
+        $data = (array("data" => json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/dashboard/data")), true)));
         $data = isset($data['data']) ? $data['data'] : null;
         return $data;
     }
 
     public static function getLocations()
     {
-        $data = (array("data" => json_decode(ApiUtilities::IssueGETRequest("http://localhost:8080/UAP/fetch/locations"), true)));
+        $data = (array("data" => json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/fetch/locations")), true)));
         $data = isset($data['data']) ? $data['data'] : null;
         return ($data);
     }
@@ -28,7 +28,7 @@ class DashboardUtilities
     public static function getChartDetails()
     {
 
-        $data = json_decode(ApiUtilities::IssueGETRequest("http://localhost:8080/UAP/fetch/charts"));
+        $data = json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/fetch/charts")));
 
         $array = array();
         for ($x = 1; $x <= count($data); $x++) {
@@ -46,7 +46,7 @@ class DashboardUtilities
 
     public static function createLossReport($content)
     {
-        $createreport = json_decode(ApiUtilities::IssuePOSTRequest("http://localhost:8080/UAP/create/reports", collect($content)->toJson()), true);
+        $createreport = json_decode(ApiUtilities::IssuePOSTRequest(ApiUtilities::MakeAPIURL("/create/reports"), collect($content)->toJson()), true);
 
 
         return ($createreport);
@@ -55,7 +55,7 @@ class DashboardUtilities
 
     public static function getLossCauses()
     {
-        $data = json_decode(ApiUtilities::IssueGETRequest("http://localhost:8080/UAP/fetch/loss/causes"));
+        $data = json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/fetch/loss/causes")));
 
         $array = array();
         for ($x = 1; $x <= count($data); $x++) {
@@ -74,7 +74,7 @@ class DashboardUtilities
 
     public static function getZones()
     {
-        $data = json_decode(ApiUtilities::IssueGETRequest("http://localhost:8080/UAP/fetch/zones"));
+        $data = json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/fetch/zones")));
 
         $array = array();
         for ($x = 1; $x <= count($data); $x++) {
@@ -93,7 +93,7 @@ class DashboardUtilities
 
     public static function getSeasons()
     {
-        $data = json_decode(ApiUtilities::IssueGETRequest("http://localhost:8080/UAP/fetch/seasons"));
+        $data = json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/fetch/seasons")));
 
         $array = array();
         for ($x = 1; $x <= count($data); $x++) {
@@ -113,7 +113,7 @@ class DashboardUtilities
 
     public static function getUsers()
     {
-        $data = json_decode(ApiUtilities::IssueGETRequest("http://localhost:8080/UAP/fetch/users"));
+        $data = json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/fetch/users")));
 
         $array = array();
         for ($x = 1; $x <= count($data); $x++) {
@@ -132,7 +132,7 @@ class DashboardUtilities
 
     public static function getRoles()
     {
-        $data = json_decode(ApiUtilities::IssueGETRequest("http://localhost:8080/UAP/fetch/roles"));
+        $data = json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/fetch/roles")));
         return $data;
     }
 }

@@ -12,13 +12,13 @@ namespace App\Utilities;
 class InspectorUtilities
 {
 public static function getCropInspectors(){
-    return (array("data" => json_decode(ApiUtilities::IssueGETRequest("http://localhost:8080/UAP/fetch/inspectors"), true)));
+    return (array("data" => json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/fetch/inspectors")), true)));
 
 }
 
     public static function getInspectorDetails($id)
     {
-        $data = json_decode(ApiUtilities::IssueGETRequest("http://localhost:8080/UAP/fetch/inspector/".$id), true);
+        $data = json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/fetch/inspector/").$id), true);
 
 //        $data = isset($data['data']) ? $data['data'] : null;
 
@@ -28,11 +28,11 @@ public static function getCropInspectors(){
     public static function addInspector($content)
     {
 
-        return (array("data" => json_decode(ApiUtilities::IssuePOSTRequest("http://localhost:8080/UAP/register/user", collect($content)->toJson()), true)));
+        return (array("data" => json_decode(ApiUtilities::IssuePOSTRequest(ApiUtilities::MakeAPIURL("/register/user"), collect($content)->toJson()), true)));
     }
 
     public static function updateInpector($content)
     {
-        return (array("data" => json_decode(ApiUtilities::IssuePOSTRequest("http://localhost:8080/UAP/update/user", collect($content)->toJson()), true)));
+        return (array("data" => json_decode(ApiUtilities::IssuePOSTRequest(ApiUtilities::MakeAPIURL("/update/user"), collect($content)->toJson()), true)));
     }
 }

@@ -50,7 +50,7 @@ class InspectorController extends Controller
     {
         session()->forget('individualEditFlag');
 
-        return redirect()->route('inspectors', [$id]);
+        return redirect()->route('inspectors');
     }
     /*Create New Inspector page*/
     public function createInspectors()
@@ -70,14 +70,14 @@ class InspectorController extends Controller
                 'first_name' => 'required',
                 'last_name' => 'required',
                 'username' => 'required',
-                'email' => 'required',
-                'role_id' => 'numeric|required',
+                'email' => 'required|email',
                 'password' => 'required',
                 'confirm_password' => 'required|same:password'
             ]);
 
             // Process request to create company
-            $newInspectorData = $request->only('id', 'first_name', 'last_name', 'username', 'email', 'role_id');
+            $newInspectorData = $request->only('id', 'first_name', 'last_name', 'username', 'email');
+            $newInspectorData ['role_id'] = 1;
             $newInspectorData ['password'] = bcrypt(request('password'));
             $createResponse = InspectorUtilities::updateInpector($newInspectorData);
 
@@ -109,14 +109,14 @@ class InspectorController extends Controller
                     'first_name' => 'required',
                     'last_name' => 'required',
                     'username' => 'required',
-                    'email' => 'required',
-                    'role_id' => 'numeric|required',
+                    'email' => 'required|email',
                     'password' => 'required',
                     'confirm_password' => 'required|same:password'
                 ]);
 
                 // Process request to create company
-                $newInspectorData = $request->only('first_name','last_name','username','email','role_id');
+                $newInspectorData = $request->only('id', 'first_name', 'last_name', 'username', 'email');
+                $newInspectorData ['role_id'] = 1;
                 $newInspectorData ['password'] = bcrypt(request('password'));
                 $createResponse = InspectorUtilities::addInspector($newInspectorData);
 

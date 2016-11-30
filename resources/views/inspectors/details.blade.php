@@ -17,7 +17,7 @@
             <div class="bread-crumb pull-right">
                 <a href="{{ URL::route('dashboard') }}"><i class="fa fa-home"></i> Home</a>
                 <span class="divider">/</span>
-                <a href="#">Employees</a>
+                <a href="#">Inspectors</a>
                 <span class="divider">/</span>
                 <a class="bread-current" href="#"></a>
             </div>
@@ -30,7 +30,7 @@
                 <div class="row tools-table">
                     <div class="col-xs-6 col-md-6">
                         <a class="btn btn-link no-left-padding" href="/inspectors"><i class="fa fa-angle-left"></i> Back
-                            to Individual Inspectors List</a>
+                            to  Inspectors List</a>
                     </div>
 
                 </div>
@@ -153,7 +153,7 @@
 
                                             <div class="col-sm-6">
                                                 @if (session()->has('individualEditFlag'))
-                                                    <input name="email" type="text" class="form-control"
+                                                    <input name="email" type="email" class="form-control"
                                                            id="email"
                                                            value="{!! $pageData['individualDetails']['email'] !!}">
                                                 @else
@@ -176,7 +176,7 @@
 
                                             <div class="col-sm-6">
                                                 @if (session()->has('individualEditFlag'))
-                                                    <input name="password" type="text"
+                                                    <input name="password" type="password"
                                                            class="form-control" id="password"
                                                     >
                                                 @else
@@ -197,7 +197,7 @@
 
                                             <div class="col-sm-6">
                                                 @if (session()->has('individualEditFlag'))
-                                                    <input name="confirm_password" type="text"
+                                                    <input name="confirm_password" type="password"
                                                            class="form-control" id="confirm_password">
                                                 @else
                                                     <p class="form-control-static"> <span class='text-missing'>Password Hidden</span></p>                                                @endif
@@ -210,28 +210,6 @@
                                             </div>
                                         </div>
 
-
-
-
-
-                                        <div class="form-group row">
-                                            <label class="col-sm-4 form-control-label text-right">Role</label>
-
-                                            <div class="col-sm-6">
-                                                @if (session()->has('individualEditFlag'))
-                                                    <select id="role_id" name="role_id"
-                                                            class="form-control"></select>
-                                                @else
-                                                    <p class="form-control-static">{!! $pageData['individualDetails']['role_id'] or "<span class='text-missing'>Role not set</span>" !!}</p>
-                                                @endif
-
-                                                @if ($errors->has('role_id'))
-                                                    <span class="help-block">
-                        <strong class="text-danger">{{ $errors->first('role_id') }}</strong>
-                      </span>
-                                                @endif
-                                            </div>
-                                        </div>
 
                                         @if (session()->has('individualEditFlag'))
 
