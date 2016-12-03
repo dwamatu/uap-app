@@ -53,8 +53,10 @@ class LossCalculationController extends Controller
     public function makeLossAssessmentnote($assessment_id)
     {
         $assessmentDetails = LossUtilities::getLossAssessmentDetails($assessment_id);
-        $pageData = $assessmentDetails[0];
 
+
+        $pageData = $assessmentDetails[0];
+//        dd($pageData);
         $the_style = '<style>
                             @page {
                                 margin: 0.9%;
@@ -97,14 +99,11 @@ class LossCalculationController extends Controller
                                     min-width: 2em;
                             min-height: 2em;
                                 }
-                                .my_footer{
-                                page-break-after: always;
-    
-                            }          
+                                       
 
                             div > img{
                                height:300px;
-                                width:300px;
+                                width:375px;
                             }
 
                     </style>
@@ -231,19 +230,29 @@ class LossCalculationController extends Controller
 
         $the_imgs = '<div class="image123" style="display: inline-block">
                     <div style="float: left">
-                        <img src="img/cow.jpg" />
-                        <p>This is a photo of the Farmers land</p>
+                        <img src="'. $pageData['crop_image1'] .'" />
+                        <p>This is are photo of the <strong>Farmers</strong> Crops</p>
                         
                     </div>
                     <div style="float: right">
-                        <img style="float: right" class="middle-img" src="img/cow.jpg" />                          
+                        <img style="float: right" class="middle-img" src="'. $pageData['crop_image2'] .'" />                          
              
                     </div>
                    
                 </div>';
+        $the_img = '<div class="image123" style="display: block">
+                    <div style="float: left">
+                        <img src="'. $pageData['farm_image'] .'" />
+                        <p>This is a photo of the <strong>Farmers</strong> land</p>
+                        
+                    </div>
+                  
+                   
+                </div>';
+
 
         $the_footer = '<table class="my_footer"><tr><td></td></tr></table>';
-        $the_html = $the_style . '<div class="bordered">' . $the_title . $the_header . $the_firsttable . $the_secondtable . $the_comments . $the_imgs . $the_footer . '</div>';
+        $the_html = $the_style . '<div class="bordered">' . $the_title . $the_header . $the_firsttable . $the_secondtable . $the_comments  . $the_footer .$the_imgs.'<div class="row"  style  = "padding-top:350px;" >'. $the_img.'</div> </div>';
         return $the_html;
 
 

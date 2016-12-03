@@ -26,7 +26,8 @@ class DashboardUtilities
     }
 
     public static function getChartDetails()
-    {
+    {       $mnth = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+
 
         $data = json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/fetch/charts")));
 
@@ -34,7 +35,7 @@ class DashboardUtilities
         for ($x = 1; $x <= count($data); $x++) {
             $newArray = array(
                 'entries' => $data[$x - 1][0],
-                'mnth' => $data[$x - 1][1],
+                'mnth' => $mnth[($data[$x - 1][1])-1],
                 'yr' => $data[$x - 1][2]
             );
             array_push($array, $newArray);

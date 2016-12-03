@@ -11,7 +11,7 @@ var data = [];
             $.each(results, function (entry, k) {
                 data.push({
 
-                    title: k.mnth.substring(0, 3) + ' ' + k.yr.substring(2, 4),
+                    title: k.mnth + ' ' + k.yr,
                     value: k.entries
 
                 })
