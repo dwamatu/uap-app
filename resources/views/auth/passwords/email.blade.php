@@ -1,6 +1,4 @@
 @extends('auth.master')
-
-<!-- Main Content -->
 @section('auth-content')
 
     <div class="panel-heading">

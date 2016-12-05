@@ -96,6 +96,15 @@
                                                     {!! $errors->first('password_confirmation', '<div class="text-danger">:message</div>') !!}
                                                 </div>
                                             </div>
+                                            <div class="form-group {{ $errors->has('password_updated_at') ? 'has-error' : ''}}">
+                                                {{--{!! Form::label('password_updated_at', 'Created At: ', ['class' => 'col-sm-3 control-label']) !!}--}}
+                                                <div class="col-md-6">
+                                                <input type="hidden" class="form-control" name="password_updated_at" id="password_updated_at" value="{{  \Carbon\Carbon::now() }}">
+
+                                                    {!! $errors->first('password_updated_at', '<div class="text-danger">:message</div>') !!}
+                                                </div>
+                                            </div>
+
 
                                             <div class="form-group">
                                                 <div class="col-sm-offset-3 col-sm-6">
@@ -122,6 +131,24 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        /*To put a date instance in the Create*/
+
+        function getDate()
+        {
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1; //January is 0!
+            var yyyy = today.getFullYear();
+            if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm}
+            today = yyyy+""+mm+""+dd;
+
+            $('#u').val(today);
+        }
+
+        //call getDate() when loading the page
+        getDate();
+    </script>
     <script src="{{URL::to('/js/app.js')}}"></script>
 
 @endsection

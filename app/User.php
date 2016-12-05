@@ -9,10 +9,10 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class User extends Eloquent implements AuthenticatableContract,
-    CanResetPasswordContract
+class user extends eloquent implements authenticatablecontract,
+    canresetpasswordcontract
 {
-    use Authenticatable, CanResetPassword, ShinobiTrait;
+    use authenticatable, canresetpassword, shinobitrait;
 
     protected $fillable = ['firstname', 'secondname', 'email', 'password'];
 
@@ -21,12 +21,10 @@ class User extends Eloquent implements AuthenticatableContract,
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
+     * the attributes that should be hidden for arrays.
      *
      * @var array
      */
 
-    public function losscalculation(){
-        return $this ->belongsTo('App\LossCalculation');
-    }
+
 }

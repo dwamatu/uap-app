@@ -10,12 +10,13 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::group(['middleware' => ['web']], function () {
+Route::get('/', function () {   return view('auth.login'); });
+Route::get('/auth/reset/old',function (){return view('auth.reset.old');});
+Route::post('/password/reset/old', 'UserController@storeNewPassword');
 
-Route::get('/', function () {
-    return view('auth.login');
-});
 
-Route::get('/dashboard',['uses' => 'DataController@getDashboard'])->name('dashboard');
+Route::get('/dashboard',['uses' => 'DataController@getDashboard', 'middleware' => 'auth'])->name('dashboard');
 
 Route::get('/fetch/loss/causes',['uses' => 'DataController@getLossCauses'])->name('fetch.loss.causes');
 
@@ -34,7 +35,7 @@ Route::post('/auth/login', ['uses' => 'UserController@postSignIn', 'as' => 'sign
 
 Route::get('/logout',[  'uses'=> 'UserController@getLogout',    'as' => 'logout']);
 
-Route::get('/farms','FarmController@getFarms');
+
 
 /*Report Data*/
 Route::post('/post/report/data',['uses' => 'DataController@postReportData'])->name('report.data');
@@ -60,10 +61,9 @@ Route::get('/farmers' ,[ 'uses' => 'FarmersController@viewFarmers' , 'as' => 'fa
 
 Route::get('/fetch/farmers' ,[ 'uses' => 'FarmersController@getFarmers' , 'as' => 'fetch_farmers']);
 
-Route::get('/status','UserStatusController@getUserStatuses');
 
 
-Route::get('/loss', 'LossCauseController@getCauses');
+
 
 
 Route::get('/loss/calculation','LossCalculationController@viewLossCalculations')->name('loss.calculation');
@@ -75,19 +75,5 @@ Route::get('fetch/loss/calculation','LossCalculationController@getLossCalculatio
 Route::get('/download/loss/assessment/{assessment_id}','LossCalculationController@downloadLossAssessment')->name('assessnote.download');
 
 
-Route::get('/loss/type','LossTypeController@getLossTypes')->name('get.loss.types');
-
-
-Route::get('/seasons','SeasonController@getSeasons');
-
-
 Route::auth();
-
-
-
-
-
-Route::get('/home', 'HomeController@index');
-
-
-
+});

@@ -11,7 +11,8 @@
     </div>
     <div class="panel-body">
 
-        <form action="/auth/login" method="post">
+        <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
+            {{ csrf_field() }}
             <div class="form-group has-feedback {{$errors -> has ('email') ? 'has-error' : ''}}">
                 <input type="email" class="form-control inset" placeholder="Email" id="email"
                        name="email"
@@ -56,11 +57,6 @@
 
     </div>
     <!-- /.social-auth-links -->
-
-    <script>
-        var urlSignin = '{{route('signin')}}';
-        var token = '{{Session::token()}}';
-    </script>
 
 
 @endsection

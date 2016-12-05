@@ -5,19 +5,19 @@
     <div class="panel-heading">Reset Password</div>
 
     <div class="panel-body">
-        <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/reset') }}">
+        <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/reset/old') }}">
             {{ csrf_field() }}
 
-            <input type="hidden" name="token" value="{{ $token }}">
 
-            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
-                <input id="email" type="email" class="form-control" name="email"
-                       value="{{ $email or old('email') }}" placeholder="E-Mail Address">
+            <div class="form-group{{ $errors->has('old_password') ? ' has-error' : '' }}">
 
-                @if ($errors->has('email'))
+                <input id="old_password" type="password" class="form-control" name="old_password"
+                       value="{{ $old_password or old('old_password') }}" placeholder="Old Password">
+
+                @if ($errors->has('old_password'))
                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('old_password') }}</strong>
                                     </span>
                 @endif
             </div>

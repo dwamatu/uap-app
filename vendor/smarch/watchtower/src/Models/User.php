@@ -4,6 +4,7 @@ namespace Smarch\Watchtower\Models;
 
 
 use Caffeinated\Shinobi\Traits\ShinobiTrait;
+use Carbon\Carbon;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
@@ -26,7 +27,7 @@ class User extends Eloquent implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['firstname','secondname', 'email', 'password'];
+    protected $fillable = ['firstname','secondname', 'email', 'password','password_updated_at'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -34,4 +35,9 @@ class User extends Eloquent implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public function hasOldPassword()
+    {
+        return $this->password_updated_at->lt(Carbon::now()->subMonths(3));
+    }
 }

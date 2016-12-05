@@ -1,5 +1,4 @@
 @extends('common.master')
-
 @section('content')
     <div class="mainbar content" style="overflow-x: hidden;">
         <div class="container">
@@ -71,6 +70,7 @@
 
                     <svg width="500" height="450"></svg>
 
+
                 </div>
 
 
@@ -78,9 +78,9 @@
                 <section class="col-md-6">
 
 
-                        <div id="map" style="height: 450px ;">
+                    <div id="map" style="height: 450px ;">
 
-                        </div>
+                    </div>
 
 
 
@@ -100,3 +100,4 @@
     <script src="{{ URL::to('/js/d3.min.js') }}"></script> <!-- jQuery -->
     <script src="{{url::to('/js/barGraph.js')}}"></script>
 @endsection
+

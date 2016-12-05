@@ -90,6 +90,7 @@ class UserController extends Controller
 		$message = " You are not permitted to create users.";
 
 		if ( Shinobi::can ( config('watchtower.acl.user.create', false) ) ) {
+
 			$this->model->create($request->all());
 			$level = "success";
 			$message = "<i class='fa fa-check-square-o fa-1x'></i> Success! User created.";
