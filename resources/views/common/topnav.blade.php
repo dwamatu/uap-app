@@ -20,7 +20,7 @@
 						<li class="dropdown pull-right">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="fa fa-user"> {{Auth::user()->firstname." ".Auth::user()->secondname}}</i> <b class="caret"></b></a> <!-- Dropdown menu -->
 							<ul class="dropdown-menu">
-								<li><a href="{{ url( config('watchtower.auth_routes.logout') ) }}"><i class="fa fa-sign-out"></i> Logout</a></li>
+								<li><a href="{{ url('logout' ) }}"><i class="fa fa-sign-out"></i> Logout</a></li>
 							</ul>
 						</li>
 					</ul>

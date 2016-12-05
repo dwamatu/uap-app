@@ -3,6 +3,7 @@
 namespace App;
 
 use Caffeinated\Shinobi\Traits\ShinobiTrait;
+use Carbon\Carbon;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
@@ -14,7 +15,7 @@ class user extends eloquent implements authenticatablecontract,
 {
     use authenticatable, canresetpassword, shinobitrait;
 
-    protected $fillable = ['firstname', 'secondname', 'email', 'password'];
+    protected $fillable = ['firstname', 'secondname', 'email', 'password','password_updated_at'];
 
     protected $hidden = [
         'password', 'remember_token',
@@ -26,5 +27,16 @@ class user extends eloquent implements authenticatablecontract,
      * @var array
      */
 
+
+    /**
+     * Check if user has an old password that needs to be reset
+     * @return boolean
+     */
+    public function hasOldPassword()
+    {
+        $lastlogin = Carbon::createFromFormat('Y-m-d H:i:s',$this->password_updated_at);
+
+        return $lastlogin->lt(Carbon::now()->subMonths(3));
+    }
 
 }

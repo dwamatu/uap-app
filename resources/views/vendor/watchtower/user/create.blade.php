@@ -99,7 +99,7 @@
                                             <div class="form-group {{ $errors->has('password_updated_at') ? 'has-error' : ''}}">
                                                 {{--{!! Form::label('password_updated_at', 'Created At: ', ['class' => 'col-sm-3 control-label']) !!}--}}
                                                 <div class="col-md-6">
-                                                <input type="hidden" class="form-control" name="password_updated_at" id="password_updated_at" value="{{  \Carbon\Carbon::now() }}">
+                                                <input type="hidden" class="form-control" name="password_updated_at" id="password_updated_at" value="{{  \Carbon\Carbon::now()->subMonth(3) }}">
 
                                                     {!! $errors->first('password_updated_at', '<div class="text-danger">:message</div>') !!}
                                                 </div>

@@ -11,7 +11,7 @@
     </div>
     <div class="panel-body">
 
-        <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
+        <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
             {{ csrf_field() }}
             <div class="form-group has-feedback {{$errors -> has ('email') ? 'has-error' : ''}}">
                 <input type="email" class="form-control inset" placeholder="Email" id="email"
