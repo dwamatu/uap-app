@@ -38,6 +38,8 @@ class User extends Eloquent implements AuthenticatableContract,
 
     public function hasOldPassword()
     {
-        return $this->password_updated_at->lt(Carbon::now()->subMonths(3));
+        $lastlogin = Carbon::createFromFormat('Y-m-d H:i:s',$this->password_updated_at);
+
+        return $lastlogin->lt(Carbon::now()->subMonths(3));
     }
 }

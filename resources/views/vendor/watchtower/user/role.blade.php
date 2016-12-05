@@ -55,10 +55,10 @@
 
                                             </div>
 
-                                            <h1>'{{ $user->first_name }}' roles</h1>
+                                            <h1>'{{ $user->firstname }}' roles</h1>
                                             <hr/>
 
-                                            {!! form::model($user, [ 'route' => [ 'watchtower.user.role.update', $user->id ], 'class' => 'form-horizontal']) !!}
+                                            {!! Form::model($user, [ 'route' => [ 'watchtower.user.role.update', $user->id ], 'class' => 'form-horizontal']) !!}
 
                                             <div class="row">
                                                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -133,7 +133,7 @@
 
                                             <div class="form-group">
                                                 <div class="col-sm-3">
-                                                    {!! form::submit('update roles', ['class' => 'btn btn-primary form-control']) !!}
+                                                    {!! Form::submit('update roles', ['class' => 'btn btn-primary form-control']) !!}
                                                 </div>
                                                 <div class="col-sm-9">
                                                     <button class="btn btn-info pull-right" type="button"
@@ -145,7 +145,7 @@
                                                 </div>
                                             </div>
 
-                                            {!! form::close() !!}
+                                            {!! Form::close() !!}
 
                                             <div class="row panel-collapse collapse" id="collapsepermissions">
                                                 <div class="col-md-12 col-sm-12 col-xs-12">

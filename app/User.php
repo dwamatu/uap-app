@@ -10,10 +10,10 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class user extends eloquent implements authenticatablecontract,
-    canresetpasswordcontract
+class User extends Eloquent implements AuthenticatableContract,
+    CanResetPasswordContract
 {
-    use authenticatable, canresetpassword, shinobitrait;
+    use Authenticatable, CanResetPassword, ShinobiTrait;
 
     protected $fillable = ['firstname', 'secondname', 'email', 'password','password_updated_at'];
 

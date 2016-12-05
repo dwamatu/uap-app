@@ -44,7 +44,7 @@ class UserStoreRequest extends Request
             'firstname' => 'required|max:40',
             'secondname' => 'required|max:40',
             'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed|min:4',
+            'password' => 'required|confirmed|min:6',
             'password_updated_at' => 'required',
        ], config('watchtower.user.rules.store') );
 
