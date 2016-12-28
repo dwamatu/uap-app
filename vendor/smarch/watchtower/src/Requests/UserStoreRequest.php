@@ -12,11 +12,11 @@ class UserStoreRequest extends Request
     public function all() {
         $atts = parent::all();
         
-        if ($atts['password'] === $atts['password_confirmation']) {
-            $crypted = bcrypt( $atts['password'] );
-            $atts['password'] = $crypted;
-            $atts['password_confirmation'] = $crypted;
-        }
+//        if ($atts['password'] === $atts['password_confirmation']) {
+//            $crypted = bcrypt( $atts['password'] );
+//            $atts['password'] = $crypted;
+//            $atts['password_confirmation'] = $crypted;
+//        }
         
         return $atts;
     }
@@ -44,7 +44,7 @@ class UserStoreRequest extends Request
             'firstname' => 'required|max:40',
             'secondname' => 'required|max:40',
             'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'password' => 'required|confirmed|min:6|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/',
             'password_updated_at' => 'required',
        ], config('watchtower.user.rules.store') );
 

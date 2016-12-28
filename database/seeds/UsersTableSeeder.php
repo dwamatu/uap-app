@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
             'secondname' => 'Wamatu',
             'email' => 'dwamatu@gmail.com',
             'password' => bcrypt('test'),
-            'password_updated_at' => Carbon::now()->subMonths(3),
+            'password_updated_at' => Carbon::now(),
 
 
         ]);

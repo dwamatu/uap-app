@@ -42,4 +42,14 @@ class User extends Eloquent implements AuthenticatableContract,
 
         return $lastlogin->lt(Carbon::now()->subMonths(3));
     }
+
+    /**
+     * Set the password attribute.
+     *
+     * @param string $password
+     */
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
 }
