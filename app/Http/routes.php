@@ -34,12 +34,12 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/fetch/users', ['uses' => 'DataController@getUsers'])->name('fetch.users');
         Route::get('/fetch/locations', ['uses' => 'DataController@getLocations'])->name('fetch.locations');
         Route::get('/fetch/chart/data', ['uses' => 'DataController@getChartDetails'])->name('chart.data');
-
+        Route::get('/fetch/image/usr/local/uap/inspecton_files/{url}', ['uses' => 'ImageController@getImage'])->name('fetch.image');
 
         /*Report Data*/
         Route::post('/post/report/data', ['uses' => 'DataController@postReportData'])->name('report.data');
 
-//Get Streets
+//Get Role
         Route::get('/getRoles', ['uses' => 'DataController@getRoles', 'as' => 'check.role']);
 
         /* View Crop Inspectors*/

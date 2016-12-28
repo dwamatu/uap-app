@@ -6,6 +6,8 @@ use App\LossCalculation;
 
 use App\Utilities\LossUtilities;
 use DB;
+use Log;
+
 
 use Dompdf\Dompdf;
 
@@ -228,9 +230,11 @@ class LossCalculationController extends Controller
                         </div>';
 
 
+
+
         $the_imgs = '<div class="image123" style="display: inline-block">
                     <div style="float: left">
-                        <img src="'. $pageData['crop_image1'] .'" />
+                        <img src="/fetch/image' . $pageData['crop_image1'] . '"/>
                         <p>This is are photo of the <strong>Farmers</strong> Crops</p>
                         
                     </div>
@@ -240,6 +244,7 @@ class LossCalculationController extends Controller
                     </div>
                    
                 </div>';
+//        Log::Debug('Showing Images for Crop: '[$the_imgs]);
         $the_img = '<div class="image123" style="display: block">
                     <div style="float: left">
                         <img src="'. $pageData['farm_image'] .'" />

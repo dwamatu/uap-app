@@ -76,10 +76,10 @@ class InspectorController extends Controller
             ]);
 
             // Process request to create company
-            $newInspectorData = $request->only('id', 'first_name', 'last_name', 'username', 'email');
+            $newInspectorData = $request->only('id', 'first_name', 'last_name', 'username' , 'email');
             $newInspectorData ['role_id'] = 1;
-            $newInspectorData ['password'] = bcrypt(request('password'));
-            $createResponse = InspectorUtilities::updateInpector($newInspectorData);
+            $newInspectorData ['password'] = md5(request('password'));
+            $createResponse = InspectorUtilities::updateInspector($newInspectorData);
 
             //TODO : confirm with Martin on checks
             if ($createResponse['data'][0]['id'] !== null && $createResponse['data'][0]['first_name'] === $newInspectorData['first_name']) {
@@ -115,11 +115,12 @@ class InspectorController extends Controller
                 ]);
 
                 // Process request to create company
-                $newInspectorData = $request->only('id', 'first_name', 'last_name', 'username', 'email');
+                $newInspectorData = $request->only('id', 'first_name', 'last_name', 'username','password', 'email');
                 $newInspectorData ['role_id'] = 1;
-                $newInspectorData ['password'] = bcrypt(request('password'));
+//                $newInspectorData ['password'] = bcrypt(request('password'));
+                dd($newInspectorData);
                 $createResponse = InspectorUtilities::addInspector($newInspectorData);
-
+dd($createResponse);
                 //TODO : confirm with Martin on checks
                 if ($createResponse['data'][0]['id'] !== null && $createResponse['data'][0]['first_name'] === $newInspectorData['first_name']) {
                     $request->session()->flash('success', 'Inspector has been created.');

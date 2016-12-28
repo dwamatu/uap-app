@@ -28,10 +28,10 @@ public static function getCropInspectors(){
     public static function addInspector($content)
     {
 
-        return (array("data" => json_decode(ApiUtilities::IssuePOSTRequest(ApiUtilities::MakeAPIURL("/register/user"), collect($content)->toJson()), true)));
+        return (array("data" => json_decode(ApiUtilities::IssuePOSTRequest(ApiUtilities::MakeAPIURL("/createInspector"), collect($content)->toJson()), true)));
     }
 
-    public static function updateInpector($content)
+    public static function updateInspector($content)
     {
         return (array("data" => json_decode(ApiUtilities::IssuePOSTRequest(ApiUtilities::MakeAPIURL("/update/user"), collect($content)->toJson()), true)));
     }

@@ -180,6 +180,7 @@
 
 @push('scripts')
 
+
 <script src="{{ URL::asset('js/bootstrap-select.min.js') }}"></script>
 <script src="{{ URL::asset('js/roles_field.js') }}"></script>
 
