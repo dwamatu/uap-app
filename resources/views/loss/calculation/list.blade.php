@@ -133,7 +133,13 @@
                 }],
             "columnDefs": [{
                 render: function (data, type, row) {
-                    return "<a  target='_blank' class='btn btn-primary btn-block' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>";
+                    if(row.confirmed === true) {
+                        return "<a  target='_blank' class='btn btn-primary btn-block' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>";
+                    }
+                    else {
+                        return "<a  target='_blank' class='btn btn-primary btn-block' href='/confirm/loss/assessment/" + row.uuid + "'>Confirm LAS</a>";
+
+                    }
                 },
                 "targets": 8
             },{

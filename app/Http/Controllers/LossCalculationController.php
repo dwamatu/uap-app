@@ -32,6 +32,10 @@ class LossCalculationController extends Controller
         return (collect(LossUtilities::getLosses())->toJson());
 
     }
+    public function confirmLossAssessment($uuid)
+    {
+        return (collect(LossUtilities::confirmLossAssesment($uuid)));
+    }
 
     public function downloadLossAssessment($assessment_id)
     {
