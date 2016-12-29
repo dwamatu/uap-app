@@ -253,7 +253,7 @@ class LossCalculationController extends Controller
 
         $the_imgs = '<div class="image123" style="display: inline-block">
                     <div style="float: left">
-                         <img src="'.$pageData['crop_image1'].'.jpeg"/>
+                         <img src="file://var/www/html/uapapp.netcengroup.com/storage/app/inspection_images/50829e67-0515-46a2-bf4a-353e8a8bc252/crop1Image.jpeg"/>
                         <p>This is are photo of the <strong>Farmers</strong> Crops</p>
                         
                     </div>
