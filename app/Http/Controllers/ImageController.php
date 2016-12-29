@@ -28,22 +28,24 @@ class ImageController extends Controller
 
         $path = storage_path("app/inspection_images/$uuid/$imagename");
 
-//        $remoteImage = $path;
-//        $imginfo = getimagesize($remoteImage);
-//        header("Content-type: {$imginfo['mime']}");
-//        readfile($remoteImage);
-        if(!File::exists($path)) abort(404);
+        $remoteImage = $path;
+        $imginfo = getimagesize($remoteImage);
+        header("Content-type: {$imginfo['mime']}");
+        readfile($remoteImage);
 
-        $file = File::get($path);
 
-        $type = File::mimeType($path);
-
-        $response = Response::make($file, 200);
-        Log::info('Return image URL ',[$response]);
-        $response->header("Content-Type", $type);
-
-        Log::info('Return image Mime',[$response]);
-        return $response;
+//        if(!File::exists($path)) abort(404);
+//
+//        $file = File::get($path);
+//
+//        $type = File::mimeType($path);
+//
+//        $response = Response::make($file, 200);
+//        Log::info('Return image URL ',[$response]);
+//        $response->header("Content-Type", $type);
+//
+//        Log::info('Return image Mime',[$response]);
+//        return $response;
 
 
 
