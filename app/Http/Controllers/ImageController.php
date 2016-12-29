@@ -24,7 +24,7 @@ class ImageController extends Controller
 
         $uuid  = $pageData['uuid'];
 
-        $path = storage_path("app/inspector_images/$uuid/$imagename");
+        $path = storage_path("app/inspection_images/$uuid/$imagename");
 
 //        $remoteImage = $path;
 //        $imginfo = getimagesize($remoteImage);
