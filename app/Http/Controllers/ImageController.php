@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
-    public function getImage($id,$imagename)
+    public static function getImage($id,$imagename)
     {
         $assessmentDetails = LossUtilities::getLossAssessmentDetails($id);
 
