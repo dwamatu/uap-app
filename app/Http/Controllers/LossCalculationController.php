@@ -269,7 +269,7 @@ class LossCalculationController extends Controller
                    
                 </div>';
 
-
+//dd($the_imgs);
         $the_footer = '<table class="my_footer"><tr><td></td></tr></table>';
         $the_html = $the_style . '<div class="bordered">' . $the_title . $the_header . $the_firsttable . $the_secondtable . $the_comments  . $the_footer .$the_imgs.'<div class="row"  style  = "padding-top:350px;" >'. $the_img.'</div> </div>';
         return $the_html;
