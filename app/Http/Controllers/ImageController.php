@@ -19,7 +19,7 @@ class ImageController extends Controller
     public static function getImage($id,$imagename)
     {
 
-        if((empty($id)&&(empty($imagename)))) return null;
+        if((empty($id) || (empty($imagename)))) return null;
 
 
 
