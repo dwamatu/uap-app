@@ -72,7 +72,7 @@ class LossCalculationController extends Controller
 
 
         $pageData = $assessmentDetails[0];
-        dd($pageData);
+//        dd($pageData);
         $the_style = '<style>
                             @page {
                                 margin: 0.9%;
@@ -248,12 +248,12 @@ class LossCalculationController extends Controller
 
         $the_imgs = '<div class="image123" style="display: inline-block">
                     <div style="float: left">
-                        <img src="/fetch/image' . $pageData['crop_image1'] . '"/>
+                        <img src="/fetch/image/' . $pageData['uuid'] . '/' . $pageData['crop_image1'] . '"/>
                         <p>This is are photo of the <strong>Farmers</strong> Crops</p>
                         
                     </div>
                     <div style="float: right">
-                        <img style="float: right" class="middle-img" src="'. $pageData['crop_image2'] .'" />                          
+                                         <img src="/fetch/image/' . $pageData['uuid'] . '/' . $pageData['crop_image2'] . '"/>
              
                     </div>
                    
@@ -261,7 +261,7 @@ class LossCalculationController extends Controller
 //        Log::Debug('Showing Images for Crop: '[$the_imgs]);
         $the_img = '<div class="image123" style="display: block">
                     <div style="float: left">
-                        <img src="'. $pageData['farm_image'] .'" />
+                         <img src="/fetch/image/' . $pageData['uuid'] . '/' . $pageData['farm_image'] . '"/>
                         <p>This is a photo of the <strong>Farmers</strong> land</p>
                         
                     </div>
