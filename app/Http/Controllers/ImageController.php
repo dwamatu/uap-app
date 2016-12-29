@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 
 use App\Utilities\LossUtilities;
+use Log;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
@@ -34,11 +35,14 @@ class ImageController extends Controller
         if(!File::exists($path)) abort(404);
 
         $file = File::get($path);
+
         $type = File::mimeType($path);
 
         $response = Response::make($file, 200);
+        Log::info('Return image URL ',[$response]);
         $response->header("Content-Type", $type);
 
+        Log::info('Return image Mime',[$response]);
         return $response;
     });
 
