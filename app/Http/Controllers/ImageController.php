@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 
 use App\Utilities\LossUtilities;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
@@ -25,10 +26,12 @@ class ImageController extends Controller
 
         $path = storage_path("inspector_files/$uuid/$imagename");
 
-        $remoteImage = $path;
+//        $remoteImage = $path;
 //        $imginfo = getimagesize($remoteImage);
 //        header("Content-type: {$imginfo['mime']}");
-        readfile($remoteImage);
+//        readfile($remoteImage);
+
+        return Storage::get($path);
     }
 
 }
