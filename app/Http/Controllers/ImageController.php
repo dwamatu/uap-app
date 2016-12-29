@@ -9,11 +9,20 @@
 namespace App\Http\Controllers;
 
 
+use App\Utilities\LossUtilities;
+
 class ImageController extends Controller
 {
-    public function getImage($imagename)
+    public function getImage($id,$imagename)
     {
-        $path = storage_path("inspector_files/$imagename");
+        $assessmentDetails = LossUtilities::getLossAssessmentDetails($id);
+
+
+
+        $pageData = $assessmentDetails[0];
+        $uuid  = $pageData['uuid'];
+
+        $path = storage_path("inspector_files/$uuid/$imagename");
 
         $remoteImage = $path;
         $imginfo = getimagesize($remoteImage);

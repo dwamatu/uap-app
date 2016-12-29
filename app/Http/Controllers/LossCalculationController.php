@@ -66,11 +66,13 @@ class LossCalculationController extends Controller
 
     public function makeLossAssessmentnote($assessment_id)
     {
+
         $assessmentDetails = LossUtilities::getLossAssessmentDetails($assessment_id);
 
 
+
         $pageData = $assessmentDetails[0];
-//        dd($pageData);
+        dd($pageData);
         $the_style = '<style>
                             @page {
                                 margin: 0.9%;
