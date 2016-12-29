@@ -67,6 +67,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('fetch/loss/calculation', 'LossCalculationController@getLossCalculations')->name('fetch_loss_calculation');
 
         Route::get('/download/loss/assessment/{assessment_id}', 'LossCalculationController@downloadLossAssessment')->name('assessnote.download');
+        Route::get('/confirm/loss/assessment/{uuid}', 'LossCalculationController@confirmLossAssessment')->name('confirmloss.assessment');
 
     });
 

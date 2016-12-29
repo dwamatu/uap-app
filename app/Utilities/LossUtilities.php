@@ -4,6 +4,8 @@ namespace App\Utilities;
 
 use App\User;
 use App\Utilities\ApiUtilities;
+use Illuminate\Support\Facades\Auth;
+
 class LossUtilities
 {
     public static function getLosses()
@@ -26,7 +28,7 @@ class LossUtilities
     {
 
         $useremail=  Auth::user()->email;
-        return (array("data" => json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("confirmLossReport/$uuid/$useremail")), true)));
+        return (array("data" => json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/confirmLossReport/$uuid/$useremail")), true)));
 
     }
 }

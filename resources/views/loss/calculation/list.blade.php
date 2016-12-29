@@ -134,10 +134,10 @@
             "columnDefs": [{
                 render: function (data, type, row) {
                     if(row.confirmed === true) {
-                        return "<a  target='_blank' class='btn btn-primary btn-block' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>";
+                        return "<a  target='_blank' class='btn btn-success btn-block' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>";
                     }
                     else {
-                        return "<a  target='_blank' class='btn btn-primary btn-block' href='/confirm/loss/assessment/" + row.uuid + "'>Confirm LAS</a>";
+                        return "<a  class='btn btn-info btn-block' href='/confirm/loss/assessment/" + row.uuid + "'>Confirm LAS</a>";
 
                     }
                 },

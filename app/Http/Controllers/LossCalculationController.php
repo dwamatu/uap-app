@@ -34,7 +34,15 @@ class LossCalculationController extends Controller
     }
     public function confirmLossAssessment($uuid)
     {
-        return (collect(LossUtilities::confirmLossAssesment($uuid)));
+        $confirmLossreport = (collect(LossUtilities::confirmLossAssesment($uuid)));
+
+
+        if ($confirmLossreport['data'][0]['id'] !== null && $confirmLossreport['data'][0]['uuid'] === $uuid) {
+            return back();
+        } else {
+            return back()->withInput();
+        }
+
     }
 
     public function downloadLossAssessment($assessment_id)
