@@ -26,8 +26,8 @@ class ImageController extends Controller
         $path = storage_path("inspector_files/$uuid/$imagename");
 
         $remoteImage = $path;
-        $imginfo = getimagesize($remoteImage);
-        header("Content-type: {$imginfo['mime']}");
+//        $imginfo = getimagesize($remoteImage);
+//        header("Content-type: {$imginfo['mime']}");
         readfile($remoteImage);
     }
 
