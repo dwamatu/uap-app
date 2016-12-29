@@ -9,8 +9,8 @@ class LossUtilities
     public static function getLosses()
     {
 
-//        return (array("data" => json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/fetch/loss/assessment")), true)));
-        return (array("data" => json_decode(ApiUtilities::IssueGETRequest("http://localhost:8080/UAP/fetch/loss/assessment"), true)));
+        return (array("data" => json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/fetch/loss/assessment")), true)));
+//        return (array("data" => json_decode(ApiUtilities::IssueGETRequest("http://localhost:8080/UAP/fetch/loss/assessment"), true)));
 
     }
     public static function getLossAssessmentDetails($assessment_id) {
