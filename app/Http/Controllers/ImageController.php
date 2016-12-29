@@ -20,6 +20,7 @@ class ImageController extends Controller
 
 
         $pageData = $assessmentDetails[0];
+
         $uuid  = $pageData['uuid'];
 
         $path = storage_path("inspector_files/$uuid/$imagename");
@@ -28,7 +29,6 @@ class ImageController extends Controller
         $imginfo = getimagesize($remoteImage);
         header("Content-type: {$imginfo['mime']}");
         readfile($remoteImage);
-        dd($remoteImage);
     }
 
 }
