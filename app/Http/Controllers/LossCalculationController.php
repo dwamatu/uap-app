@@ -70,10 +70,10 @@ class LossCalculationController extends Controller
         $assessmentDetails = LossUtilities::getLossAssessmentDetails($assessment_id);
         $pageData = $assessmentDetails[0];
 
-        $firstImage = ImageController::getImage($pageData['id'] ,$pageData['crop_image1']);
-        $secondImage = ImageController::getImage($pageData['id'] ,$pageData['crop_image2']);
-        $thirdImage = ImageController::getImage($pageData['id'] ,$pageData['farm_image']);
-
+//        $firstImage = ImageController::getImage($pageData['id'] ,$pageData['crop_image1']);
+//        $secondImage = ImageController::getImage($pageData['id'] ,$pageData['crop_image2']);
+//        $thirdImage = ImageController::getImage($pageData['id'] ,$pageData['farm_image']);
+//
 
 
 
@@ -253,12 +253,12 @@ class LossCalculationController extends Controller
 
         $the_imgs = '<div class="image123" style="display: inline-block">
                     <div style="float: left">
-                         <img src="'.$firstImage.'"/>
+                         <img src="'.$pageData['crop_image1'].'"/>
                         <p>This is are photo of the <strong>Farmers</strong> Crops</p>
                         
                     </div>
                     <div style="float: right">
-                                         <img src="'.$secondImage.'"/>
+                                         <img src="'.$pageData['crop_image2'].'"/>
              
                     </div>
                    
@@ -266,7 +266,7 @@ class LossCalculationController extends Controller
 //        Log::Debug('Showing Images for Crop: '[$the_imgs]);
         $the_img = '<div class="image123" style="display: block">
                     <div style="float: left">
-                         <img src="'.$thirdImage.'"/>
+                         <img src="'.$pageData['farm_image'].'"/>
                         <p>This is a photo of the <strong>Farmers</strong> land</p>
                         
                     </div>
