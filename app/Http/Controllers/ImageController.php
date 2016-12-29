@@ -44,7 +44,7 @@ class ImageController extends Controller
 
         Log::info('Return image Mime',[$response]);
         return $response;
-    });
+
 
 
 //        return Storage::get($path);
