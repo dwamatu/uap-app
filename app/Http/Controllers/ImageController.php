@@ -26,12 +26,12 @@ class ImageController extends Controller
 
         $path = storage_path("app/inspection_images/$uuid/$imagename");
 
-//        $remoteImage = $path;
-//        $imginfo = getimagesize($remoteImage);
-//        header("Content-type: {$imginfo['mime']}");
-//        readfile($remoteImage);
+        $remoteImage = $path;
+        $imginfo = getimagesize($remoteImage);
+        header("Content-type: {$imginfo['mime']}");
+        readfile($remoteImage);
 
-        return Storage::get($path);
+//        return Storage::get($path);
     }
 
 }
