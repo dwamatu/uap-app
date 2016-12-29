@@ -18,6 +18,10 @@ class ImageController extends Controller
 {
     public static function getImage($id,$imagename)
     {
+        if($id===null) abort(404);
+        if($imagename===null) abort(404);
+
+
         $assessmentDetails = LossUtilities::getLossAssessmentDetails($id);
 
 
