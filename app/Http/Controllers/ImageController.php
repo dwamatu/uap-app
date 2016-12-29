@@ -31,7 +31,7 @@ class ImageController extends Controller
         $remoteImage = $path;
         $imginfo = getimagesize($remoteImage);
         header("Content-type: {$imginfo['mime']}");
-        readfile($remoteImage);
+        file_get_contents($remoteImage);
 
 
 //        if(!File::exists($path)) abort(404);
