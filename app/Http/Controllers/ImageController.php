@@ -11,11 +11,15 @@ namespace App\Http\Controllers;
 
 class ImageController extends Controller
 {
-    public function getImage($imagePath)
+    public function getImage($imagename)
     {
-        $remoteImage = $imagePath;
+        $path = storage_path("inspector_files/$imagename");
+
+        $remoteImage = $path;
         $imginfo = getimagesize($remoteImage);
         header("Content-type: {$imginfo['mime']}");
         readfile($remoteImage);
+        dd($remoteImage);
     }
+
 }

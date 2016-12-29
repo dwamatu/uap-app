@@ -34,7 +34,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/fetch/users', ['uses' => 'DataController@getUsers'])->name('fetch.users');
         Route::get('/fetch/locations', ['uses' => 'DataController@getLocations'])->name('fetch.locations');
         Route::get('/fetch/chart/data', ['uses' => 'DataController@getChartDetails'])->name('chart.data');
-        Route::get('/fetch/image/usr/local/uap/inspecton_files/{url}', ['uses' => 'ImageController@getImage'])->name('fetch.image');
+        Route::get('/fetch/image/{url}', ['uses' => 'ImageController@getImage'])->name('fetch.image');
 
         /*Report Data*/
         Route::post('/post/report/data', ['uses' => 'DataController@postReportData'])->name('report.data');
