@@ -19,8 +19,8 @@ class ImageController extends Controller
     public static function getImage($id,$imagename)
     {
 
-        if($id===null) die();
-        if($imagename===null) die();
+        if($id===null) return null;
+        if($imagename===null) return null;
 
 
         $assessmentDetails = LossUtilities::getLossAssessmentDetails($id);
