@@ -253,12 +253,12 @@ class LossCalculationController extends Controller
 
         $the_imgs = '<div class="image123" style="display: inline-block">
                     <div style="float: left">
-                         <img src="'.$pageData['crop_image1'].'"/>
+                         <img src="'.$pageData['crop_image1'].'.jpg"/>
                         <p>This is are photo of the <strong>Farmers</strong> Crops</p>
                         
                     </div>
                     <div style="float: right">
-                                         <img src="'.$pageData['crop_image2'].'"/>
+                                         <img src="'.$pageData['crop_image2'].'.jpg"/>
              
                     </div>
                    
@@ -266,7 +266,7 @@ class LossCalculationController extends Controller
 //        Log::Debug('Showing Images for Crop: '[$the_imgs]);
         $the_img = '<div class="image123" style="display: block">
                     <div style="float: left">
-                         <img src="'.$pageData['farm_image'].'"/>
+                         <img src="'.$pageData['farm_image'].'.jpg"/>
                         <p>This is a photo of the <strong>Farmers</strong> land</p>
                         
                     </div>
