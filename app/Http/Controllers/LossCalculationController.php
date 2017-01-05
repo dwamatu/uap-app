@@ -253,12 +253,12 @@ class LossCalculationController extends Controller
 
         $the_imgs = '<div class="image123" style="display: inline-block">
                     <div style="float: left">
-                         <img src="file://var/www/html/uapapp.netcengroup.com/storage/app/inspection_images/50829e67-0515-46a2-bf4a-353e8a8bc252/crop1Image"/>
+                        <img src="img/inspection_images/'.$pageData['uuid'].'/'.$pageData['crop_image1'].'".jpeg""/>
                         <p>This is are photo of the <strong>Farmers</strong> Crops</p>
                         
                     </div>
                     <div style="float: right">
-                                         <img src="'.$pageData['crop_image2'].'.jpeg"/>
+                                         <img src="img/inspection_images/'.$pageData['uuid'].'/'.$pageData['crop_image2'].'".jpeg""/>
              
                     </div>
                    
@@ -266,7 +266,7 @@ class LossCalculationController extends Controller
 //        Log::Debug('Showing Images for Crop: '[$the_imgs]);
         $the_img = '<div class="image123" style="display: block">
                     <div style="float: left">
-                         <img src="'.$pageData['farm_image'].'.jpeg"/>
+                         <img src="img/inspection_images/'.$pageData['uuid'].'/'.$pageData['farm_image'].'".jpeg""/>
                         <p>This is a photo of the <strong>Farmers</strong> land</p>
                         
                     </div>
