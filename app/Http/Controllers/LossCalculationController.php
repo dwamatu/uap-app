@@ -250,23 +250,20 @@ class LossCalculationController extends Controller
                         </div>';
 
 
-        $the_imgs = '<div class="image123" style="display: inline-block">
-                    <div style="float: left">
-                        <img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['farm_image'] . '"/>
-                        <p>This are photos of the <strong>Farmers</strong> Crops</p>
-                        
+        $the_imgs = '<div class="image123" style="display: inline">
+                    <div>
+                        <img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['crop_image1'] . '" width="100px" style="float: left;"/>
+                        <img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['crop_image2'] . '" width="100px" style="float: left;"/>
                     </div>
-                    <div style="float: right">
-                                         <img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['farm_image'] . '"/>
-             
-                    </div>
-                   
-                </div>';
+                    <p>
+                </div>
+                
+                ';
 //        Log::Debug('Showing Images for Crop: '[$the_imgs]);
         $the_img = '<div class="image123" style="display: block">
                     <div style="float: left">
                      <img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['farm_image'] . '"/>
-                        <p>This is a photo of the <strong>Farmers</strong> land</p>
+                        <p>These are photos of the <strong>Farmer\'s </strong> crops & land</p>
                         
                     </div>
                   
@@ -276,6 +273,7 @@ class LossCalculationController extends Controller
 //dd($the_imgs);
         $the_footer = '<table class="my_footer"><tr><td></td></tr></table>';
         $the_html = $the_style . '<div class="bordered">' . $the_title . $the_header . $the_firsttable . $the_secondtable . $the_comments . $the_footer . $the_imgs . '<div class="row"  style  = "padding-top:350px;" >' . $the_img . '</div> </div>';
+        //die($the_html);
         return $the_html;
 
 
