@@ -72,7 +72,7 @@
 <script>
     $(document).ready(function () {
         var dataTable = $('#farmers-table').DataTable({
-            dom: "<'row table-controls'<'col-sm-4 col-md-2 page-length'l><'col-sm-4 col-md-8 search'f><'col-sm-4 col-md-2 text-right'B>><'row'<'col-md-12'rt>><'row space-up-10'<'col-md-6'i><'col-md-6'p>>",
+            dom: "<'row table-controls'<'col-sm-4 col-md-3 page-length'l><'col-sm-4 col-md-5 search'f><'col-sm-4 col-md-2 col-md-offset-2 pull-right'B>><'row'<'col-md-12'rt>><'row space-up-10'<'col-md-6'i><'col-md-6'p>>",
             processing: true,
             serverSide: false,
             language: {"search": ""},
@@ -86,6 +86,7 @@
             ],
 //            order: [[1, "asc"]],
             buttons: [
+                'reload',
                 {
                     extend: 'collection',
                     text: 'Export',

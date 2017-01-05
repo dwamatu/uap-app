@@ -183,6 +183,7 @@
                     ],
                     order: [[1, "asc"]],
                     buttons: [
+                        'reload',
                         {
                             extend: 'collection',
                             text: 'Export',
