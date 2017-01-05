@@ -9,7 +9,7 @@
 
     <div class="mainbar content">
         <div class="page-head">
-            <h2 class="pull-left">Reported Claims</h2>
+            <h2 class="pull-left">Confirmed Claims</h2>
 
             <div class="bread-crumb pull-right">
                 <a href="{{ URL::route('dashboard') }}"><i class="fa fa-home"></i>Claim</a>
@@ -28,7 +28,7 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <table id="reportedClaims-grid" class="table table-striped table-bordered" cellspacing="0"
+                        <table id="confirmedClaims-grid" class="table table-striped table-bordered" cellspacing="0"
                                width="100%">
                             <thead>
                             <tr>
@@ -85,7 +85,7 @@
 <script src="{{ URL::asset('js/moment.min.js') }}"></script>
 <script>
     $(document).ready(function () {
-        var dataTable = $('#reportedClaims-grid').DataTable({
+        var dataTable = $('#confirmedClaims-grid').DataTable({
             dom: "<'row table-controls'<'col-sm-4 col-md-3 page-length'l><'col-sm-4 col-md-5 search'f><'col-sm-4 col-md-2 col-md-offset-2 pull-right'B>><'row'<'col-md-12'rt>><'row space-up-10'<'col-md-6'i><'col-md-6'p>>",
             processing: true,
             serverSide: false,
@@ -95,12 +95,12 @@
 
                 {data: 'bat_acc_no'},
                 {data: 'farmer_name'},
+                {data: 'farmer_zone'},
                 {data: 'crop_inspector_name'},
                 {data: 'cause_of_loss'},
                 {data: 'latitude'},
                 {data: 'longitude'},
                 {data: 'percentage_loss'},
-                {data: 'farmer_zone'},
                 {data: 'inspection_date'},
                 {data: 'loss_assessment_id'},
                 {data: 'confirmed'}
@@ -114,7 +114,7 @@
                         {
                             extend: 'excel',
                             text: 'Export as Excel',
-                            title: 'Reported Claims',
+                            title: 'Confirmed Claims',
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5, 6, 7]
                             }
@@ -122,7 +122,7 @@
                         {
                             extend: 'pdf',
                             text: 'Export as PDF',
-                            title: 'Reported Claims',
+                            title: 'Confirmed Claims',
                             download: 'open',
                             orientation: 'landscape',
                             exportOptions: {
@@ -132,7 +132,7 @@
                         {
                             extend: 'csv',
                             text: 'Export as CSV',
-                            title: 'Reported Claims',
+                            title: 'Confirmed Claims',
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5, 6, 7]
                             }
