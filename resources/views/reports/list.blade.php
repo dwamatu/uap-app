@@ -218,7 +218,7 @@
                         }],
                     "columnDefs": [{
                         render: function (data, type, row) {
-                            return "<a  target='_blank' class='btn btn-primary btn-block' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>";
+                            return "<a  target='_blank' class='btn btn-success btn-block' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>"
                         },
                         "targets": 8
                     }, {
