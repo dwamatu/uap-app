@@ -226,7 +226,7 @@ class TestMatrix {
     if($this->checkMatrices($A, $Q->times($R)))
       $this->try_success("QRDecomposition...","");
     else
-      $errorCount = $this->try_failure($errorCount,"QRDecomposition...","incorrect qr decomposition calculation");
+      $errorCount = $this->try_failure($errorCount,"QRDecomposition...","incorrect qr decomposition reported");
 
     $A = new Matrix($columnwise, 4);
     $SVD = $A->svd();
@@ -236,7 +236,7 @@ class TestMatrix {
     if ($this->checkMatrices($A, $U->times($S->times($V->transpose()))))
       $this->try_success("SingularValueDecomposition...","");
     else
-      $errorCount = $this->try_failure($errorCount,"SingularValueDecomposition...","incorrect singular value decomposition calculation");
+      $errorCount = $this->try_failure($errorCount,"SingularValueDecomposition...","incorrect singular value decomposition reported");
 
     $n = $A->getColumnDimension();
     $A = $A->getMatrix(0,$n-1,0,$n-1);
@@ -247,19 +247,19 @@ class TestMatrix {
     if ( $this->checkMatrices($A->getMatrix($LU->getPivot(),0,$n-1), $L->times($LU->getU())) )
       $this->try_success("LUDecomposition...","");
     else
-      $errorCount = $this->try_failure($errorCount,"LUDecomposition...","incorrect LU decomposition calculation");
+      $errorCount = $this->try_failure($errorCount,"LUDecomposition...","incorrect LU decomposition reported");
 
     $X = $A->inverse();
     if ( $this->checkMatrices($A->times($X),Matrix::identity(3,3)) )
        $this->try_success("inverse()...","");
      else
-       $errorCount = $this->try_failure($errorCount, "inverse()...","incorrect inverse calculation");
+       $errorCount = $this->try_failure($errorCount, "inverse()...","incorrect inverse reported");
 
     $DEF = new Matrix($rankdef);
     if($this->checkScalars($DEF->rank(), min($DEF->getRowDimension(), $DEF->getColumnDimension())-1))
       $this->try_success("Rank...");
     else
-      $this->try_failure("Rank...", "incorrect rank calculation");
+      $this->try_failure("Rank...", "incorrect rank reported");
 
     $B = new Matrix($condmat);
     $SVD = $B->svd();
@@ -267,7 +267,7 @@ class TestMatrix {
     if($this->checkScalars($B->cond(), $singularvalues[0]/$singularvalues[min($B->getRowDimension(), $B->getColumnDimension())-1]))
       $this->try_success("Condition number...");
     else
-      $this->try_failure("Condition number...", "incorrect condition number calculation");
+      $this->try_failure("Condition number...", "incorrect condition number reported");
 
     $SUB = new Matrix($subavals);
     $O   = new Matrix($SUB->getRowDimension(),1,1.0);
@@ -276,7 +276,7 @@ class TestMatrix {
     if ( $this->checkMatrices($SQ->solve($SOL),$O) )
       $this->try_success("solve()...","");
     else
-     $errorCount = $this->try_failure($errorCount,"solve()...","incorrect lu solve calculation");
+     $errorCount = $this->try_failure($errorCount,"solve()...","incorrect lu solve reported");
 
     $A = new Matrix($pvals);
     $Chol = $A->chol();
@@ -284,13 +284,13 @@ class TestMatrix {
     if ( $this->checkMatrices($A, $L->times($L->transpose())) )
       $this->try_success("CholeskyDecomposition...","");
     else
-      $errorCount = $this->try_failure($errorCount,"CholeskyDecomposition...","incorrect Cholesky decomposition calculation");
+      $errorCount = $this->try_failure($errorCount,"CholeskyDecomposition...","incorrect Cholesky decomposition reported");
 
     $X = $Chol->solve(Matrix::identity(3,3));
     if ( $this->checkMatrices($A->times($X), Matrix::identity(3,3)) )
       $this->try_success("CholeskyDecomposition solve()...","");
     else
-      $errorCount = $this->try_failure($errorCount,"CholeskyDecomposition solve()...","incorrect Choleskydecomposition solve calculation");
+      $errorCount = $this->try_failure($errorCount,"CholeskyDecomposition solve()...","incorrect Choleskydecomposition solve reported");
 
     $Eig = $A->eig();
     $D = $Eig->getD();
@@ -298,7 +298,7 @@ class TestMatrix {
     if( $this->checkMatrices($A->times($V),$V->times($D)) )
       $this->try_success("EigenvalueDecomposition (symmetric)...","");
     else
-      $errorCount = $this->try_failure($errorCount,"EigenvalueDecomposition (symmetric)...","incorrect symmetric Eigenvalue decomposition calculation");
+      $errorCount = $this->try_failure($errorCount,"EigenvalueDecomposition (symmetric)...","incorrect symmetric Eigenvalue decomposition reported");
 
     $A = new Matrix($evals);
     $Eig = $A->eig();
@@ -307,7 +307,7 @@ class TestMatrix {
     if ( $this->checkMatrices($A->times($V),$V->times($D)) )
       $this->try_success("EigenvalueDecomposition (nonsymmetric)...","");
     else
-      $errorCount = $this->try_failure($errorCount,"EigenvalueDecomposition (nonsymmetric)...","incorrect nonsymmetric Eigenvalue decomposition calculation");
+      $errorCount = $this->try_failure($errorCount,"EigenvalueDecomposition (nonsymmetric)...","incorrect nonsymmetric Eigenvalue decomposition reported");
 
 	print("<b>{$errorCount} total errors</b>.");
   }

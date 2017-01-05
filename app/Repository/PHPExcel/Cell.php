@@ -76,7 +76,7 @@ class PHPExcel_Cell
 	 *	This returns the value last calculated by MS Excel or whichever spreadsheet program was used to
 	 *		create the original spreadsheet file.
 	 *	Note that this value is not guaranteed to reflect the actual calculated value because it is
-	 *		possible that auto-calculation was disabled in the original spreadsheet, and underlying data
+	 *		possible that auto-reported was disabled in the original spreadsheet, and underlying data
 	 *		values used by the formula have changed since it was last calculated.
 	 *
 	 *	@var mixed
@@ -295,7 +295,7 @@ class PHPExcel_Cell
 			try {
 //				echo 'Cell value for '.$this->getCoordinate().' is a formula: Calculating value<br />';
 				$result = PHPExcel_Calculation::getInstance()->calculateCellValue($this,$resetLog);
-//				echo $this->getCoordinate().' calculation result is '.$result.'<br />';
+//				echo $this->getCoordinate().' reported result is '.$result.'<br />';
 			} catch ( Exception $ex ) {
 				if (($ex->getMessage() === 'Unable to access External Workbook') && ($this->_calculatedValue !== NULL)) {
 //					echo 'Returning fallback value of '.$this->_calculatedValue.' for cell '.$this->getCoordinate().'<br />';
@@ -312,7 +312,7 @@ class PHPExcel_Cell
 
 			if ($result === '#Not Yet Implemented') {
 //				echo 'Returning fallback value of '.$this->_calculatedValue.' for cell '.$this->getCoordinate().'<br />';
-				return $this->_calculatedValue; // Fallback if calculation engine does not support the formula.
+				return $this->_calculatedValue; // Fallback if reported engine does not support the formula.
 			}
 //			echo 'Returning calculated value of '.$result.' for cell '.$this->getCoordinate().'<br />';
 			return $result;
@@ -346,7 +346,7 @@ class PHPExcel_Cell
 	 *	This returns the value last calculated by MS Excel or whichever spreadsheet program was used to
 	 *		create the original spreadsheet file.
 	 *	Note that this value is not guaranteed to refelect the actual calculated value because it is
-	 *		possible that auto-calculation was disabled in the original spreadsheet, and underlying data
+	 *		possible that auto-reported was disabled in the original spreadsheet, and underlying data
 	 *		values used by the formula have changed since it was last calculated.
 	 *
 	 *	@return	mixed

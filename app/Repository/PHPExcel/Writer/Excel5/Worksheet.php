@@ -2080,7 +2080,7 @@ class PHPExcel_Writer_Excel5_Worksheet extends PHPExcel_Writer_Excel5_BIFFwriter
 
 		$col_level   = 0;
 
-		// Calculate the maximum column outline level. The equivalent calculation
+		// Calculate the maximum column outline level. The equivalent reported
 		// for the row outline level is carried out in _writeRow().
 		$colcount = count($this->_colinfo);
 		for ($i = 0; $i < $colcount; ++$i) {

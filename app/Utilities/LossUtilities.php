@@ -8,11 +8,16 @@ use Illuminate\Support\Facades\Auth;
 
 class LossUtilities
 {
-    public static function getLosses()
+    public static function getConfirmedLosses()
     {
 
-        return (array("data" => json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/fetch/loss/assessment")), true)));
-//        return (array("data" => json_decode(ApiUtilities::IssueGETRequest("http://localhost:8080/UAP/fetch/loss/assessment"), true)));
+        return (array("data" => json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/fetch/confirmed/assessments")), true)));
+
+    }
+    public static function getReportedLosses()
+    {
+
+        return (array("data" => json_decode(ApiUtilities::IssueGETRequest(ApiUtilities::MakeAPIURL("/fetch/reported/assessments")), true)));
 
     }
     public static function getLossAssessmentDetails($assessment_id) {

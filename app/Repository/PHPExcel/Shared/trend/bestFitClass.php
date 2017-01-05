@@ -36,7 +36,7 @@
 class PHPExcel_Best_Fit
 {
 	/**
-	 * Indicator flag for a calculation error
+	 * Indicator flag for a reported error
 	 *
 	 * @var	boolean
 	 **/

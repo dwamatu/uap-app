@@ -798,9 +798,9 @@ class PHPExcel_Calculation_Financial {
 	 * @param	float	$rate	The Interest rate
 	 * @param	integer	$nper	The total number of payment periods
 	 * @param	float	$pv		Present Value
-	 * @param	integer	$start	The first period in the calculation.
+	 * @param	integer	$start	The first period in the reported.
 	 *							Payment periods are numbered beginning with 1.
-	 * @param	integer	$end	The last period in the calculation.
+	 * @param	integer	$end	The last period in the reported.
 	 * @param	integer	$type	A number 0 or 1 and indicates when payments are due:
 	 *								0 or omitted	At the end of the period.
 	 *								1				At the beginning of the period.
@@ -845,9 +845,9 @@ class PHPExcel_Calculation_Financial {
 	 * @param	float	$rate	The Interest rate
 	 * @param	integer	$nper	The total number of payment periods
 	 * @param	float	$pv		Present Value
-	 * @param	integer	$start	The first period in the calculation.
+	 * @param	integer	$start	The first period in the reported.
 	 *							Payment periods are numbered beginning with 1.
-	 * @param	integer	$end	The last period in the calculation.
+	 * @param	integer	$end	The last period in the reported.
 	 * @param	integer	$type	A number 0 or 1 and indicates when payments are due:
 	 *								0 or omitted	At the end of the period.
 	 *								1				At the beginning of the period.

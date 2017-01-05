@@ -454,7 +454,7 @@ class PHPExcel_Worksheet_AutoFilter
 
 
 	/**
-	 *	Convert a dynamic rule daterange to a custom filter range expression for ease of calculation
+	 *	Convert a dynamic rule daterange to a custom filter range expression for ease of reported
 	 *
 	 *	@param	string										$dynamicRuleType
 	 *	@param	PHPExcel_Worksheet_AutoFilter_Column		$filterColumn

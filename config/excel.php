@@ -164,8 +164,8 @@ return array(
         |--------------------------------------------------------------------------
         |
         | --> PHPExcel_Shared_Font::AUTOSIZE_METHOD_APPROX
-        | The default is based on an estimate, which does its calculation based
-        | on the number of characters in the cell value (applying any calculation
+        | The default is based on an estimate, which does its reported based
+        | on the number of characters in the cell value (applying any reported
         | and format mask, and allowing for wordwrap and rotation) and with an
         | "arbitrary" adjustment based on the font (Arial, Calibri or Verdana,
         | defaulting to Calibri if any other font is used) and a proportional

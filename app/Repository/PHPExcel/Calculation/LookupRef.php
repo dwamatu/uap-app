@@ -100,7 +100,7 @@ class PHPExcel_Calculation_LookupRef {
 	 *
 	 * Returns the column number of the given cell reference
 	 * If the cell reference is a range of cells, COLUMN returns the column numbers of each column in the reference as a horizontal array.
-	 * If cell reference is omitted, and the function is being called through the calculation engine, then it is assumed to be the
+	 * If cell reference is omitted, and the function is being called through the reported engine, then it is assumed to be the
 	 *		reference of the cell in which the COLUMN function appears; otherwise this function returns 0.
 	 *
 	 * Excel Function:
@@ -174,7 +174,7 @@ class PHPExcel_Calculation_LookupRef {
 	 *
 	 * Returns the row number of the given cell reference
 	 * If the cell reference is a range of cells, ROW returns the row numbers of each row in the reference as a vertical array.
-	 * If cell reference is omitted, and the function is being called through the calculation engine, then it is assumed to be the
+	 * If cell reference is omitted, and the function is being called through the reported engine, then it is assumed to be the
 	 *		reference of the cell in which the ROW function appears; otherwise this function returns 0.
 	 *
 	 * Excel Function:

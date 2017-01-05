@@ -43,7 +43,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/getRoles', ['uses' => 'DataController@getRoles', 'as' => 'check.role']);
 
         /* View Crop Inspectors*/
-        Route::get('/inspectors', ['uses' => 'InspectorController@viewInspectors', 'as' => 'inspectors', 'middleware' => 'oldpassword']);
+        Route::get('/inspectors', ['uses' => 'InspectorController@viewInspectors', 'as' => 'inspectors']);
         Route::get('/fetch/inspectors', ['uses' => 'InspectorController@getCropInspectors', 'as' => 'fetch.inspectors']);
         Route::get('/inspector/details/{id}', ['as' => 'view_inspector_details', 'uses' => 'InspectorController@viewInspectorDetails']);
         /* Create Crop Inspectors*/
@@ -60,11 +60,13 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::get('/fetch/farmers', ['uses' => 'FarmersController@getFarmers', 'as' => 'fetch_farmers']);
 
-        Route::get('/loss/calculation', 'LossCalculationController@viewLossCalculations')->name('loss.calculation');
+        Route::get('/reported/claims', 'LossCalculationController@viewReportedClaims')->name('claims.reported');
+        Route::get('/confirmed/claims', 'LossCalculationController@viewConfirmedClaims')->name('claims.confirmed');
 
         Route::get('/loss/report', 'LossCalculationController@viewLossReports')->name('loss.report');
 
-        Route::get('fetch/loss/calculation', 'LossCalculationController@getLossCalculations')->name('fetch_loss_calculation');
+        Route::get('fetch/confirmed/claims', 'LossCalculationController@getConfirmedLossCalculations')->name('fetch.confirmed.claims');
+        Route::get('fetch/reported/claims', 'LossCalculationController@getReportedLossCalculations')->name('fetch.reported.claims');
 
         Route::get('/download/loss/assessment/{assessment_id}', 'LossCalculationController@downloadLossAssessment')->name('assessnote.download');
         Route::get('/confirm/loss/assessment/{uuid}', 'LossCalculationController@confirmLossAssessment')->name('confirmloss.assessment');

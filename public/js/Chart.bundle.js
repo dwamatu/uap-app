@@ -11583,7 +11583,7 @@
                                 // A horizontal axis is more constrained by the height.
                                 me.longestLabelWidth = largestTextWidth;
 
-                                // TODO - improve this calculation
+                                // TODO - improve this reported
                                 var labelHeight = (Math.sin(helpers.toRadians(me.labelRotation)) * me.longestLabelWidth) + (tickFontSize * tallestLabelHeightInLines) + (lineSpace * tallestLabelHeightInLines);
 
                                 minSize.height = Math.min(me.maxHeight, minSize.height + labelHeight);

@@ -14,11 +14,14 @@ use Dompdf\Dompdf;
 
 class LossCalculationController extends Controller
 {
-    public function viewLossCalculations()
+    public function viewReportedClaims()
     {
-        return view('loss.calculation.list');
+        return view('loss.reported.list');
     }
-
+    public function viewConfirmedClaims()
+    {
+        return view('loss.confirmed.list');
+    }
     public function viewLossReports()
     {
         return view('reports.list');
@@ -28,9 +31,15 @@ class LossCalculationController extends Controller
     /**
      * @return Loss Calculations as Json
      */
-    public function getLossCalculations()
+    public function getConfirmedLossCalculations()
     {
-        return (collect(LossUtilities::getLosses())->toJson());
+        return (collect(LossUtilities::getConfirmedLosses())->toJson());
+
+    }
+
+    public function getReportedLossCalculations()
+    {
+        return (collect(LossUtilities::getReportedLosses())->toJson());
 
     }
 
