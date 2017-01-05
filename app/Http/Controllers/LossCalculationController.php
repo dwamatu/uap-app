@@ -254,11 +254,11 @@ class LossCalculationController extends Controller
         $the_imgs = '<div class="image123" style="display: inline-block">
                     <div style="float: left">
                         <img src="img/inspection_images/'.$pageData['uuid'].'/'.$pageData['crop_image1'].'".jpeg""/>
-                        <p>This is are photo of the <strong>Farmers</strong> Crops</p>
+                        <p>This are photos of the <strong>Farmers</strong> Crops</p>
                         
                     </div>
                     <div style="float: right">
-                                         <img src="img/inspection_images/'.$pageData['uuid'].'/'.$pageData['crop_image2'].'".jpeg""/>
+                                         <img src="img/inspection_images/'.$pageData['uuid'].'/'.$pageData['crop_image1'].'".jpeg""/>
              
                     </div>
                    
