@@ -9,115 +9,126 @@
 
 @endpush
 
+
 @section('content')
+    <div class="wrapper">
 
-    <div class="mainbar content">
-        <div class="page-head">
-            <h2 class="pull-left">Farmers</h2>
 
-            <div class="bread-crumb pull-right">
-                <a href="{{ URL::route('dashboard') }}"><i class="fa fa-home"></i> Home</a>
-                <span class="divider">/</span>
-                <a href="{{ URL::route('farmers') }}">Farmers</a>
-            </div>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Claims
+                    <small> panel</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li> <a href="{{ URL::route('dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">Reports</li>
+                </ol>
+            </section>
+            <section class="content">
+                <div >
+                    <div class="row tools-table">
+                        <header class="panel¡-heading center">
 
-            <div class="clearfix"></div>
-        </div>
-
-        <div class="matter">
-            <div class="container">
-                <div class="row tools-table">
-                    <header class="panel¡-heading center">
-
-                        <form action="#" method="" accept-charset="utf-8" class="form-inline" role="form"
-                              enctype="multipart/form-data">
-                            {!! csrf_field() !!}
-                            <div class="form-group">
-                                <div id="reportrange" class="pull-right"
-                                     style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
-                                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
-                                    <span></span> <b class="caret"></b>
+                            <form action="#" method="" accept-charset="utf-8" class="form-inline" role="form"
+                                  enctype="multipart/form-data">
+                                {!! csrf_field() !!}
+                                <div class="form-group">
+                                    <div id="reportrange" class="pull-right"
+                                         style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+                                        <span></span> <b class="caret"></b>
+                                    </div>
+                                    <input type="hidden" name="date_start" id="date_start">
+                                    <input type="hidden" name="date_end" id="date_end">
                                 </div>
-                                <input type="hidden" name="date_start" id="date_start">
-                                <input type="hidden" name="date_end" id="date_end">
-                            </div>
-                            <div class="form-group">
-                                <select name="ext_area" class="form-control" id="ext_area">
+                                <div class="form-group">
+                                    <select name="ext_area" class="form-control" id="ext_area">
 
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <select class="form-control" name="season" id="season">
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" name="season" id="season">
 
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <select name="cause_of_loss" class="form-control" id="cause_of_loss">
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="cause_of_loss" class="form-control" id="cause_of_loss">
 
-                                </select>
+                                    </select>
 
-                            </div>
+                                </div>
 
-                            <div class="form-group">
-                                <select class="form-control" name="crop_inspector" id="crop_inspector">
+                                <div class="form-group">
+                                    <select class="form-control" name="crop_inspector" id="crop_inspector">
 
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <b>% 0</b> <input id="range" name="range" type="text" class="span2" value=""
-                                                  data-slider-min="0" data-slider-max="100" data-slider-step="5"
-                                                  data-slider-value="[0,100]" style="background-color: green;"/>
-                                <b>%100</b>
-                            </div>
-                            <button type="button" id="searchreport" class="btn btn-warning btn-sm"><i
-                                        class="fa fa-search"></i>&nbsp;&nbsp;Search
-                            </button>
-                        </form>
-                    </header>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <b>% 0</b> <input id="range" name="range" type="text" class="span2" value=""
+                                                      data-slider-min="0" data-slider-max="100" data-slider-step="5"
+                                                      data-slider-value="[0,100]" style="background-color: green;"/>
+                                    <b>%100</b>
+                                </div>
+                                <button type="button" id="searchreport" class="btn btn-warning btn-sm"><i
+                                            class="fa fa-search"></i>&nbsp;&nbsp;Search
+                                </button>
+                            </form>
+                        </header>
 
-                </div>
+                    </div>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <table id="reports-table" class="table table-striped table-bordered" cellspacing="0"
-                               width="100%">
-                            <thead>
-                            <tr>
-                                <th>Farmer BAT Code</th>
-                                <th>Farmer Name</th>
-                                <th>Crop Inspector</th>
-                                <th>Cause Of Loss</th>
-                                <th>Latitude</th>
-                                <th>Longitude</th>
-                                <th>Percentage Loss</th>
-                                <th>Inspection Date</th>
-                                <th>Action</th>
-                            </tr>
-                            </thead>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table id="reports-table" class="table table-striped table-bordered" cellspacing="0"
+                                   width="100%">
+                                <thead>
+                                <tr>
+                                    <th>Farmer BAT Code</th>
+                                    <th>Farmer Name</th>
+                                    <th>Crop Inspector</th>
+                                    <th>Cause Of Loss</th>
+                                    <th>Latitude</th>
+                                    <th>Longitude</th>
+                                    <th>Percentage Loss</th>
+                                    <th>Inspection Date</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
 
-                            <tfoot>
-                            <tr>
-                                <th>Farmer BAT Code</th>
-                                <th>Farmer Name</th>
-                                <th>Crop Inspector</th>
-                                <th>Cause Of Loss</th>
-                                <th>Latitude</th>
-                                <th>Longitude</th>
-                                <th>Percentage Loss</th>
-                                <th>Inspection Date</th>
-                                <th>Action</th>
-                            </tr>
-                            </tfoot>
-                        </table>
+                                <tfoot>
+                                <tr>
+                                    <th>Farmer BAT Code</th>
+                                    <th>Farmer Name</th>
+                                    <th>Crop Inspector</th>
+                                    <th>Cause Of Loss</th>
+                                    <th>Latitude</th>
+                                    <th>Longitude</th>
+                                    <th>Percentage Loss</th>
+                                    <th>Inspection Date</th>
+                                    <th>Action</th>
+                                </tr>
+                                </tfoot>
+                            </table>
 
-                        <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+
+
+            <!-- /.content -->
         </div>
+
+
+
     </div>
 
-    <div class="clearfix"></div>
+
 
 @endsection
 

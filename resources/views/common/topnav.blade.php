@@ -1,32 +1,33 @@
-<header>
-	<!-- Navigation -->
-	<nav class="navbar navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-2">
-					<div class="logo" >
-						<a href="/">
-							{{--<img src="{{ URL::asset('img/logo.png') }}" height="20" style="display:inline" alt="UAP Africa">--}}
-						</a>
-					</div>
-				</div>
-				<div class="col-md-2
-				 col-md-offset-3">
-					<div class="app-title">UAP Old Mutual </div>
-				</div>
-				@if( Auth::check())
-				<div class="col-md-3 col-md-offset-2">
-					<ul class="nav navbar-nav pull-right">
-						<li class="dropdown pull-right">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="fa fa-user"> {{Auth::user()->firstname." ".Auth::user()->secondname}}</i> <b class="caret"></b></a> <!-- Dropdown menu -->
-							<ul class="dropdown-menu">
-								<li><a href="{{ url('logout' ) }}"><i class="fa fa-sign-out"></i> Logout</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				@endif
+<header class="main-header">
+	<!-- Logo -->
+	<a href="# " class="logo">
+		<!-- mini logo for sidebar mini 50x50 pixels -->
+		<span class="logo-mini"><b>u</b>PT</span>
+		<!-- logo for regular state and mobile devices -->
+		<span class="logo-lg"><b>UAP</b> Portal</span>
+	</a>
+	<!-- Header Navbar: style can be found in header.less -->
+	<nav class="navbar navbar-static-top">
+		<!-- Sidebar toggle button-->
+		<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+			<span class="sr-only">Toggle navigation</span>
+		</a>
+		@if( Auth::check())
+			<div class="navbar-custom-menu">
+				<ul class="nav navbar-nav">
+
+					<li class="dropdown">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="true"> <i
+									class="fa fa-user"> {{Auth::user()->email}}</i> <b class="caret"></b></a>
+						<!-- Dropdown menu -->
+						<ul class="dropdown-menu">
+							<li><a href="{{url('/logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>
+						</ul>
+					</li>
+				</ul>
 			</div>
-		</div>
+		@endif
+
+
 	</nav>
 </header>

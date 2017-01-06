@@ -7,61 +7,74 @@
 
 @section('content')
 
-    <div class="mainbar content">
-        <div class="page-head">
-            <h2 class="pull-left">Inspectors</h2>
+    <div class="wrapper">
 
-            <div class="bread-crumb pull-right">
-                <a href="{{ URL::route('dashboard') }}"><i class="fa fa-home"></i> Home</a>
-                <span class="divider">/</span>
-                <a href="{{ URL::route('inspectors') }}">Inspectors</a>
-            </div>
 
-            <div class="clearfix"></div>
-        </div>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Roles
+                    <small>panel</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ URL::route('dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">Inspectors</li>
+                </ol>
+            </section>
+            <section class="content">
+                <div >
+                    <div class="row tools-table">
+                        <div class="col-xs-6 col-md-6">
 
-        <div class="matter">
-            <div class="container">
-                <div class="row tools-table">
-                    <div class="col-xs-6 col-md-6">
+                            <a id="add-company" class="btn btn-primary" href="{{ url('/inspector/create') }}">Add Inspector</a>
 
-                                            <a id="add-company" class="btn btn-primary" href="{{ url('/inspector/create') }}">Add Inspector</a>
+                        </div>
 
                     </div>
 
-                </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table id="crop-inspectors-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                <tr>
+                                    <th>Inspector Name</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <table id="crop-inspectors-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                            <tr>
-                                <th>Inspector Name</th>
-                                <th>Username</th>
-                                <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
 
-                                <th>Role</th>
-                                <th>Action</th>
-                            </tr>
-                            </thead>
+                                <tfoot>
+                                <tr>
+                                    <th>Inspector Name</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Action</th>
+                                </tr>
+                                </tfoot>
+                            </table>
 
-                            <tfoot>
-                            <tr>
-                                <th>Inspector Name</th>
-                                <th>Username</th>
-                                <th>Email</th>
-                                <th>Role</th>
-                                <th>Action</th>
-                            </tr>
-                            </tfoot>
-                        </table>
-
-                        <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+
+            <!-- /.content -->
         </div>
+        <!-- /.content-wrapper -->
+
+
+
     </div>
+
+
 
     <div class="clearfix"></div>
 

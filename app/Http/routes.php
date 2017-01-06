@@ -15,7 +15,7 @@ Route::get('/auth/reset/old', function () {
     return view('auth.reset.old');
 });
 Route::post('/password/reset/old', 'UserController@storeNewPassword');
-Route::get('/', function () {
+Route::get('/auth/login', function () {
     return view('auth.login');
 })->name('auth.login');
 Route::auth();
@@ -26,7 +26,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['oldpassword']], function () {
 
 
-        Route::get('/dashboard', ['uses' => 'DataController@getDashboard'])->name('dashboard');
+        Route::get('/', ['uses' => 'DataController@getDashboard'])->name('dashboard');
         Route::get('/fetch/loss/causes', ['uses' => 'DataController@getLossCauses'])->name('fetch.loss.causes');
         Route::get('/fetch/zones', ['uses' => 'DataController@getZones'])->name('fetch.zones');
         Route::get('/fetch/seasons', ['uses' => 'DataController@getSeasons'])->name('fetch.seasons');

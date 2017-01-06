@@ -6,57 +6,70 @@
 @endpush
 
 @section('content')
+    <div class="wrapper">
 
-    <div class="mainbar content">
-        <div class="page-head">
-            <h2 class="pull-left">Farmers</h2>
 
-            <div class="bread-crumb pull-right">
-                <a href="{{ URL::route('dashboard') }}"><i class="fa fa-home"></i> Home</a>
-                <span class="divider">/</span>
-                <a href="{{ URL::route('farmers') }}">Farmers</a>
-            </div>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Farmers
+                    <small>List</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li> <a href="{{ URL::route('dashboard') }}"><i class="fa fa-home"></i> Home</a>
+                        <span class="divider">/</span>
+                    <li class="active">Dashboard   <a href="{{ URL::route('farmers') }}">Farmers</a></li>
 
-            <div class="clearfix"></div>
-        </div>
+                </ol>
+            </section>
+            <section class="content">
+                <div>
+                    <div class="row tools-table">
 
-        <div class="matter">
-            <div class="container">
-                <div class="row tools-table">
+                    </div>
 
-                </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table id="farmers-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                <tr>
+                                    <th class="first">Farmer BAT Account No.</th>
+                                    <th> Farmer Name</th>
+                                    <th>Farmer Zone</th>
+                                    <th>ALM Manger</th>
+                                    <th class="last"> Expected KG</th>
+                                </tr>
+                                </thead>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <table id="farmers-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                            <tr>
-                                <th class="first">Farmer BAT Account No.</th>
-                                <th> Farmer Name</th>
-                                <th>Farmer Zone</th>
-                                <th>ALM Manger</th>
-                                <th class="last"> Expected KG</th>
-                            </tr>
-                            </thead>
+                                <tfoot>
+                                <tr>
 
-                            <tfoot>
-                            <tr>
+                                    <th class="first">Farmer BAT Account No.</th>
+                                    <th> Farmer Name</th>
+                                    <th>Farmer Zone</th>
+                                    <th>ALM Manger</th>
+                                    <th class="last"> Expected KG</th>
+                                </tr>
+                                </tfoot>
+                            </table>
 
-                                <th class="first">Farmer BAT Account No.</th>
-                                <th> Farmer Name</th>
-                                <th>Farmer Zone</th>
-                                <th>ALM Manger</th>
-                                <th class="last"> Expected KG</th>
-                            </tr>
-                            </tfoot>
-                        </table>
-
-                        <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+
+
+            <!-- /.content -->
         </div>
+
+
     </div>
+
+
 
     <div class="clearfix"></div>
 
@@ -86,7 +99,6 @@
             ],
 //            order: [[1, "asc"]],
             buttons: [
-                'reload',
                 {
                     extend: 'collection',
                     text: 'Export',

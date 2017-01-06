@@ -1,74 +1,53 @@
-<!-- Sidebar starts -->
-<div class="sidebar">
-    <!--- Sidebar navigation -->
-    <!-- If the main navigation has sub navigation, then add the class "has_sub" to "li" of main navigation. -->
-    <ul id="nav">
-        <li>
-            <a href="/dashboard"><i class="fa fa-home"></i>Dashboard</a>
-        </li>
-        <li>
-            <a href="/farmers"><i class="fa fa-th-list"></i>Farmers</a>
-        </li>
-        {{--	<li >
-                <a href="/farms"><i class="fa fa-th-list"></i>Farms</a>
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+        <ul class="sidebar-menu">
+            <li class="header">MAIN NAVIGATION</li>
+
+            <li><a href="/"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+            <li><a href="/farmers"><i class="fa fa-users"></i><span>Farmers</span></a></li>
+
+
+            <li class="treeview {!! Route::is('claims.confirmed') ||  Route::is('claims.reported') ?'active' :null !!}">
+                <a href="#">
+                    <i class="fa fa-folder"></i> <span>Loss Assessment</span>
+                    <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li{!! Route::is('claims.reported') ? 'class=current' :null !!}><a href="/reported/claims"><i
+                                    class="fa fa-star-half-empty"></i>Reported Claim</a></li>
+                    <li {!! Route::is('claims.confirmed') ? 'class=current' :null !!}><a href="/confirmed/claims"><i
+                                    class="fa fa-anchor"></i>Confirmed Claims</a></li>
+
+                </ul>
             </li>
-            <li >
-                <a href="/status"><i class="fa fa-h-square"></i>Status</a>
+            <li>
+                <a href="/loss/report"><i class="fa fa-calculator"></i><span>Reports</span></a>
             </li>
-            <li >
-                <a href="/loss"><i class="fa fa-anchor"></i>Loss</a>
-            </li>--}}
+            <li class="treeview {!! Route::is('watchtower.user.index') || Route::is('watchtower.user.create')|| Route::is('view_inspector_details') || Route::is('inspector.create') || Route::is('inspectors')  || Route::is('watchtower.user.edit')  ||
+            Route::is('watchtower.role.index') || Route::is('watchtower.partials.create') || Route::is('watchtower.user.update') || Route::is('watchtower.role.permission.edit')|| Route::is('watchtower.user.destroy')|| Route::is('watchtower.user.role.edit')|| Route::is('watchtower.user.show')|| Route::is('watchtower.user.edit') ||Route::is('watchtower.role.matrix') || Route::is('watchtower.partials.edit') ||   Route::is('watchtower.permission.index') ? 'active' :null !!} ">
+                <a href="#">
+                    <i class="fa fa-cogs"></i> <span>Administration</span>
+                    <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{url::route('inspectors')}}"><i class="fa fa-user-md"></i>Inspectors</a></li>
+                    <li><a href="{{url::route('watchtower.user.index')}}"><i class="fa fa-users"></i>Users</a></li>
+                    <li><a href="{{url::route('watchtower.role.index')}}"><i class="fa fa-dashcube"></i>Roles</a></li>
+                    <li><a href="{{url::route('watchtower.permission.index')}}"><i class="fa fa-key"></i>Permissions</a>
+                    </li>
 
-        <li class="has_sub {!! Route::is('claims.confirmed') ||  Route::is('claims.reported') ?'open' :null !!}">
-            <a href=""><i class="fa fa-thumb-tack"></i> Loss Assessment <span class="pull-right"> <i
-                            class="fa fa-chevron-right"></i></span></a>
-            <ul>
-                <li {!! Route::is('claims.reported') ? 'class=current' :null !!}><a href="/reported/claims"><i
-                                class="fa fa-anchor"></i>Reported Claims</a></li>
-                <li {!! Route::is('claims.confirmed') ? 'class=current' :null !!}><a href="/confirmed/claims"><i
-                                class="fa fa-anchor"></i>Confirmed Claims</a></li>
-            </ul>
-        </li>
-        <li>
-
-        </li>
-        <li>
-            <a href="/loss/report"><i class="fa fa-calculator"></i>Reports</a>
-        </li>
-        {{--<li >--}}
-        {{--<a href="/home"><i class="fa fa-anchor"></i>Home</a>--}}
-        {{--</li>--}}
-        {{--<li >--}}
-        {{--<a href="/loss/type"><i class="fa fa-anchor"></i>Type of Loss</a>--}}
-        {{--</li>--}}
-        <li class="has_sub {!! Route::is('watchtower.user.index') || Route::is('watchtower.user.create')|| Route::is('view_inspector_details') || Route::is('inspector.create') || Route::is('inspectors')  ? 'open' : null !!}  || Route::is('watchtower.user.edit')  ? 'open' : null !!} ||
-			{!! Route::is('watchtower.role.index') || Route::is('watchtower.partials.create') || Route::is('watchtower.partials.edit')  ? 'open' : null !!} ||
-			{!! Route::is('watchtower.permission.index') || Route::is('watchtower.partials.create') || Route::is('watchtower.partials.edit')  ? 'open' : null !!} ||
-			{!! Route::is('get.loss.types') ? 'open' :null !!} ">
-            <a href="#"><i class="fa fa-file-o"></i> Administration <span class="pull-right"><i
-                            class="fa fa-chevron-right"></i></span></a>
-            <ul>
-                <li {!! Route::is('inspectors') || Route::is('view_inspector_details')|| Route::is('inspector.create')   ? 'class="current"' : null !!}>
-                    <a href="{{url::route('inspectors')}}">Crop Inspectors</a></li>
-                <li {!! Route::is('watchtower.user.index') || Route::is('watchtower.user.create') || Route::is('watchtower.user.edit')  ? 'class="current"' : null !!} >
-                    <a href="{{url::route('watchtower.user.index')}}">Users</a></li>
-                <li {!! Route::is('watchtower.role.index') || Route::is('watchtower.partials.create') || Route::is('watchtower.partials.edit')  ? 'class="current"' : null !!}>
-                    <a href="{{url::route('watchtower.role.index')}}">Roles</a></li>
-                <li {!! Route::is('watchtower.permission.index') || Route::is('watchtower.partials.create') || Route::is('watchtower.partials.edit')  ? 'class="current"' : null !!}>
-                    <a href="{{url::route('watchtower.permission.index')}}">Permissions</a></li>
-                {{--<li {!! Route::is('get.loss.types') ?  'class="current"' :null !!} ><a href="{{url::route('get.loss.types') }}"></i>Type of Loss</a></li>--}}
+                </ul>
+            </li>
 
 
-            </ul>
-        </li>
-
-    </ul>
-
-    <div id="sidebar-copy-content">
-        <div class="copy-content">
-            <p class="rights">© 2016 UAP Old Mutual Africa</p>
-            <p class="partner">Powered by Netcen Group.</p>
-        </div>
-    </div>
-</div>
-<!-- Sidebar ends -->
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

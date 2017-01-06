@@ -1,76 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
-	<!-- Title and other stuffs -->
-	<title>Acre Africa Pricing Portal</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>UAP  | Portal </title>
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<!-- Bootstrap 3.3.6 -->
+	<link  href="{{URL::asset('/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!-- Ionicons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+	<!-- Theme style -->
+	<link rel="stylesheet" href="{{url::asset('css/AdminLTE.min.css')}}">
 
-	<!-- X-CSRF-TOKEN -->
-	<meta name="csrf-token" content="{{ csrf_token() }}">
+	<link rel="stylesheet" href="{{url::asset('')}}">
 
-	<!-- Stylesheets -->
-	<link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
-
-	<!-- Roboto Font -->
-	<link rel="stylesheet" href="{{ URL::asset('fonts/Roboto/roboto.css') }}">
-
-	<!-- Font awesome icon -->
-	<link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">
-
-	@unless ( ! Auth::check() )
-	<!-- jQuery UI -->
-	<link rel="stylesheet" href="{{ URL::asset('css/jquery-ui.css') }}">
-	<!-- Calendar -->
-	<link rel="stylesheet" href="{{ URL::asset('css/fullcalendar.css') }}">
-	<!-- prettyPhoto -->
-	<link rel="stylesheet" href="{{ URL::asset('css/prettyPhoto.css') }}">
-	<!-- Star rating -->
-	<link rel="stylesheet" href="{{ URL::asset('css/rateit.css') }}">
-	<!-- Date picker -->
-	<link rel="stylesheet" href="{{ URL::asset('css/bootstrap-datetimepicker.min.css') }}">
-	<!-- CLEditor -->
-	<link rel="stylesheet" href="{{ URL::asset('css/jquery.cleditor.css') }}">
-	<!-- Bootstrap toggle -->
-	<link rel="stylesheet" href="{{ URL::asset('css/jquery.onoff.css') }}">
-	<!-- Widgets stylesheet -->
-	<link href="{{ URL::asset('css/widgets.css') }}" rel="stylesheet">
-
-	<script src="{{ URL::asset('js/respond.min.js') }}"></script>
-
-	@endunless
-
-	<!-- Main stylesheet -->
-	<link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
-
+	<!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+	<link rel="stylesheet" href="{{url::asset('/css/skins/_all-skins.min.css')}}">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
-	<script src="{{ URL::asset('js/html5shiv.js') }}"></script>
+
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="{{ URL::asset('img/favicon/favicon.ico') }}">
-
 	@stack('styles')
-
 </head>
 
-<body>
+<!-- ./wrapper -->
 
-	@unless ( ! Auth::check() )
+<!-- jQuery 2.2.3 -->
+
+<script src="{{url::to('/js/jquery-2.2.3.min.js')}}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{{url::to('bootstrap/js/bootstrap.min.js')}}"></script>
+
+
+<body class="login-page">
+
+@unless ( ! Auth::check() )
 
 	@include('common.topnav')
 
-	<div id="content">@yield('content')</div>
+	<div id="content">
 
-	@endunless
+		@yield('content')</div>
 
-	@yield('login-content')
+@endunless
 
-	@include('common.footer')
+
+@yield('login-content')
+
+{{--@include('common.footer') --}}
 
 </body>
 </html>

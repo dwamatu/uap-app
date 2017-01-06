@@ -7,55 +7,59 @@
 
 @section('content')
 
-    <div class="mainbar content">
-        <div class="page-head">
-            <h2 class="pull-left">Confirmed Claims</h2>
+    <div class="wrapper">
 
-            <div class="bread-crumb pull-right">
-                <a href="{{ URL::route('dashboard') }}"><i class="fa fa-home"></i>Claim</a>
-                <span class="divider">/</span>
-                <a href="{{ URL::route('farmers') }}">Assessment</a>
-            </div>
 
-            <div class="clearfix"></div>
-        </div>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Reported
+                    <small>Claims panel</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Claim</a></li>
+                    <li class="active">Assessment</li>
+                </ol>
+            </section>
+            <section class="content">
+                <div>
+                    <div class="row tools-table">
 
-        <div class="matter">
-            <div class="container">
-                <div class="row tools-table">
+                    </div>
 
-                </div>
+                    <div class="row">
 
-                <div class="row">
-                    <div class="col-md-12">
                         <table id="confirmedClaims-grid" class="table table-striped table-bordered" cellspacing="0"
                                width="100%">
                             <thead>
                             <tr>
-                                <th>Farmer BAT Code</th>
+                                {{--<th>Farmer BAT Code</th>--}}
                                 <th>Farmer Name</th>
-                                <th>Farmer Zone</th>
-                                <th>Crop Inspector</th>
+                                <th>Zone</th>
+                                <th>Inspector</th>
                                 <th>Cause Of Loss</th>
                                 <th>Latitude</th>
                                 <th>Longitude</th>
-                                <th>Percentage Loss</th>
+                                <th>% Loss</th>
                                 <th>Inspection Date</th>
                                 <th>Action</th>
                                 <th>Status</th>
+
                             </tr>
                             </thead>
 
                             <tfoot>
                             <tr>
-                                <th>Farmer BAT Code</th>
+                                {{--<th>Farmer BAT Code</th>--}}
                                 <th>Farmer Name</th>
-                                <th>Farmer Zone</th>
-                                <th>Crop Inspector</th>
+                                <th>Zone</th>
+                                <th>Inspector</th>
                                 <th>Cause Of Loss</th>
                                 <th>Latitude</th>
                                 <th>Longitude</th>
-                                <th>Percentage Loss</th>
+                                <th>% Loss</th>
                                 <th>Inspection Date</th>
                                 <th>Action</th>
                                 <th>Status</th>
@@ -66,8 +70,13 @@
                         <div class="clearfix"></div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+
+            <!-- /.content -->
         </div>
+
+
     </div>
 
     <div class="clearfix"></div>
@@ -93,7 +102,7 @@
             ajax: '{!! route("fetch.confirmed.claims") !!}',
             "columns": [
 
-                {data: 'bat_acc_no'},
+//                {data: 'bat_acc_no'},
                 {data: 'farmer_name'},
                 {data: 'farmer_zone'},
                 {data: 'crop_inspector_name'},
@@ -105,7 +114,7 @@
                 {data: 'loss_assessment_id'},
                 {data: 'confirmed'}
             ],
-            order: [[1, "asc"]],
+            order: [[9, "desc"]],
             buttons: [
                 {
                     extend: 'collection',
@@ -142,31 +151,45 @@
             "columnDefs": [{
                 render: function (data, type, row) {
 
-                    return "<a  target='_blank' class='btn btn-success btn-block' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>"
+                    return "<p>"+toTitleCase(row.farmer_name)+"</p>"
+
+                },
+                "targets": 0
+            },{
+                render: function (data, type, row) {
+
+                    return "<p>"+toTitleCase(row.farmer_zone)+"</p>"
+
+                },
+                "targets": 1
+            },{
+                render: function (data, type, row) {
+
+                    return "<a  target='_blank' class='btn btn-success btn-sm' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>"
 
 
                 },
-                "targets": 9
+                "targets": 8
             }, {
                 render: function (data, type, row) {
                     data = row.inspection_date;
                     return (moment(data).format('LL'));
                 },
-                "targets": 8
+                "targets": 7
             }
                 ,
                 {
                     render: function (data, type, row) {
                         data = row.confirmed;
                         if (data != true) {
-                            return "<a  class='btn btn-info btn-block' href='/confirm/loss/assessment/" + row.uuid + "'>Confirm LAS</a>";
+                            return "<a  class='btn btn-info btn-sm ' href='/confirm/loss/assessment/" + row.uuid + "'>Confirm LAS</a>";
 
                         }
                         else {
                             return "<p class='btn btn-link'> Confirmed </p>"
                         }
                     },
-                    "targets": 10
+                    "targets": 9
                 }]
         });
 
