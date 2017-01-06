@@ -9,22 +9,20 @@
             <li><a href="/"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
             <li><a href="/farmers"><i class="fa fa-users"></i><span>Farmers</span></a></li>
 
-
-            <li class="treeview {!! Route::is('claims.confirmed') ||  Route::is('claims.reported') ?'active' :null !!}">
+            <li class="treeview {!! Route::is('claims.confirmed') ||  Route::is('claims.reported') ? 'active' :null !!}">
                 <a href="#">
-                    <i class="fa fa-folder"></i> <span>Loss Assessment</span>
+                    <i class="fa fa-folder"></i> <span>Loss Claims</span>
                     <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li{!! Route::is('claims.reported') ? 'class=current' :null !!}><a href="/reported/claims"><i
-                                    class="fa fa-star-half-empty"></i>Reported Claim</a></li>
-                    <li {!! Route::is('claims.confirmed') ? 'class=current' :null !!}><a href="/confirmed/claims"><i
-                                    class="fa fa-anchor"></i>Confirmed Claims</a></li>
+                    <li ><a href="/reported/claims"><i class="fa fa-star-half-empty"></i>Reported Claims</a></li>
+                    <li><a href="/confirmed/claims"><i class="fa fa-anchor"></i>Confirmed Claims</a></li>
 
                 </ul>
             </li>
+
             <li>
                 <a href="/loss/report"><i class="fa fa-calculator"></i><span>Reports</span></a>
             </li>
@@ -45,6 +43,7 @@
 
                 </ul>
             </li>
+           
 
 
         </ul>
