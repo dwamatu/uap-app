@@ -11,8 +11,8 @@
                 <p>Are you sure you want to confirm this Claim</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" id="confirmation_event" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" id="confirmation_event" class="btn btn-primary">Confirm Claim</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
