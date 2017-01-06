@@ -8,6 +8,7 @@
 @endpush
 
 @section('content')
+
     <div class="wrapper">
 
 
@@ -84,7 +85,7 @@
 
 
     <div class="clearfix"></div>
-
+@include('loss.reported.confirm')
 @endsection
 
 @push('scripts')
@@ -95,6 +96,7 @@
 <script src="https://cdn.datatables.net/buttons/1.1.0/js/buttons.print.min.js"></script>
 
 <script src="{{ URL::asset('js/utilities.js') }}"></script>
+
 <script src="{{ URL::asset('js/moment.min.js') }}"></script>
 <script>
     $(document).ready(function () {
@@ -188,7 +190,7 @@
                     render: function (data, type, row) {
                         data = row.confirmed;
                         if (data != true) {
-                            return "<a  class='btn btn-sm' id='confirm-loss-claims' href='/confirm/loss/assessment/" + row.uuid + "'>Confirm LAS</a>";
+                            return "<a data-toggle='modal' type='button' class='btn btn-sm btn-info' id='confirmlossclaims' data-target='#confirmloss' href='#' data-uuid='"+row.uuid+"'>Confirm LAS</a>";
 
                         }
                         else {
@@ -203,4 +205,5 @@
         $('.dataTables_filter input[type="search"]').attr('placeholder', 'Search by name...');
     });
 </script>
+<script src="{{ URL::asset('js/confirmloss.js') }}"></script>
 @endpush
