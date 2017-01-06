@@ -266,8 +266,8 @@ class LossCalculationController extends Controller
 
         $the_imgs = '<table class="ze-head border=1 cellspacing=0 cellpadding="5" align="center">
                     <tr>
-                    <td><img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['crop_image1'] . '" width="350px" height="400px"></td>
-                    <td><img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['crop_image2'] . '" width="350px" height="400px"></td>
+                    <td><img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['crop_image1'] . '" width="350px" height="350px"></td>
+                    <td><img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['crop_image2'] . '" width="350px" height="350px"></td>
                     </tr>
                     <tr>
                     <td> <p style="text-align: center">Farm Photo A</p></td>
@@ -275,7 +275,7 @@ class LossCalculationController extends Controller
                     </tr>                 
                     <tr>                  
                      <td style="align-content: center"> 
-                     <img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['farm_image'] . '"  width="350px" height="400px"></td>
+                     <img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['farm_image'] . '"  width="350px" height="350px"></td>
                      
                     </tr>
                     <tr>
