@@ -3,6 +3,8 @@
 @push('styles')
 <link href="{{ URL::asset('css/datatables.min.css') }}" rel="stylesheet">
 <link href="{{ URL::asset('css/custom-datatables.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css">
 @endpush
 
 @section('content')
@@ -97,6 +99,8 @@
 <script>
     $(document).ready(function () {
         var dataTable = $('#reportedClaims-grid').DataTable({
+
+
             dom: "<'row table-controls'<'col-sm-4 col-md-3 page-length'l><'col-sm-4 col-md-5 search'f><'col-sm-4 col-md-2 col-md-offset-2 pull-right'B>><'row'<'col-md-12'rt>><'row space-up-10'<'col-md-6'i><'col-md-6'p>>",
             processing: true,
             serverSide: false,

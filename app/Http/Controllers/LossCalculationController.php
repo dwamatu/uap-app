@@ -135,28 +135,13 @@ class LossCalculationController extends Controller
                                 .my_footer{
                    page-break-after: always;
                     padding-bottom: 200px;
+                    
 
                 }
+           
                                        
 
-                            div.images {
-                                   z-index: -5000;
-                                width: 45%;                           
-                                float: left;
-                                margin: 5px;
-                                padding: 10px;
-                            }
-                             
-                        
-                            img {
-                                display: block;
-                                margin: auto;
-                            }
-                        
-                            p {
-                                text-align: center;
-                            }
-
+                    
                     </style>
                     ';
         $the_title = '<center><h2>LOSS ASSESSMENT REPORT</h2></center>';
@@ -279,23 +264,31 @@ class LossCalculationController extends Controller
                         </div>';
 
 
-        $the_imgs = '<div class="images">
-                        <img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['crop_image1'] . '"  width="500px" height="400px">
-                       <p>Farm Photo A</p>
-                    </div>
-                    <div  class="images">
-                        <img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['crop_image2'] . '"  width="500px" height="400px">
-                        <p>Farm Photo B</p>
-                    </div>';
-        $the_img = '<div  class="images">
-                        <img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['farm_image'] . '" width="500px" height="400px">
-                        
-                        <p>Loss Assessment Form</p>
-                    </div>';
+        $the_imgs = '<table class="ze-head border=1 cellspacing=0 cellpadding="5" align="center">
+                    <tr>
+                    <td><img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['crop_image1'] . '" width="350px" height="auto"></td>
+                    <td><img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['crop_image2'] . '" width="350px" height="auto"></td>
+                    </tr>
+                    <tr>
+                    <td> <p style="text-align: center">Farm Photo A</p></td>
+                    <td><p style="text-align: center">Farm Photo B</p></td>
+                    </tr>                 
+                    <tr>                  
+                     <td style="align-content: center"> 
+                     <img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['farm_image'] . '"  width="350px" height="auto"></td>
+                     
+                    </tr>
+                    <tr>
+                    <td><p style="text-align: center">Loss Assessment Form</p></td>
+                    </tr>
+                    
+                    
+                    </table>';
+
 
         $the_footer = '<table class="my_footer"><tr><td></td></tr></table>';
-        $the_html = $the_style . '<div class="bordered">' . $the_title . $the_header . $the_firsttable . $the_secondtable . $the_comments .$the_footer.'<div class="row"  style="padding-top:350px;"></div>' . $the_imgs  . $the_img . '</div> </div>';
-        die($the_html);
+        $the_html = $the_style . '<div class="bordered">' . $the_title . $the_header . $the_firsttable . $the_secondtable . $the_comments . $the_footer . '<div class="row"  style="padding-top:350px;"></div>' . $the_imgs . '</div> </div>';
+//        die($the_html);
         return $the_html;
 
 
