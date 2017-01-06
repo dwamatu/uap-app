@@ -276,10 +276,10 @@ class LossCalculationController extends Controller
                     <tr>                  
                      <td style="align-content: center"> 
                      <img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['farm_image'] . '"  width="350px" height="350px"></td>
-                     
+                     <td><p style="text-align: center">Loss Assessment Form</p></td>
                     </tr>
                     <tr>
-                    <td><p style="text-align: center">Loss Assessment Form</p></td>
+                   
                     </tr>
                     
                     
