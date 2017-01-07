@@ -185,7 +185,7 @@ class LossCalculationController extends Controller
                         </tr>
                         <tr>
                             <th width="250px">Cause of loss:</th><td>' . $pageData['cause_of_loss'] . '</td>
-                            <th width="250px">Inspection Number:</th><td>' . $pageData['inspection_number'] . '</td>
+                            <th width="250px">Inspection Number:</th><td>' . $pageData['inspection_number'] . '1</td>
                         </tr>
                         <tr>
                             <th>Size of Land:</th><td>' . $pageData['size_of_land'] . ' Hectares</td>
