@@ -192,7 +192,7 @@
                         {data: 'inspection_date'},
                         {data: 'loss_assessment_id'}
                     ],
-                    order: [[1, "asc"]],
+                    order: [[7, "desc"]],
                     buttons: [
                         'reload',
                         {
@@ -234,8 +234,8 @@
                         "targets": 8
                     }, {
                         render: function (data, type, row) {
-                            data = row.inspection_date
-                            return (moment(data).format('LL'));
+                            data = row.inspection_date;
+                            return (moment(data).format('LLLL'));
                         },
                         "targets": 7
                     }]

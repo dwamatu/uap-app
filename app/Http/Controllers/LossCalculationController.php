@@ -132,12 +132,7 @@ class LossCalculationController extends Controller
                                     min-width: 2em;
                             min-height: 2em;
                                 }
-                                .my_footer{
-                   page-break-after: always;
-                    padding-bottom: 200px;
-                    
-
-                }
+                              
            
                                        
 
@@ -153,14 +148,14 @@ class LossCalculationController extends Controller
 <tr>
     <td><b>Farmers Name</b></td>
     <td colspan="1">' . $pageData['farmer_name'] . '</td>
-    <td><b>ID no</b></td>
+    <td><b>ID Number</b></td>
     <td>' . $pageData['id_no'] . '</td>
 
 </tr>
 <tr>
     <td><b>Farmers Zone</b></td>
     <td colspan="1">' . $pageData['farmer_zone'] . '</td>
-    <td><b>A/C no</b></td>
+    <td><b>Account Number</b></td>
     <td>' . $pageData['bat_acc_no'] . '</td>
 
 </tr>
@@ -184,12 +179,12 @@ class LossCalculationController extends Controller
                             <th colspan="4">B. INSPECTION DETAILS</th>
                         </tr>
                         <tr>
-                            <th width="250px">Cause of loss:</th><td>' . $pageData['cause_of_loss'] . '</td>
-                            <th width="250px">Inspection Number:</th><td>' . $pageData['inspection_number'] . '1</td>
+                            <th width="200px">Cause of loss:</th><td>' . $pageData['cause_of_loss'] . '</td>
+                            <th width="200px">Inspection Number:</th><td>' . $pageData['inspection_number'] . '1</td>
                         </tr>
                         <tr>
                             <th>Size of Land:</th><td>' . $pageData['size_of_land'] . ' Hectares</td>
-                            <th>Inspection Date:</th><td>' . date('d-M-Y', strtotime($pageData['inspection_date'])) . '</td>
+                            <th>Inspection Date:</th><td>' . date('d-M-Y , g:i a', strtotime($pageData['inspection_date'])) . '</td>
                         </tr>
                       
                     </table>';
@@ -238,7 +233,7 @@ class LossCalculationController extends Controller
                              <th style=" text-indent: 30px;">Established no. of plants <b>(f)</b></th><td style=" text-indent: 80px;"  colspan="3">' . $pageData['average_no_of_plants_on_land'] . '</td>
                         </tr>
                         <tr>
-                            <th>Percentage Loss (%)</th><td style=" text-indent: 80px;" colspan="3">' . $pageData['percentage_loss'] . ' %</td>
+                            <th>Percentage Loss (%)</th><td style=" text-indent: 80px;" colspan="3">' . number_format((float)$pageData['percentage_loss'] , 2, '.', '').' %</td>
                         
                         </tr>
                         <tr>
@@ -287,7 +282,7 @@ class LossCalculationController extends Controller
 
 
         $the_footer = '<table class="my_footer"><tr><td></td></tr></table>';
-        $the_html = $the_style . '<div class="bordered">' . $the_title . $the_header . $the_firsttable . $the_secondtable . $the_comments . $the_footer . '<div class="row"  style="padding-top:350px;"></div>' . $the_imgs . '</div> </div>';
+        $the_html = $the_style . '<div class="bordered">' . $the_title . $the_header . $the_firsttable . $the_secondtable . $the_comments . $the_footer . $the_imgs . '</div>';
 //        die($the_html);
         return $the_html;
 
