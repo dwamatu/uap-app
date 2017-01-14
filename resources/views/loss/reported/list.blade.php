@@ -2,6 +2,7 @@
 
 @push('styles')
 <link href="{{ URL::asset('css/datatables.min.css') }}" rel="stylesheet">
+<link href="{{ URL::asset('css/animate.css') }}" rel="stylesheet">
 <link href="{{ URL::asset('css/custom-datatables.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css">
@@ -96,6 +97,8 @@
 <script src="https://cdn.datatables.net/buttons/1.1.0/js/buttons.print.min.js"></script>
 
 <script src="{{ URL::asset('js/utilities.js') }}"></script>
+<script src="{{ URL::asset('js/jquery.noty.packaged.js') }}"></script>
+<script src="{{ URL::asset('js/confirmloss.js') }}"></script>
 
 <script src="{{ URL::asset('js/moment.min.js') }}"></script>
 <script>
@@ -205,5 +208,6 @@
         $('.dataTables_filter input[type="search"]').attr('placeholder', 'Search by name...');
     });
 </script>
-<script src="{{ URL::asset('js/confirmloss.js') }}"></script>
+
+
 @endpush

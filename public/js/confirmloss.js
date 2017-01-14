@@ -8,15 +8,16 @@ $('#confirmloss').on('show.bs.modal', function (e) {
 
     //get data-id attribute of the clicked element
     var uuid = $(e.relatedTarget).data('uuid');
+
+    //get data-farmername attribute of the clicked element
     var farmername = $(e.relatedTarget).data('farmername');
 
+    //passes the farmer name to the p tag on the modal
     $('#farmername').text(farmername);
 
-
-
+    //Confirms a Loss Claims
     $('#confirmation_event').on('click', function (e) {
         e.preventDefault();
-
 
 
         var url = '/confirm/loss/assessment/' + uuid;
@@ -25,15 +26,34 @@ $('#confirmloss').on('show.bs.modal', function (e) {
             url: url,
             success: function (data) {
                 $('#confirmloss').modal('hide');
-            location.reload();
+
 
             }
 
         });
 
+        //Creates a notification  to confirm a loss
+
+        var n = noty({
+            text: ' Loss Assessment Successfully Updated!',
+            type: "success",
+            dismissQueue: true,
+            layout: 'topLeft',
+            closeWith: ['click'],
+            theme: 'relax',
+            maxVisible: 10,
+            timeout: '1500',
+            animation: {
+                open: 'animated bounceInLeft',
+                close: 'animated bounceOutRight',
+                easing: 'swing',
+                speed: 500
+            }
+        });
+
+        location.reload();
+
     })
 
 });
 
-// //populate the textbox
-// $(e.currentTarget).find('input[name="bookId"]').val(bookId); });
