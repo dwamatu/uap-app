@@ -114,7 +114,7 @@
                 {data: 'loss_assessment_id'},
                 {data: 'confirmed'}
             ],
-            order: [[9, "desc"]],
+            order: [[7, "desc"]],
             buttons: [
                 {
                     extend: 'collection',
@@ -173,7 +173,7 @@
             }, {
                 render: function (data, type, row) {
                     data = row.inspection_date;
-                    return (moment(data).format('LL'));
+                    return (moment(data).format('LLLL'));
                 },
                 "targets": 7
             }

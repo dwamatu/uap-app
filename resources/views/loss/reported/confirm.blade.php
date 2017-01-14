@@ -8,11 +8,11 @@
                 <h4 class="modal-title">Claim Confirmation</h4>
             </div>
             <div class="modal-body">
-                <p>Are you sure you want to confirm this Claim</p>
+                <p class="center">Are you sure you want to confirm this Claim for </p> <p class="center" id="farmername">Farmer</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" id="confirmation_event" class="btn btn-danger">Confirm Claim</button>
+                <button type="button" id="confirmation_event" class="btn btn-success">Confirm Claim</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

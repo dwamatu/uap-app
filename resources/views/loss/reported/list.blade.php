@@ -182,7 +182,7 @@
             }, {
                 render: function (data, type, row) {
                     data = row.inspection_date;
-                    return (moment(data).format('LL'));
+                    return (moment(data).format('LLLL'));
                 },
                 "targets": 7
             },
@@ -190,7 +190,7 @@
                     render: function (data, type, row) {
                         data = row.confirmed;
                         if (data != true) {
-                            return "<a data-toggle='modal' type='button' class='btn btn-sm btn-info' id='confirmlossclaims' data-target='#confirmloss' href='#' data-uuid='"+row.uuid+"'>Confirm LAS</a>";
+                            return "<a data-toggle='modal' type='button' class='btn btn-sm btn-info' id='confirmlossclaims' data-target='#confirmloss' href='#' data-farmername='"+row.farmer_name+"' data-uuid='"+row.uuid+"'>Confirm LAS</a>";
 
                         }
                         else {

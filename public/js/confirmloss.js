@@ -8,9 +8,17 @@ $('#confirmloss').on('show.bs.modal', function (e) {
 
     //get data-id attribute of the clicked element
     var uuid = $(e.relatedTarget).data('uuid');
+    var farmername = $(e.relatedTarget).data('farmername');
+
+    $('#farmername').text(farmername);
+
+
 
     $('#confirmation_event').on('click', function (e) {
         e.preventDefault();
+
+
+
         var url = '/confirm/loss/assessment/' + uuid;
         $.ajax({
             method: 'GET',
