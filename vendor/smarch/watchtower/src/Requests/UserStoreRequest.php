@@ -44,7 +44,7 @@ class UserStoreRequest extends Request
             'firstname' => 'required|max:40',
             'secondname' => 'required|max:40',
             'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed|min:6|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/',
+            'password' => 'required|confirmed|min:10|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/',
             'password_updated_at' => 'required',
        ], config('watchtower.user.rules.store') );
 

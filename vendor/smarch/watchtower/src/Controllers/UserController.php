@@ -142,6 +142,7 @@ class UserController extends Controller
 	 */
 	public function update($id, UserUpdateRequest $request)
 	{
+
 		$level = "danger";
 		$message = " You are not permitted to update users.";
 
