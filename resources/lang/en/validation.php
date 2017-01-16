@@ -60,7 +60,12 @@ return [
     'not_in'               => 'The selected :attribute is invalid.',
     'numeric'              => 'The :attribute must be a number.',
     'present'              => 'The :attribute field must be present.',
-    'regex'                => 'The :attribute format is invalid.',
+    'regex'                => ' Notes on Passwords
+                                1:  Must have One or more UPPERCASE letters, “A, B, C to Z”
+                                2:  Must have One or more lowercase letters, “a, b, c to z”
+                                3:  Must have One or more numerals, “0,1,2,3,4,5,6,7,8,9”
+                                4:  Must have One or more symbols or special characters, e.g. “! @ % + - _“
+                                5:  Administrative account passwords must be at least 10 characters long.',
     'required'             => 'The :attribute field is required.',
     'required_if'          => 'The :attribute field is required when :other is :value.',
     'required_unless'      => 'The :attribute field is required unless :other is in :values.',
