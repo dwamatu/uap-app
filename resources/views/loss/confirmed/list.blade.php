@@ -113,7 +113,7 @@
                 {data: 'loss_assessment_id'},
 
             ],
-            order: [[7, "desc"]],
+            order: [[6, "desc"]],
             buttons: [
                 {
                     extend: 'collection',
