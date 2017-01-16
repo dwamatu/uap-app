@@ -33,7 +33,7 @@
                     </div>
 
                     <div class="row">
-
+                        <div class="col-md-12">
                         <table id="reportedClaims-grid" class="table table-striped table-bordered" cellspacing="0"
                                width="100%">
                             <thead>
@@ -43,12 +43,10 @@
                                 <th>Zone</th>
                                 <th>Inspector</th>
                                 <th>Cause Of Loss</th>
-                                <th>Latitude</th>
-                                <th>Longitude</th>
+                                <th>Lat/Lng</th>
                                 <th>% Loss</th>
                                 <th>Inspection Date</th>
                                 <th>Action</th>
-                                <th>Status</th>
 
                             </tr>
                             </thead>
@@ -60,15 +58,15 @@
                                 <th>Zone</th>
                                 <th>Inspector</th>
                                 <th>Cause Of Loss</th>
-                                <th>Latitude</th>
-                                <th>Longitude</th>
+                                <th>Lat/Lng</th>
                                 <th>% Loss</th>
                                 <th>Inspection Date</th>
                                 <th>Action</th>
-                                <th>Status</th>
+
                             </tr>
                             </tfoot>
                         </table>
+                        </div>
 
                         <div class="clearfix"></div>
                     </div>
@@ -119,11 +117,10 @@
                 {data: 'crop_inspector_name'},
                 {data: 'cause_of_loss'},
                 {data: 'latitude'},
-                {data: 'longitude'},
                 {data: 'percentage_loss'},
                 {data: 'inspection_date'},
-                {data: 'loss_assessment_id'},
-                {data: 'uuid'}
+                {data: 'loss_assessment_id'}
+
             ],
             order: [[7, "desc"]],
             buttons: [
@@ -175,33 +172,36 @@
 
                     },
                     "targets": 1
-                },{
-                render: function (data, type, row) {
-
-                    return "<a  target='_blank' class='btn btn-success btn-sm'  href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>"
-
-                },
-                "targets": 8
-            }, {
-                render: function (data, type, row) {
-                    data = row.inspection_date;
-                    return (moment(data).format('LLLL'));
-                },
-                "targets": 7
-            },
-                {
+                }
+                , {
                     render: function (data, type, row) {
-                        data = row.confirmed;
-                        if (data != true) {
-                            return "<a data-toggle='modal' type='button' class='btn btn-sm btn-info' id='confirmlossclaims' data-target='#confirmloss' href='#' data-farmername='"+row.farmer_name+"' data-uuid='"+row.uuid+"'>Confirm LAS</a>";
 
-                        }
-                        else {
-                            return "<p class='btn btn-link btn-sm'> Confirmed </p>"
-                        }
+                        return "<p>"+ Number(row.latitude).toFixed(4) + " / " + Number(row.longitude).toFixed(4)+ "</p>"
+
                     },
-                    "targets": 9
-                }]
+                    "targets": 4
+                }
+                , {
+                    render: function (data, type, row) {
+                        data = row.inspection_date;
+                        return (moment(data).format('lll'));
+                    },
+                    "targets": 6
+                }
+                , {
+                    render: function (data, type, row) {
+                        data=row.confirmed;
+                        return "<div class='dropdown' >" +
+                            "<button class='btn btn-default btn-block dropdown-toggle' type='button' id='dropDownMenu' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>ACTION <span class='caret'></span></button> " +
+                            "<ul class='dropdown-menu' aria-labelledby='dropDownMenu'>" +
+                            "<li><a  target='_blank'   href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>" +
+                            "<li><a data-toggle='modal'  id='confirmlossclaims' data-target='#confirmloss' href='#' data-farmername='"+row.farmer_name+"' data-uuid='"+row.uuid+"'>Confirm LAS</a>" +
+                            "</ul> </div> "  ;
+
+                    },
+                    "targets": 7
+                }
+                ]
         });
 
         // Add placeholder to search box

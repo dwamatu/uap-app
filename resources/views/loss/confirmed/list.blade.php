@@ -15,7 +15,7 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Reported
+                    Confirmed
                     <small>Claims panel</small>
                 </h1>
                 <ol class="breadcrumb">
@@ -31,41 +31,41 @@
 
                     <div class="row">
 
-                        <table id="confirmedClaims-grid" class="table table-striped table-bordered" cellspacing="0"
-                               width="100%">
-                            <thead>
-                            <tr>
-                                {{--<th>Farmer BAT Code</th>--}}
-                                <th>Farmer Name</th>
-                                <th>Zone</th>
-                                <th>Inspector</th>
-                                <th>Cause Of Loss</th>
-                                <th>Latitude</th>
-                                <th>Longitude</th>
-                                <th>% Loss</th>
-                                <th>Inspection Date</th>
-                                <th>Action</th>
-                                <th>Status</th>
+                        <div class="col-md-12">
+                            <table id="confirmedClaims-grid" class="table table-striped table-bordered" cellspacing="0"
+                                   width="100%">
+                                <thead>
+                                <tr>
+                                    {{--<th>Farmer BAT Code</th>--}}
+                                    <th>Farmer Name</th>
+                                    <th>Zone</th>
+                                    <th>Inspector</th>
+                                    <th>Cause Of Loss</th>
+                                    <th>Lat/Lng</th>
+                                    <th>% Loss</th>
+                                    <th>Inspection Date</th>
+                                    <th>Action</th>
 
-                            </tr>
-                            </thead>
 
-                            <tfoot>
-                            <tr>
-                                {{--<th>Farmer BAT Code</th>--}}
-                                <th>Farmer Name</th>
-                                <th>Zone</th>
-                                <th>Inspector</th>
-                                <th>Cause Of Loss</th>
-                                <th>Latitude</th>
-                                <th>Longitude</th>
-                                <th>% Loss</th>
-                                <th>Inspection Date</th>
-                                <th>Action</th>
-                                <th>Status</th>
-                            </tr>
-                            </tfoot>
-                        </table>
+                                </tr>
+                                </thead>
+
+                                <tfoot>
+                                <tr>
+                                    {{--<th>Farmer BAT Code</th>--}}
+                                    <th>Farmer Name</th>
+                                    <th>Zone</th>
+                                    <th>Inspector</th>
+                                    <th>Cause Of Loss</th>
+                                    <th>Lat/Lng</th>
+                                    <th>% Loss</th>
+                                    <th>Inspection Date</th>
+                                    <th>Action</th>
+
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
 
                         <div class="clearfix"></div>
                     </div>
@@ -108,11 +108,10 @@
                 {data: 'crop_inspector_name'},
                 {data: 'cause_of_loss'},
                 {data: 'latitude'},
-                {data: 'longitude'},
                 {data: 'percentage_loss'},
                 {data: 'inspection_date'},
                 {data: 'loss_assessment_id'},
-                {data: 'confirmed'}
+
             ],
             order: [[7, "desc"]],
             buttons: [
@@ -147,50 +146,49 @@
                             }
                         }
                     ]
-                }],
+                }]
+            ,
             "columnDefs": [{
                 render: function (data, type, row) {
 
-                    return "<p>"+toTitleCase(row.farmer_name)+"</p>"
+                    return "<p>" + toTitleCase(row.farmer_name) + "</p>"
 
                 },
                 "targets": 0
-            },{
+            }, {
                 render: function (data, type, row) {
 
-                    return "<p>"+toTitleCase(row.farmer_zone)+"</p>"
+                    return "<p>" + toTitleCase(row.farmer_zone) + "</p>"
 
                 },
                 "targets": 1
-            },{
+            }
+            ,
+                {
+                render: function (data, type, row) {
+
+                    return "<p>"+ Number(row.latitude).toFixed(4) + " / " + Number(row.longitude).toFixed(4)+ "</p>"
+
+                },
+                "targets": 4
+            },
+                {
+                    render: function (data, type, row) {
+                        data = row.inspection_date;
+                        return (moment(data).format('lll'));
+                    },
+                    "targets": 6
+                },
+                {
                 render: function (data, type, row) {
 
                     return "<a  target='_blank' class='btn btn-success btn-sm' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>"
 
 
                 },
-                "targets": 8
-            }, {
-                render: function (data, type, row) {
-                    data = row.inspection_date;
-                    return (moment(data).format('LLLL'));
-                },
                 "targets": 7
             }
-                ,
-                {
-                    render: function (data, type, row) {
-                        data = row.confirmed;
-                        if (data != true) {
-                            return "<a  class='btn btn-info btn-sm ' href='/confirm/loss/assessment/" + row.uuid + "'>Confirm LAS</a>";
-
-                        }
-                        else {
-                            return "<p class='btn btn-link'> Confirmed </p>"
-                        }
-                    },
-                    "targets": 9
-                }]
+               ]
         });
 
         // Add placeholder to search box
