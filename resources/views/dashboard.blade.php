@@ -16,7 +16,7 @@
                     <li class="active">Dashboard</li>
                 </ol>
             </section>
-
+            @can('can.view.dashboard')
             <section class="content">
                 <div class="row">
                     <div class="col-lg-3 col-xs-6">
@@ -106,6 +106,7 @@
                     <!-- right col -->
                 </div>
             </section>
+            @endcan
         </div>
         <!-- /.content-wrapper -->
 

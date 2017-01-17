@@ -1,4 +1,3 @@
-
 @extends('common.master')
 
 @push('styles')
@@ -25,11 +24,12 @@
                 </ol>
             </section>
             <section class="content">
-                <div >
+                <div>
                     <div class="row tools-table">
                         <div class="col-xs-6 col-md-6">
-                            <a class="btn btn-link no-left-padding" href="/inspectors"><i class="fa fa-angle-left"></i> Back
-                                to  Inspectors List</a>
+                            <a class="btn btn-link no-left-padding" href="/inspectors"><i class="fa fa-angle-left"></i>
+                                Back
+                                to Inspectors List</a>
                         </div>
 
                     </div>
@@ -55,22 +55,25 @@
                                         <form role="form" method="POST" action="/inspector/individual/details/update">
                                             {!! csrf_field() !!}
 
-                                            <input name="id" type="hidden" value="{!! $pageData['individualDetails']['id'] !!}">
+                                            <input name="id" type="hidden"
+                                                   value="{!! $pageData['individualDetails']['id'] !!}">
 
 
                                             <div class="row tabs tools">
                                                 <div class="col-md-12">
-                                                    @if (session()->has('individualEditFlag'))
+                                                    @can('can.update.inspectors')
+                                                        @if (session()->has('individualEditFlag'))
 
-                                                        <a id="cancel" class="btn btn-link no-left-padding"
-                                                           href="/inspector/individual/edit/cancel/{!! $pageData['individualDetails']['id'] !!}">Cancel</a>
+                                                            <a id="cancel" class="btn btn-link no-left-padding"
+                                                               href="/inspector/individual/edit/cancel/{!! $pageData['individualDetails']['id'] !!}">Cancel</a>
 
-                                                    @else
+                                                        @else
 
-                                                        <a id="edit-details" class="btn btn-default"
-                                                           href="/inspector/individual/edit/{!! $pageData['individualDetails']['id'] !!}">Edit</a>
+                                                            <a id="edit-details" class="btn btn-default"
+                                                               href="/inspector/individual/edit/{!! $pageData['individualDetails']['id'] !!}">Edit</a>
 
-                                                    @endif
+                                                        @endif
+                                                    @endcan
                                                 </div>
                                             </div>
 
@@ -179,7 +182,8 @@
                                                                class="form-control" id="password"
                                                         >
                                                     @else
-                                                        <p class="form-control-static"> <span class='text-missing'>Password Hidden</span></p>
+                                                        <p class="form-control-static"><span class='text-missing'>Password Hidden</span>
+                                                        </p>
 
                                                     @endif
 
@@ -192,14 +196,16 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-sm-4 form-control-label text-right">Confirm Password</label>
+                                                <label class="col-sm-4 form-control-label text-right">Confirm
+                                                    Password</label>
 
                                                 <div class="col-sm-6">
                                                     @if (session()->has('individualEditFlag'))
                                                         <input name="confirm_password" type="password"
                                                                class="form-control" id="confirm_password">
                                                     @else
-                                                        <p class="form-control-static"> <span class='text-missing'>Password Hidden</span></p>                                                @endif
+                                                        <p class="form-control-static"><span class='text-missing'>Password Hidden</span>
+                                                        </p>                                                @endif
 
                                                     @if ($errors->has('confirm_password'))
                                                         <span class="help-block">
@@ -214,9 +220,11 @@
 
                                                 <div class="form-group row push-up-20">
                                                     <div class="col-sm-6 col-sm-offset-4">
+                                                        @can('can.update.inspectors')
                                                         <button id="update-details" type="submit"
                                                                 class="btn btn-primary btn-lg">Update Inspector
                                                         </button>
+                                                         @endcan
                                                     </div>
                                                 </div>
 
@@ -250,7 +258,6 @@
         <!-- /.content-wrapper -->
 
 
-
     </div>
 
     <div class="clearfix"></div>
@@ -263,7 +270,6 @@
 
 <script src="{{ URL::asset('js/bootstrap-select.min.js') }}"></script>
 <script src="{{ URL::asset('js/roles_field.js') }}"></script>
-
 
 
 @endpush

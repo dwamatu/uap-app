@@ -28,7 +28,7 @@
                     <div class="row tools-table">
 
                     </div>
-
+                    @can('can.view.confirmed')
                     <div class="row">
 
                         <div class="col-md-12">
@@ -69,6 +69,7 @@
 
                         <div class="clearfix"></div>
                     </div>
+                    @endcan
                 </div>
             </section>
 
@@ -95,7 +96,9 @@
 <script>
     $(document).ready(function () {
         var dataTable = $('#confirmedClaims-grid').DataTable({
+
             dom: "<'row table-controls'<'col-sm-4 col-md-3 page-length'l><'col-sm-4 col-md-5 search'f><'col-sm-4 col-md-2 col-md-offset-2 pull-right'B>><'row'<'col-md-12'rt>><'row space-up-10'<'col-md-6'i><'col-md-6'p>>",
+
             processing: true,
             serverSide: false,
             language: {"search": ""},
@@ -182,8 +185,9 @@
                 {
                 render: function (data, type, row) {
 
-                    return "<a  target='_blank' class='btn btn-success btn-sm' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>"
 
+
+                    return "<a  target='_blank' class='btn btn-success btn-sm' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>"
 
                 },
                 "targets": 7

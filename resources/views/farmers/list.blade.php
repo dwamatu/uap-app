@@ -6,6 +6,7 @@
 @endpush
 
 @section('content')
+
     <div class="wrapper">
 
 
@@ -31,6 +32,7 @@
                     </div>
 
                     <div class="row">
+                        @can('can.view.farmers')
                         <div class="col-md-12">
                             <table id="farmers-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
@@ -57,6 +59,7 @@
 
                             <div class="clearfix"></div>
                         </div>
+                        @endcan
                     </div>
                 </div>
             </section>
@@ -68,7 +71,6 @@
 
 
     </div>
-
 
 
     <div class="clearfix"></div>
@@ -85,8 +87,10 @@
 <script>
     $(document).ready(function () {
         var dataTable = $('#farmers-table').DataTable({
+            @can('can.export.farmers')
             dom: "<'row table-controls'<'col-sm-4 col-md-3 page-length'l><'col-sm-4 col-md-5 search'f><'col-sm-4 col-md-2 col-md-offset-2 pull-right'B>><'row'<'col-md-12'rt>><'row space-up-10'<'col-md-6'i><'col-md-6'p>>",
             processing: true,
+            @endcan
             serverSide: false,
             language: {"search": ""},
             ajax: '{!! route("fetch_farmers") !!}',

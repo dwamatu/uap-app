@@ -76,6 +76,8 @@
                                                             <tr>
                                                                 <th>#</th>
                                                                 <th>First Name</th>
+                                                                <th>Second Name</th>
+                                                                <th>Email</th>
                                                                 <th>Actions</th>
                                                             </tr>
                                                             </thead>
@@ -86,7 +88,13 @@
                                                                     <td>{{ $item->id }}</td>
 
                                                                     <td>
-                                                                        <a href="{{ route('watchtower.user.show', $item->id) }}">{{ $item->firstname }} {{$item->last_name }}</a>
+                                                                        <a href="{{ route('watchtower.user.show', $item->id) }}">{{ $item->firstname }}  </a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p>{{$item->secondname }}</p>
+                                                                    </td>
+<td>
+                                                                        <p>{{$item->email}}</p>
                                                                     </td>
 
                                                                     <td>

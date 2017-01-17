@@ -23,12 +23,12 @@
                     <small> panel</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li> <a href="{{ URL::route('dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="{{ URL::route('dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
                     <li class="active">Reports</li>
                 </ol>
             </section>
             <section class="content">
-                <div >
+                <div>
                     <div class="row tools-table">
                         <header class="panel¡-heading center">
 
@@ -72,9 +72,12 @@
                                                       data-slider-value="[0,100]" style="background-color: green;"/>
                                     <b>%100</b>
                                 </div>
-                                <button type="button" id="searchreport" class="btn btn-warning btn-sm"><i
-                                            class="fa fa-search"></i>&nbsp;&nbsp;Search
-                                </button>
+                                @can('can.search.reports')
+
+                                    <button type="button" id="searchreport" class="btn btn-warning btn-sm"><i
+                                                class="fa fa-search"></i>&nbsp;&nbsp;Search
+                                    </button>
+                                @endcan
                             </form>
                         </header>
 
@@ -120,10 +123,8 @@
             </section>
 
 
-
             <!-- /.content -->
         </div>
-
 
 
     </div>
@@ -204,7 +205,7 @@
                                     text: 'Export as Excel',
                                     title: 'Loss Assessment Reports',
                                     exportOptions: {
-                                        columns: [0,1,2,3,4,5,6,7]
+                                        columns: [0, 1, 2, 3, 4, 5, 6, 7]
                                     }
                                 },
                                 {
@@ -214,7 +215,7 @@
                                     download: 'open',
                                     orientation: 'landscape',
                                     exportOptions: {
-                                        columns: [0,1,2,3,4,5,6,7]
+                                        columns: [0, 1, 2, 3, 4, 5, 6, 7]
                                     }
                                 },
                                 {
@@ -222,14 +223,17 @@
                                     text: 'Export as CSV',
                                     title: 'Loss Assessment Reports',
                                     exportOptions: {
-                                        columns: [0,1,2,3,4,5,6,7]
+                                        columns: [0, 1, 2, 3, 4, 5, 6, 7]
                                     }
                                 }
                             ]
                         }],
                     "columnDefs": [{
                         render: function (data, type, row) {
+
+
                             return "<a  target='_blank' class='btn btn-success btn-block' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>"
+
                         },
                         "targets": 8
                     }, {

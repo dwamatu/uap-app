@@ -33,40 +33,42 @@
                     </div>
 
                     <div class="row">
+                        @can('can.view.reported')
                         <div class="col-md-12">
-                        <table id="reportedClaims-grid" class="table table-striped table-bordered" cellspacing="0"
-                               width="100%">
-                            <thead>
-                            <tr>
-                                {{--<th>Farmer BAT Code</th>--}}
-                                <th>Farmer Name</th>
-                                <th>Zone</th>
-                                <th>Inspector</th>
-                                <th>Cause Of Loss</th>
-                                <th>Lat/Lng</th>
-                                <th>% Loss</th>
-                                <th>Inspection Date</th>
-                                <th>Action</th>
+                            <table id="reportedClaims-grid" class="table table-striped table-bordered" cellspacing="0"
+                                   width="100%">
+                                <thead>
+                                <tr>
+                                    {{--<th>Farmer BAT Code</th>--}}
+                                    <th>Farmer Name</th>
+                                    <th>Zone</th>
+                                    <th>Inspector</th>
+                                    <th>Cause Of Loss</th>
+                                    <th>Lat/Lng</th>
+                                    <th>% Loss</th>
+                                    <th>Inspection Date</th>
+                                    <th>Action</th>
 
-                            </tr>
-                            </thead>
+                                </tr>
+                                </thead>
 
-                            <tfoot>
-                            <tr>
-                                {{--<th>Farmer BAT Code</th>--}}
-                                <th>Farmer Name</th>
-                                <th>Zone</th>
-                                <th>Inspector</th>
-                                <th>Cause Of Loss</th>
-                                <th>Lat/Lng</th>
-                                <th>% Loss</th>
-                                <th>Inspection Date</th>
-                                <th>Action</th>
+                                <tfoot>
+                                <tr>
+                                    {{--<th>Farmer BAT Code</th>--}}
+                                    <th>Farmer Name</th>
+                                    <th>Zone</th>
+                                    <th>Inspector</th>
+                                    <th>Cause Of Loss</th>
+                                    <th>Lat/Lng</th>
+                                    <th>% Loss</th>
+                                    <th>Inspection Date</th>
+                                    <th>Action</th>
 
-                            </tr>
-                            </tfoot>
-                        </table>
+                                </tr>
+                                </tfoot>
+                            </table>
                         </div>
+                        @endcan
 
                         <div class="clearfix"></div>
                     </div>
@@ -84,7 +86,7 @@
 
 
     <div class="clearfix"></div>
-@include('loss.reported.confirm')
+    @include('loss.reported.confirm')
 @endsection
 
 @push('scripts')
@@ -104,7 +106,9 @@
         var dataTable = $('#reportedClaims-grid').DataTable({
 
 
+
             dom: "<'row table-controls'<'col-sm-4 col-md-3 page-length'l><'col-sm-4 col-md-5 search'f><'col-sm-4 col-md-2 col-md-offset-2 pull-right'B>><'row'<'col-md-12'rt>><'row space-up-10'<'col-md-6'i><'col-md-6'p>>",
+
             processing: true,
             serverSide: false,
             language: {"search": ""},
@@ -123,6 +127,7 @@
 
             ],
             order: [[6, "desc"]],
+
             buttons: [
                 {
                     extend: 'collection',
@@ -160,7 +165,7 @@
                 {
                     render: function (data, type, row) {
 
-                        return "<p>"+toTitleCase(row.farmer_name)+"</p>"
+                        return "<p>" + toTitleCase(row.farmer_name) + "</p>"
 
                     },
                     "targets": 0
@@ -168,7 +173,7 @@
                 {
                     render: function (data, type, row) {
 
-                        return "<p>"+toTitleCase(row.farmer_zone)+"</p>"
+                        return "<p>" + toTitleCase(row.farmer_zone) + "</p>"
 
                     },
                     "targets": 1
@@ -176,7 +181,7 @@
                 , {
                     render: function (data, type, row) {
 
-                        return "<p>"+ Number(row.latitude).toFixed(4) + " / " + Number(row.longitude).toFixed(4)+ "</p>"
+                        return "<p>" + Number(row.latitude).toFixed(4) + " / " + Number(row.longitude).toFixed(4) + "</p>"
 
                     },
                     "targets": 4
@@ -190,18 +195,22 @@
                 }
                 , {
                     render: function (data, type, row) {
-                        data=row.confirmed;
+                        data = row.confirmed;
                         return "<div class='dropdown' >" +
                             "<button class='btn btn-default btn-block dropdown-toggle' type='button' id='dropDownMenu' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>ACTION <span class='caret'></span></button> " +
                             "<ul class='dropdown-menu' aria-labelledby='dropDownMenu'>" +
-                            "<li><a  target='_blank'   href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>" +
-                            "<li><a data-toggle='modal'  id='confirmlossclaims' data-target='#confirmloss' href='#' data-farmername='"+row.farmer_name+"' data-uuid='"+row.uuid+"'>Confirm LAS</a>" +
-                            "</ul> </div> "  ;
+                                @can('can.download.las')
+                                    "<li><a  target='_blank'   href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>" +
+                                @endcan
+                                @can('can.confirm.las')
+                                    "<li><a data-toggle='modal'  id='confirmlossclaims' data-target='#confirmloss' href='#' data-farmername='" + row.farmer_name + "' data-uuid='" + row.uuid + "'>Confirm LAS</a>" +
+                                @endcan
+                                    "</ul> </div> ";
 
                     },
                     "targets": 7
                 }
-                ]
+            ]
         });
 
         // Add placeholder to search box
