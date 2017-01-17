@@ -107,9 +107,9 @@ class UapRolesSeeder extends Seeder
                 'description' => 'Can Download Inspectors'
             ],
             [
-            'name' => 'Confirm Loss Claim',
-            'slug' => 'can.confirm.las',
-            'description' => 'Can Confirm Inspectors'
+                'name' => 'Confirm Loss Claim',
+                'slug' => 'can.confirm.las',
+                'description' => 'Can Confirm Inspectors'
             ]
 
         ];
