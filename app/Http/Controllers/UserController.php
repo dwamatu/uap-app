@@ -48,7 +48,7 @@ class UserController extends Controller
 
         $user = auth()->user();
 
-        $user->password  = bcrypt( $request['password']);
+        $user->password  =  $request['password'];
         $user->password_updated_at = Carbon::now();
 
 
