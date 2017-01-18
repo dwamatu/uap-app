@@ -19,7 +19,7 @@
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
-            {{--@include('flash')--}}
+            @include('flash')
 
             @yield('auth-content')
 

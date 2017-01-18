@@ -3,6 +3,7 @@
 namespace Illuminate\Foundation\Auth;
 
 use Illuminate\Http\Request;
+use DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
 
@@ -72,6 +73,19 @@ trait AuthenticatesUsers
         $credentials = $this->getCredentials($request);
 
         if (Auth::guard($this->getGuard())->attempt($credentials, $request->has('remember'))) {
+
+            $userId = Auth::user()->id;
+            $active  = DB::table('users')->where('id', $userId)->value('active');
+
+            if ($active != true) {
+                $this->getLogout();
+
+
+                flash('Could not sign you in. Please Ask the Adminstratorgs to Activate your Account.');
+
+                return redirect('/login');
+            } else
+
             return $this->handleUserWasAuthenticated($request, $throttles);
         }
 
