@@ -60,12 +60,14 @@ Route::group( [
 	Route::get('watchtower/user/matrix', 'Smarch\Watchtower\Controllers\UserController@showUserMatrix')->name('user.matrix');
 	Route::post('watchtower/user/matrix', 'Smarch\Watchtower\Controllers\UserController@updateUserMatrix')->name('user.matrix');
 	Route::get('watchtower/user/role/{user}/edit', 'Smarch\Watchtower\Controllers\UserController@editUserRoles')->name('user.role.edit');
+	Route::get('watchtower/user/activate/{user}', 'Smarch\Watchtower\Controllers\UserController@activate')->name('user.activate');
 	Route::post('watchtower/user/role/{user}', 'Smarch\Watchtower\Controllers\UserController@updateUserRoles')->name('user.role.update');
 	Route::resource('watchtower/user', 'Smarch\Watchtower\Controllers\UserController',
 		['names' => [
     		'create'	=> 'user.create',
     		'destroy'	=> 'user.destroy',
     		'edit'		=> 'user.edit',
+            'activate'	=> 'user.activate',
     		'index'		=> 'user.index',
     		'show'		=> 'user.show',
     		'store'		=> 'user.store',

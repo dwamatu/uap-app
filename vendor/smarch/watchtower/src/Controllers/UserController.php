@@ -133,6 +133,16 @@ class UserController extends Controller
 
 	 	return view( config('watchtower.views.layouts.unauthorized'), [ 'message' => 'edit users' ]);
 	}
+    public function activate($id)
+    {
+        if ( Shinobi::canAtLeast( [ config('watchtower.acl.user.edit', false),  config('watchtower.acl.user.show', false) ] ) ) {
+            $resource = User::findOrFail($id);
+            $resource->update(['is_deleted'=>false]);
+            return redirect( route('watchtower.user.index') );
+        }
+
+        return view( config('watchtower.views.layouts.unauthorized'), [ 'message' => 'edit users' ]);
+    }
 
 	/**
 	 * Update the specified resource in storage.
@@ -151,7 +161,9 @@ class UserController extends Controller
 			if ($request->get('password') == '') {
         		$user->update( $request->except('password') );
     		} else {
-        		$user->update( $request->all() );
+			    $userData = $request->all();
+			    $userData['active'] = true;
+        		$user->update( $userData );
     		}
 			$level = "success";
 			$message = "<i class='fa fa-check-square-o fa-1x'></i> Success! User edited.";

@@ -15,7 +15,7 @@ class User extends Eloquent implements AuthenticatableContract,
 {
     use Authenticatable, CanResetPassword, ShinobiTrait;
 
-    protected $fillable = ['firstname', 'secondname', 'email', 'password','password_updated_at'];
+    protected $fillable = ['firstname', 'secondname', 'email', 'password','password_updated_at','active','last_login','is_deleted'];
 
     protected $hidden = [
         'password', 'remember_token',
@@ -34,9 +34,9 @@ class User extends Eloquent implements AuthenticatableContract,
      */
     public function hasOldPassword()
     {
-        $lastlogin = Carbon::createFromFormat('Y-m-d H:i:s',$this->password_updated_at);
+        $updateAt = Carbon::createFromFormat('Y-m-d H:i:s',$this->password_updated_at);
 
-        return $lastlogin->lt(Carbon::now()->subMonths(3));
+        return $updateAt->lt(Carbon::now()->subMonths(3));
     }
 
 

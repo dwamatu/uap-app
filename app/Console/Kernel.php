@@ -14,6 +14,9 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         // Commands\Inspire::class,
+        Commands\SendPasswordExpiryNotification::class,
+        Commands\DeactiveUsersWithOldPasswords::class,
+        Commands\DeleteInactiveAccounts::class,
     ];
 
     /**
@@ -26,5 +29,12 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+
+         $schedule->command('email:passwordexpiry')
+                  ->daily();
+        $schedule->command('deactivate:onpasswordexpiry')
+            ->daily();
+        $schedule->command('delete:inactiveaccounts')
+            ->daily();
     }
 }

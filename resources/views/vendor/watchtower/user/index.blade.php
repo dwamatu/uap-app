@@ -78,6 +78,7 @@
                                                                 <th>First Name</th>
                                                                 <th>Second Name</th>
                                                                 <th>Email</th>
+                                                                <th>Active</th>
                                                                 <th>Actions</th>
                                                             </tr>
                                                             </thead>
@@ -93,8 +94,25 @@
                                                                     <td>
                                                                         <p>{{$item->secondname }}</p>
                                                                     </td>
-<td>
+                                                                    <td>
                                                                         <p>{{$item->email}}</p>
+                                                                    </td>
+                                                                    <td>
+                                                                        @if ( Shinobi::can( config('watchtower.acl.user.edit', false)) )
+                                                                            @if($item->is_deleted !=true)
+                                                                                <p> Account is Active</p>
+                                                                            @else
+                                                                                <a href="{{ route('watchtower.user.activate', $item->id) }}">
+                                                                                    <button type="button"
+                                                                                            class="btn btn-default btn-xs">
+                                                                                        <i class="fa fa-cogs"></i>
+                                                                                        <span class="hidden-xs hidden-sm">Activate Account</span>
+                                                                                    </button>
+                                                                                </a>
+                                                                            @endif
+
+                                                                        @endif
+
                                                                     </td>
 
                                                                     <td>
@@ -169,7 +187,6 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-
 
 
     </div>
