@@ -43,7 +43,7 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'old_password' => 'required',
-            'password'     => 'required|same:password_confirmation|min:8',
+            'password'     => 'required|same:password_confirmation|min:10|regex:/^.*(?=.{3,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/',
         ]);
 
         $user = auth()->user();

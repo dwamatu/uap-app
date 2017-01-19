@@ -42,7 +42,7 @@ class UserUpdateRequest extends Request
         'firstname' => 'required|max:40,'.$this->user,
         'secondname' => 'required|max:40,'.$this->user,
         'email' => 'required|email|unique:users,email,'.$this->user,
-        'password' => 'confirmed|min:10|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/',
+        'password' => 'confirmed|min:10|regex:/^.*(?=.{3,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/',
     ], config('watchtower.user.rules.update') );
 
         return $rules;
