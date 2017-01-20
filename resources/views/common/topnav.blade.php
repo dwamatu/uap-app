@@ -46,12 +46,3 @@
 	</nav>
 	@endif
 </header>
-@push('scripts')
-<script>
-//    $('#topnavbar').affix({
-//        offset: {
-//            top: $('#banner').height()
-//        }
-//    });
-</script>
-@endpush
