@@ -37,7 +37,7 @@
 
                                     </div>
 
-                                    <h1>Permissions
+                         
                                         <div class="btn-group pull-right" role="group" aria-label="...">
                                             @if ( Shinobi::can( config('watchtower.acl.role.viewmatrix', false) ) )
                                                 <a href="{{ route('watchtower.role.matrix') }}">
