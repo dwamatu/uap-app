@@ -142,7 +142,7 @@
                         </div>
                     </div>
                 </div>
-             
+
 
                 <div class="widget-foot">
                 </div>
@@ -157,4 +157,5 @@
 
 
         </div>
+    </div>
 @endsection
