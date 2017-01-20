@@ -10,7 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::group(['middleware' => ['headers']], function () {
+
     Route::get('/auth/reset/old', function () {
         return view('auth.reset.old');
     });
@@ -75,4 +75,3 @@ Route::group(['middleware' => ['headers']], function () {
 
     });
 
-});

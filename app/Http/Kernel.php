@@ -30,6 +30,7 @@ class Kernel extends HttpKernel
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
+            \App\Http\Middleware\AddHeaders::class,
 
         ],
 
@@ -52,6 +53,6 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'oldpassword'=> \App\Http\Middleware\OldPasswordCheck::class,
-        'headers'=> \App\Http\Middleware\AddHeaders::class,
+
     ];
 }
