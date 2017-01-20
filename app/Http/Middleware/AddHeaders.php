@@ -17,7 +17,7 @@ class AddHeaders
     {
         $response = $next($request);
 
-        $response->header('X-Frame-Options','SAMEORIGIN');
+        $response->header('X-Frame-Options','Deny');
         $response->header('X-XSS-Protection', '1; mode=block');
         $response->header('X-Content-Type-Options', 'nosniff');
 

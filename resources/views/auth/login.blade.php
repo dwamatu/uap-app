@@ -53,6 +53,7 @@
                 </div>
             </form>
 
+
         </div>
         <!-- /.social-auth-links -->
         <div class="col-sm-6">
