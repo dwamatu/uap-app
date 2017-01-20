@@ -32,7 +32,7 @@
             <div class="form-group">
 
                 <button type="submit"
-                        class="btn-block no-margin large btn-primary gradient-light-linear color green button">
+                        class="btn-block no-margin large btn-uap gradient-light-linear color green button">
                     <i class="fa fa-btn fa-envelope"></i> Send Password Reset Link
                 </button>
             </div>
