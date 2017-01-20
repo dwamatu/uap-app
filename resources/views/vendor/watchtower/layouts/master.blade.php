@@ -17,7 +17,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Tangerine Kenya</title>
+    <title>UAP OLM PORTAL</title>
 
     <!-- styles -->
     <!-- Bootstrap core CSS -->

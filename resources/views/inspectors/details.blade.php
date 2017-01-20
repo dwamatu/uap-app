@@ -60,7 +60,7 @@
 
 
                                             <div class="row tabs tools">
-                                                <div class="col-md-12">
+                                                <div class="col-md-12" style="padding-top: 10px">
                                                     @can('can.update.inspectors')
                                                         @if (session()->has('individualEditFlag'))
 

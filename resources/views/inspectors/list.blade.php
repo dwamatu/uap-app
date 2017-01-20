@@ -26,7 +26,7 @@
             <section class="content">
                 <div>
                     <div class="row tools-table">
-                        <div class="col-xs-6 col-md-6">
+                        <div class="col-xs-6 col-md-6" style="padding-bottom: 10px">
                             @can('can.add.inspectors')
                             <a id="add-company" class="btn btn-primary" href="{{ url('/inspector/create') }}">Add
                                 Inspector</a>
