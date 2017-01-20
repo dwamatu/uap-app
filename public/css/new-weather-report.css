@@ -1,0 +1,52 @@
+.wizard > .steps .disabled a .badge-50, .wizard > .steps .disabled a:hover .badge-50, .wizard > .steps .disabled a:active .badge-50 {
+  background: #9A9EA3 none repeat scroll 0 0;
+  color: #fff;
+  cursor: default;
+}
+
+.wizard > .steps {
+  border-bottom: 1px solid #C2C6CC;
+  display: block;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.wizard > .steps ul {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.wizard .step-title {
+  padding: 10px 0 0;
+  color: #93979C;
+}
+
+.wizard .current .step-title {
+  color: #2184be;
+}
+
+.wizard > .steps > ul > li {
+  width: 25%;
+}
+
+.wizard > .content {
+  border-radius: 5px;
+  display: block;
+  height: auto;
+  margin: 0;
+  overflow: hidde;
+  position: relative;
+  width: 100%;
+  display: table;
+  clear: both;
+}
+
+.wizard > .content > .body
+{
+  content: "";
+  display: table;
+  clear: both;
+  position: relative;
+  padding: 2.5% 0 0;
+  width: 100%;
+}

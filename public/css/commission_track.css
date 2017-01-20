@@ -1,0 +1,6 @@
+#main-grid tfoot select {
+	padding: 2px 0px 2px 0px;
+	border-radius: 2px;
+	width: 100%;
+	color: #000;
+}

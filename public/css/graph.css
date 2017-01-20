@@ -1,0 +1,109 @@
+.form-control-label {
+    font-weight: normal !important;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-bottom: 0;
+    min-height: 31px;
+}
+
+#bar-chart, #curve-chart {
+    cursor: auto;
+    height: 500px;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 30px;
+}
+
+#daily-legend-container,
+#yearly-legend-container {
+    margin: 0;
+}
+
+#daily-legend-container,
+#payout-legend-container,
+#yearly-legend-container {
+    border: 0 none;
+    display: block;
+    float: right;
+    position: relative;
+}
+
+#payout-legend-container {
+    margin-top: -20px;
+}
+
+#daily-legend-container .legendColorBox,
+#payout-legend-container .legendColorBox,
+#yearly-legend-container .legendColorBox {
+    padding-right: 5px;
+}
+
+#daily-legend-container .legendLabel,
+#payout-legend-container .legendLabel,
+#yearly-legend-container .legendLabel {
+    font-size: 1.2em;
+    padding-right: 10px;
+}
+
+#toggle-data-source-comparison-graph .toggle.btn,
+#toggle-year-comparison-graph .toggle.btn {
+    min-width: 60% !important;
+}
+
+.selected-comparison-data-source,
+.selected-comparison-year {
+    border: 0 none;
+}
+
+#toggle-data-source-comparison-graph .form-control-label,
+#toggle-year-comparison-graph .form-control-label {
+ color: #666666;
+}
+
+#toggle-data-source-comparison-graph .form-control-label.active,
+#toggle-year-comparison-graph .form-control-label.active {
+    font-weight: bold !important;
+}
+
+#toggle-year-comparison-graph .form-control-label.active {
+    color: #5CB85C;
+}
+
+#toggle-data-source-comparison-graph .form-control-label.active {
+    color: #428BCA;
+}
+
+#toggle-data-source-comparison-graph .form-control-label.inactive,
+#toggle-year-comparison-graph .form-control-label.inactive {
+    font-weight: normal !important;
+    color: #666666;
+}
+
+#toggle-data-source-comparison-graph .toggle-group .btn-primary {
+    background-color: #428BCA;
+    border-color: #3c7cb5;
+}
+
+/* Transform x-axis labels */
+/* .flot-x-axis div.flot-tick-label {
+    transform: translateX(50%) rotate(20deg);
+    transform-origin: 0 0;
+
+    -ms-transform: translateX(50%) rotate(20deg);
+    -ms-transform-origin: 0 0;
+
+    -moz-transform: translateX(50%) rotate(20deg);
+    -moz-transform-origin: 0 0;
+
+    -webkit-transform: translateX(50%) rotate(20deg);
+    -webkit-transform-origin: 0 0;
+
+    -o-transform: translateX(50%) rotate(20deg);
+    -o-transform-origin: 0 0;
+
+    margin-top: -7px;
+    margin-left: 23px;
+
+    color: #111 !important;
+}
+ */
