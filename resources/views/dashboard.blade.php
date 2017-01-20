@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-xs-6">
                         <!-- small box -->
-                        <div class="small-box bg-aqua">
+                        <div class="small-box bg-aqua-gradient">
                             <div class="inner">
                                 <h3>#{!! $pageData['total_no_farmers'] !!} </h3>
 
@@ -35,7 +35,7 @@
                     <!-- ./col -->
                     <div class="col-lg-3 col-xs-6">
                         <!-- small box -->
-                        <div class="small-box bg-green">
+                        <div class="small-box bg-green-active">
                             <div class="inner">
                                 <h3 >#{!! $pageData['total_no_claims'] !!}</h3>
 
@@ -49,7 +49,7 @@
                     <!-- ./col -->
                     <div class="col-lg-3 col-xs-6">
                         <!-- small box -->
-                        <div class="small-box bg-yellow">
+                        <div class="small-box bg-navy-active">
                             <div class="inner">
                                 <h3 >{!! $pageData['average_loss'] !!} %</h3>
 
@@ -65,7 +65,7 @@
                     <!-- ./col -->
                     <div class="col-lg-3 col-xs-6">
                         <!-- small box -->
-                        <div class="small-box bg-red">
+                        <div class="small-box bg-acre">
                             <div class="inner">
                                 <h3>{!! $pageData['highest_loss'] !!} %</h3>
 

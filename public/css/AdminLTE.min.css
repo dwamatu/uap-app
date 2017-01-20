@@ -25,7 +25,7 @@ New CSS By Kipesh For Five Columns
     text-align: center;
 }
 .top{
-    background: #379321;
+    background: #1d816b;
     height: 10px;
     width: 100%;
 }
@@ -40,6 +40,17 @@ New CSS By Kipesh For Five Columns
 
     position: relative;
     z-index: 1;
+}
+.btn-uap{
+
+    color: #fff;
+    background-color: #d11f40;
+    border-color: #2e6da4
+}
+.btn-uap:hover {
+    color: #fff;
+    background-color: #379321;
+    border-color: #204d74
 }
 
 

@@ -1045,7 +1045,7 @@
 }
 
 .skin-red .main-header .navbar .sidebar-toggle:hover {
-    background-color: #379321
+    background-color: #1d816b
 }
 
 @media (max-width: 767px) {
@@ -1070,7 +1070,7 @@
 }
 
 .skin-red .main-header .logo:hover {
-    background-color: #379321
+    background-color: #1d816b
 }
 
 .skin-red .main-header li.user-header {
@@ -1091,7 +1091,7 @@
 
 .skin-red .sidebar-menu > li.header {
     color: #4b646f;
-    background: #1a2226
+    background: #abb1b0
 }
 
 .skin-red .sidebar-menu > li > a {

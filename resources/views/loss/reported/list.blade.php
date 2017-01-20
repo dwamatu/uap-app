@@ -197,7 +197,7 @@
                     render: function (data, type, row) {
                         data = row.confirmed;
                         return "<div class='dropdown' >" +
-                            "<button class='btn btn-default btn-block dropdown-toggle' type='button' id='dropDownMenu' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>ACTION <span class='caret'></span></button> " +
+                            "<button class='btn btn-uap btn-block dropdown-toggle' type='button' id='dropDownMenu' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>ACTION <span class='caret'></span></button> " +
                             "<ul class='dropdown-menu' aria-labelledby='dropDownMenu'>" +
                                 @can('can.download.las')
                                     "<li><a  target='_blank'   href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>" +

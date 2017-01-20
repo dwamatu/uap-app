@@ -187,7 +187,7 @@
 
 
 
-                    return "<a  target='_blank' class='btn btn-success btn-sm' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>"
+                    return "<a  target='_blank' class='btn btn-uap btn-block' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>"
 
                 },
                 "targets": 7

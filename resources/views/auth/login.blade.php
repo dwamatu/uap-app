@@ -40,7 +40,7 @@
 
                     <!-- /.col -->
                     <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">
+                        <button type="submit" class="btn btn-uap btn-block btn-flat">
                             Sign In
                         </button>
                         <input type="hidden" name="_token" value="{{ Session::token() }}">

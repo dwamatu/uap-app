@@ -9,8 +9,7 @@
 	<!-- Bootstrap 3.3.6 -->
 	<link  href="{{URL::asset('/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
 	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-	<!-- Ionicons -->
+	<link rel="stylesheet" href="{{url::asset('css/font-awesome.min.css')}}">	<!-- Ionicons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="{{url::asset('css/AdminLTE.min.css')}}">
@@ -24,8 +23,8 @@
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
 
-	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<script src="{{url::to('/js/html5shiv.js')}}"></script>
+	<script src="{{url::to('/js/respond.min.js')}}"></script>
 	<![endif]-->
 
 	@stack('styles')
@@ -36,8 +35,9 @@
 <!-- jQuery 2.2.3 -->
 
 <script src="{{url::to('/js/jquery-2.2.3.min.js')}}"></script>
+
 <!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="{{url::to('/js/jquery-ui.min.js')}}"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="{{url::to('bootstrap/js/bootstrap.min.js')}}"></script>
 

@@ -74,7 +74,7 @@
                                 </div>
                                 @can('can.search.reports')
 
-                                    <button type="button" id="searchreport" class="btn btn-warning btn-sm"><i
+                                    <button type="button" id="searchreport" class="btn btn-uap btn-sm"><i
                                                 class="fa fa-search"></i>&nbsp;&nbsp;Search
                                     </button>
                                 @endcan
