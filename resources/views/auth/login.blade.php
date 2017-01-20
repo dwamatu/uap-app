@@ -26,7 +26,7 @@
                 <div class="form-group has-feedback {{ $errors->has('password') ? ' has-error' : '' }}">
                     <input type="password" class="form-control inset" placeholder="Password"
                            id="password"
-                           name="password"
+                           name="password" autocomplete="off"
                            value="{{old('password')}}">
 
 
@@ -55,6 +55,12 @@
 
         </div>
         <!-- /.social-auth-links -->
+        <div class="col-sm-6">
+            <div class="logo" style="padding: 60px 25px 10px ">
+            <span class="logosu"><a href="#"><img src="{{URL::asset('img/uap/uap.png')}}" alt="Uap logo"></a></span>
+            <span class="logoso"><a href="#"><img src="{{URL::asset('img/uap/old.png')}}" alt="Old mutual logo"></a></span>
+            </div>
+        </div>
     </div>
 
 @endsection

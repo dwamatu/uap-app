@@ -44,7 +44,7 @@
 
 <body class="login-page">
 
-@unless ( ! Auth::check() )
+{{--@unless ( ! Auth::check() )--}}
 
 	@include('common.topnav')
 
@@ -52,7 +52,7 @@
 
 		@yield('content')</div>
 
-@endunless
+{{--@endunless--}}
 
 
 @yield('login-content')

@@ -24,6 +24,23 @@ New CSS By Kipesh For Five Columns
 .center {
     text-align: center;
 }
+.top{
+    background: #379321;
+    height: 10px;
+    width: 100%;
+}
+.top2 {
+    width: 100%;
+    padding: 25px 5%;
+    background: #e5e2e2;
+    position: relative;
+    height: 58px;
+}
+.top3 {
+
+    position: relative;
+    z-index: 1;
+}
 
 
 .col-group {
@@ -288,7 +305,7 @@ a:hover, a:active, a:focus {
     margin-bottom: 0;
     margin-left: 230px;
     border: none;
-    min-height: 50px;
+    min-height: 70px;
     border-radius: 0
 }
 
@@ -349,7 +366,7 @@ a:hover, a:active, a:focus {
     float: left;
     background-color: transparent;
     background-image: none;
-    padding: 15px 15px;
+    padding: 25px 25px;
     font-family: fontAwesome
 }
 
@@ -530,7 +547,7 @@ a:hover, a:active, a:focus {
 
 .main-sidebar, .left-side {
     position: absolute;
-    top: 0;
+    top: 68px;
     left: 0;
     padding-top: 50px;
     min-height: 100px%;
@@ -658,7 +675,7 @@ a:hover, a:active, a:focus {
 }
 
 .sidebar-menu li.header {
-    padding: 10px 25px 10px 15px;
+    padding: 30px 25px 10px 15px;
     font-size: 12px
 }
 
@@ -731,9 +748,13 @@ a:hover, a:active, a:focus {
         width: 50px !important;
         z-index: 850
     }
+    .sidebar-mini.sidebar-collapse .sidebar-menu {
+        padding-top: 20px;
 
+    }
     .sidebar-mini.sidebar-collapse .sidebar-menu > li {
-        position: relative
+        position: relative;
+
     }
 
     .sidebar-mini.sidebar-collapse .sidebar-menu > li > a {

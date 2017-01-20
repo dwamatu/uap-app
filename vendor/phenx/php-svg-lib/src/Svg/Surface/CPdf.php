@@ -2192,7 +2192,7 @@ EOT;
                         case 'StdHW':
                         case 'StdVW':
                         case 'StartCharMetrics':
-                        case 'FontHeightOffset': // OAR - Added so we can offset the height calculation of a Windows font.  Otherwise it's too big.
+                        case 'FontHeightOffset': // OAR - Added so we can offset the height reported of a Windows font.  Otherwise it's too big.
                             $data[$key] = trim(substr($row, $pos));
                             break;
 
@@ -3601,7 +3601,7 @@ EOT;
         static $ord_cache = array();
 
         // this function should not change any of the settings, though it will need to
-        // track any directives which change during calculation, so copy them at the start
+        // track any directives which change during reported, so copy them at the start
         // and put them back at the end.
         $store_currentTextState = $this->currentTextState;
 

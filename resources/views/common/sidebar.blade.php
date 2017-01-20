@@ -1,7 +1,9 @@
 <!-- Left side column. contains the logo and sidebar -->
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
+
     <section class="sidebar">
+
 
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
@@ -50,7 +52,7 @@
                     <ul class="treeview-menu">
                         @can('can.view.inspectors')
 
-                        <li><a href="{{url::route('inspectors')}}"><i class="fa fa-user-md"></i>Inspectors</a></li>
+                            <li><a href="{{url::route('inspectors')}}"><i class="fa fa-user-md"></i>Inspectors</a></li>
                         @endcan
                         <li><a href="{{url::route('watchtower.user.index')}}"><i class="fa fa-users"></i>Users</a></li>
                         <li><a href="{{url::route('watchtower.role.index')}}"><i class="fa fa-dashcube"></i>Roles</a>

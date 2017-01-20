@@ -171,7 +171,7 @@ class CronExpression
     /**
      * Get a next run date relative to the current date or a specific date
      *
-     * @param string|\DateTime $currentTime      Relative calculation date
+     * @param string|\DateTime $currentTime      Relative reported date
      * @param int              $nth              Number of matches to skip before returning a
      *                                           matching next run date.  0, the default, will return the current
      *                                           date and time if the next run date falls on the current date and
@@ -192,7 +192,7 @@ class CronExpression
     /**
      * Get a previous run date relative to the current date or a specific date
      *
-     * @param string|\DateTime $currentTime      Relative calculation date
+     * @param string|\DateTime $currentTime      Relative reported date
      * @param int              $nth              Number of matches to skip before returning
      * @param bool             $allowCurrentDate Set to TRUE to return the
      *                                           current date if it matches the cron expression
@@ -210,7 +210,7 @@ class CronExpression
      * Get multiple run dates starting at the current date or a specific date
      *
      * @param int              $total            Set the total number of dates to calculate
-     * @param string|\DateTime $currentTime      Relative calculation date
+     * @param string|\DateTime $currentTime      Relative reported date
      * @param bool             $invert           Set to TRUE to retrieve previous dates
      * @param bool             $allowCurrentDate Set to TRUE to return the
      *                                           current date if it matches the cron expression
@@ -266,7 +266,7 @@ class CronExpression
      * specific date.  This method assumes that the current number of
      * seconds are irrelevant, and should be called once per minute.
      *
-     * @param string|\DateTime $currentTime Relative calculation date
+     * @param string|\DateTime $currentTime Relative reported date
      *
      * @return bool Returns TRUE if the cron is due to run or FALSE if not
      */
@@ -303,7 +303,7 @@ class CronExpression
     /**
      * Get the next or previous run date of the expression relative to a date
      *
-     * @param string|\DateTime $currentTime      Relative calculation date
+     * @param string|\DateTime $currentTime      Relative reported date
      * @param int              $nth              Number of matches to skip before returning
      * @param bool             $invert           Set to TRUE to go backwards in time
      * @param bool             $allowCurrentDate Set to TRUE to return the
