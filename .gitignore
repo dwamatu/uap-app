@@ -1,3 +1,31 @@
+# Laravel
+
+/node_modules
+/public/storage
+/storage/*.key
+/storage/framework/sessions
+/vendor
+!/vendor/smarch
 .env
-.idea/
-vendor/
+
+# Mac OS
+
+.DS_Store
+
+# PhpStorm
+
+.idea
+
+*.sublime-*
+
+# Sublime Text
+
+*.sublime-*
+
+# App specific
+
+storage/uploads
+
+# Laradock
+
+laradock/postgres/data
