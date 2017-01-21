@@ -1,0 +1,92 @@
+version: '2'
+
+services:
+
+### Applications Code Container #############################
+
+    applications:
+        image: tianon/true
+        volumes:
+            - ../:/var/www
+
+### Workspace Utilities Container ###########################
+
+    workspace:
+        build:
+            context: ./workspace
+            args:
+                - INSTALL_XDEBUG=false
+                - INSTALL_MONGO=false
+                - INSTALL_NODE=false
+                - INSTALL_YARN=false
+                - INSTALL_DRUSH=false
+                - INSTALL_AEROSPIKE_EXTENSION=false
+                - COMPOSER_GLOBAL_INSTALL=false
+                - INSTALL_WORKSPACE_SSH=false
+                - PUID=1000
+                - PGID=1000
+                - NODE_VERSION=stable
+                - TZ=Africa/Nairobi
+        volumes_from:
+            - applications
+        extra_hosts:
+            # IMPORTANT: Replace with your Docker Host IP (will be appended to /etc/hosts)
+            - "dockerhost:127.0.0.1"
+        ports:
+           - "2222:22"
+        tty: true
+
+
+### Nginx Server Container ##################################
+
+    nginx:
+        build:
+            context: ./nginx
+            args:
+                - PHP_UPSTREAM=hhvm
+        volumes_from:
+            - applications
+        volumes:
+            - ./logs/nginx/:/var/log/nginx
+            - ./nginx/sites/:/etc/nginx/sites-available
+        ports:
+            - "80:80"
+            - "443:443"
+        links:
+            - hhvm
+
+
+### HHVM Container ##########################################
+
+    hhvm:
+        build: ./hhvm
+        volumes_from:
+            - applications
+        expose:
+            - "9000"
+        links:
+            - workspace
+
+
+
+### PostgreSQL Container ####################################
+
+    postgres:
+        build: ./postgres
+        volumes:
+            - ./data/postgres:/var/lib/postgresql/data
+        ports:
+            - "5432:5432"
+        environment:
+            - POSTGRES_DB=uap
+            - POSTGRES_USER=uap
+            - POSTGRES_PASSWORD=uap
+
+
+### Volumes Setup ###########################################
+
+volumes:
+    postgres:
+        driver: "local"
+    sessions:    ## nothing is connected to this (- ./data/sessions:/sessions)
+        driver: "local"
