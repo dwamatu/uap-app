@@ -28,4 +28,4 @@ storage/uploads
 
 # Laradock
 
-laradock/postgres/data
+laradock/data
