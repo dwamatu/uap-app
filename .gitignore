@@ -17,6 +17,7 @@
 *.sublime-*
 
 # App specific
+/public/img/inspection_images
 
 # Laradock
 /laradock/data
