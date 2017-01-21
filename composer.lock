@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d65dc116e7443563f4d06b8dfabf786f",
-    "content-hash": "472cb4358df1c5a464f18ab46118cf3e",
+    "hash": "a27fd4ecd2a797d8d406d417a46df33f",
+    "content-hash": "fe6d2d19f4d0fde9c0b86f5c194981af",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -54,6 +54,62 @@
                 "pdf"
             ],
             "time": "2016-08-17 08:17:33"
+        },
+        {
+            "name": "caffeinated/shinobi",
+            "version": "v2.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/caffeinated/shinobi.git",
+                "reference": "4fe040950b910a3cfa85e703f789f5ddcd53e468"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/caffeinated/shinobi/zipball/4fe040950b910a3cfa85e703f789f5ddcd53e468",
+                "reference": "4fe040950b910a3cfa85e703f789f5ddcd53e468",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "5.1.*|5.2.*",
+                "illuminate/database": "5.1.*|5.2.*",
+                "illuminate/filesystem": "5.1.*|5.2.*",
+                "illuminate/support": "5.1.*|5.2.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Caffeinated\\Shinobi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shea Lewis",
+                    "email": "shea.lewis89@gmail.com"
+                }
+            ],
+            "description": "Laravel 5 Roles and Permissions",
+            "keywords": [
+                "auth",
+                "caffeinated",
+                "laravel",
+                "permissions",
+                "roles",
+                "shinobi"
+            ],
+            "time": "2016-06-22 04:13:00"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -1550,6 +1606,56 @@
                 "shell"
             ],
             "time": "2016-03-09 05:03:14"
+        },
+        {
+            "name": "smarch/watchtower",
+            "version": "v1.1.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SmarchSoftware/watchtower.git",
+                "reference": "e70977d0643243a900552f6a39107ff01cfba574"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SmarchSoftware/watchtower/zipball/e70977d0643243a900552f6a39107ff01cfba574",
+                "reference": "e70977d0643243a900552f6a39107ff01cfba574",
+                "shasum": ""
+            },
+            "require": {
+                "caffeinated/shinobi": "~2.0",
+                "laravel/framework": "~5.1",
+                "laravelcollective/html": "~5.1",
+                "php": ">=5.5.9"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "Smarch\\Watchtower\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Smarch Software",
+                    "email": "packages@smarchsoft.com"
+                }
+            ],
+            "description": "Front-end for the Shinboi Auth system of Users / Roles / Permissions in Laravel 5",
+            "homepage": "https://github.com/SmarchSoftware/watchtower",
+            "keywords": [
+                "admin",
+                "authorization",
+                "gui",
+                "laravel",
+                "permissions",
+                "rbac",
+                "roles",
+                "shinobi"
+            ],
+            "time": "2016-08-12 14:02:40"
         },
         {
             "name": "swiftmailer/swiftmailer",
