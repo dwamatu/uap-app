@@ -94,7 +94,7 @@ RUN if [ ${INSTALL_XDEBUG} = true ]; then \
     echo "alias phpunit='php -dzend_extension=xdebug.so /var/www/vendor/bin/phpunit'" >> ~/.bashrc \
 ;fi
 # ADD for REMOTE debugging
-COPY ./xdebug.ini /etc/php/7.0/cli/conf.d/xdebug.ini
+# COPY ./xdebug.ini /etc/php/7.0/cli/conf.d/xdebug.ini
 
 #####################################
 # ssh:
@@ -102,8 +102,8 @@ COPY ./xdebug.ini /etc/php/7.0/cli/conf.d/xdebug.ini
 ARG INSTALL_WORKSPACE_SSH=false
 ENV INSTALL_WORKSPACE_SSH ${INSTALL_WORKSPACE_SSH}
 
-ADD insecure_id_rsa /tmp/id_rsa
-ADD insecure_id_rsa.pub /tmp/id_rsa.pub
+# ADD insecure_id_rsa /tmp/id_rsa
+# ADD insecure_id_rsa.pub /tmp/id_rsa.pub
 
 RUN if [ ${INSTALL_WORKSPACE_SSH} = true ]; then \
     rm -f /etc/service/sshd/down && \
@@ -215,7 +215,7 @@ ARG INSTALL_AEROSPIKE_EXTENSION=true
 ENV INSTALL_AEROSPIKE_EXTENSION ${INSTALL_AEROSPIKE_EXTENSION}
 
 # Copy aerospike configration for remote debugging
-COPY ./aerospike.ini /etc/php/7.0/cli/conf.d/aerospike.ini
+# COPY ./aerospike.ini /etc/php/7.0/cli/conf.d/aerospike.ini
 
 RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = true ]; then \
     # Install the php aerospike extension
@@ -231,7 +231,7 @@ RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = true ]; then \
     && rm /tmp/aerospike-client-php.tar.gz \
 ;fi
 
-RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = false ]; then \
+RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = false ] && [ -f /etc/php/7.0/cli/conf.d/aerospike.ini ]; then \
     rm /etc/php/7.0/cli/conf.d/aerospike.ini \
 ;fi
 
