@@ -42,7 +42,7 @@
 
 @stack('styles')
 
-<body class="hold-transition sidebar-mini sidebar-collapse skin-red">
+<body class="hold-transition sidebar-mini skin-red">
 
 @include('common.topnav')
 
