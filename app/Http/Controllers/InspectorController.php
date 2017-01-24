@@ -71,7 +71,7 @@ class InspectorController extends Controller
                 'last_name' => 'required',
                 'username' => 'required',
                 'email' => 'required|email',
-                'password' => 'required',
+                'password' => 'required|same:confirm_password|min:8|regex:/^.*(?=.{3,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/',
                 'confirm_password' => 'required|same:password'
             ]);
 
@@ -110,7 +110,7 @@ class InspectorController extends Controller
                     'last_name' => 'required',
                     'username' => 'required',
                     'email' => 'required|email',
-                    'password' => 'required',
+                    'password' => 'required|same:confirm_password|min:8|regex:/^.*(?=.{3,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/',
                     'confirm_password' => 'required|same:password'
                 ]);
 
