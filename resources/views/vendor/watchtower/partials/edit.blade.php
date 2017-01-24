@@ -22,9 +22,9 @@
                 </ol>
             </section>
             <section class="content">
-                <div>
-
+                <div >
                     <div class="row">
+                        <div class="col-md-12">
                         <div class="row taller-10">
                             <div class="col-md-6">
 
@@ -142,6 +142,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </section>
 

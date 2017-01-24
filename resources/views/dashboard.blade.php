@@ -17,95 +17,92 @@
                 </ol>
             </section>
             @can('can.view.dashboard')
-            <section class="content">
-                <div class="row">
-                    <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                        <div class="small-box bg-aqua-gradient">
-                            <div class="inner">
-                                <h3>#{!! $pageData['total_no_farmers'] !!} </h3>
+                <section class="content">
+                    <div class="row">
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua-gradient">
+                                <div class="inner">
+                                    <h3>#{!! $pageData['total_no_farmers'] !!} </h3>
 
-                                <p>Total Farmers</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-android-funnel"></i>
-                            </div>
-                            <p class="small-box-footer" style="padding: 6%"> <i class=""></i></p>                    </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                        <div class="small-box bg-green-active">
-                            <div class="inner">
-                                <h3 >#{!! $pageData['total_no_claims'] !!}</h3>
-
-                                <p > Total Losses</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-stats-bars"></i>
-                            </div>
-                            <p class="small-box-footer" style="padding: 6%"> <i class=""></i></p>                    </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                        <div class="small-box bg-navy-active">
-                            <div class="inner">
-                                <h3 >{!! $pageData['average_loss'] !!} %</h3>
-
-
-
-                                <p >Average % Loss</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-android-globe"></i>
-                            </div>
-                            <p class="small-box-footer" style="padding: 6%"> <i class=""></i></p>                    </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                        <div class="small-box bg-acre">
-                            <div class="inner">
-                                <h3>{!! $pageData['highest_loss'] !!} %</h3>
-
-                                <p>Highest % Loss</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-pie-graph"></i>
-                            </div>
-                            <p class="small-box-footer" style="padding: 6%"> <i class=""></i></p>
+                                    <p>Total Farmers</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-android-funnel"></i>
+                                </div>
+                                <p class="small-box-footer" style="padding: 6%"><i class=""></i></p></div>
                         </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-green-active">
+                                <div class="inner">
+                                    <h3>#{!! $pageData['total_no_claims'] !!}</h3>
+
+                                    <p> Total Losses</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>
+                                <p class="small-box-footer" style="padding: 6%"><i class=""></i></p></div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-navy-active">
+                                <div class="inner">
+                                    <h3>{!! $pageData['average_loss'] !!} %</h3>
+
+
+                                    <p>Average % Loss</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-android-globe"></i>
+                                </div>
+                                <p class="small-box-footer" style="padding: 6%"><i class=""></i></p></div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-acre">
+                                <div class="inner">
+                                    <h3>{!! $pageData['highest_loss'] !!} %</h3>
+
+                                    <p>Highest % Loss</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+                                <p class="small-box-footer" style="padding: 6%"><i class=""></i></p>
+                            </div>
+                        </div>
+                        <!-- ./col -->
                     </div>
-                    <!-- ./col -->
-                </div>
-                <div class="row">
+                    <div class="row">
 
 
-                    <div class="col-md-6">
+                        <div class="col-md-6">
 
-                        <svg width="500" height="450"></svg>
+                            <svg width="500" height="450"></svg>
 
-
-                    </div>
-
-
-
-                    <section class="col-md-6">
-
-
-                        <div id="map" style="height: 450px ;">
 
                         </div>
 
 
+                        <section class="col-md-6">
 
-                        <!-- /.box -->
 
-                    </section>
-                    <!-- right col -->
-                </div>
-            </section>
+                            <div id="map" style="height: 450px ;">
+
+                            </div>
+
+
+                            <!-- /.box -->
+
+                        </section>
+                        <!-- right col -->
+                    </div>
+                </section>
             @endcan
         </div>
         <!-- /.content-wrapper -->
