@@ -97,11 +97,7 @@ class LossCalculationController extends Controller
         $cropImage1 = self::getImage($pageData['uuid'] ,$pageData['crop_image1']);
         $cropImage2 = self::getImage($pageData['uuid'] ,$pageData['crop_image2']);
         $formImage = self::getImage($pageData['uuid'] ,$pageData['farm_image']);
-        dd($formImage);
-//
 
-
-//        dd($pageData);
         $the_style = '<style>
                             @page {
                                 margin: 0.9%;
@@ -295,7 +291,7 @@ class LossCalculationController extends Controller
 
         $the_footer = '<table class="my_footer"><tr><td></td></tr></table>';
         $the_html = $the_style . '<div class="bordered">' . $the_title . $the_header . $the_firsttable . $the_secondtable . $the_comments . $the_footer . $the_imgs . '</div>';
-        die($the_html);
+
         return $the_html;
 
 
