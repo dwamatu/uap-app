@@ -9,7 +9,7 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use DB;
 use Illuminate\Support\Facades\Hash;
-use PasswordHistory;
+
 
 
 class UserController extends Controller
@@ -38,6 +38,21 @@ class UserController extends Controller
         //save
         $passwordhistory->save();
     }
+    public static function CheckIfOldPasswordMatches($user,$password){
+        $status = booleanValue();
+        $oldpassword = ($password);
+        $hash = $user->password;
+
+
+            if (Hash::check($oldpassword, $hash)) {
+                $status = true;
+            } else
+            {
+                $status = false;
+            }
+
+        return $status ;
+    }
 
 
     public function storeNewPassword(Request $request)
@@ -48,6 +63,14 @@ class UserController extends Controller
         ]);
 
         $user = auth()->user();
+
+        //Check if Old Password True
+        $oldpasswordCheck = Self::CheckIfOldPasswordMatches($user, $request['old_password']);
+        if ($oldpasswordCheck != true) {
+            flash('Could not Change Password. You Old Password Does not Match Password Stored');
+            return redirect('auth/reset/old');
+        }
+
 
         //Check If Password Has been Used Before
         $newpasswordCheck = Self::CheckPasswordHistory($user, $request['password']);
