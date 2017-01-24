@@ -36,6 +36,7 @@
 									class="fa fa-user"> {{Auth::user()->email}}</i> <b class="caret"></b></a>
 						<!-- Dropdown menu -->
 						<ul class="dropdown-menu">
+							<li><a href="{{url('/auth/reset/old')}}"><i class="fa fa-cogs"></i> Change Password</a></li>
 							<li><a href="{{url('/logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>
 						</ul>
 					</li>
