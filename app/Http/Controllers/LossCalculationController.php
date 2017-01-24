@@ -28,6 +28,17 @@ class LossCalculationController extends Controller
     {
         return view('reports.list');
     }
+    public function getImage($uuid, $image)
+    {
+        if (($uuid !=null)&&($image!=null))
+        {
+            $path = "img/inspection_images/'.$uuid.'/'.$image.'";
+        }
+        else{
+            $path = null;
+        }
+        return $path;
+    }
 
 
     /**
@@ -83,9 +94,9 @@ class LossCalculationController extends Controller
         $assessmentDetails = LossUtilities::getLossAssessmentDetails($assessment_id);
         $pageData = $assessmentDetails[0];
 
-//        $firstImage = ImageController::getImage($pageData['id'] ,$pageData['crop_image1']);
-//        $secondImage = ImageController::getImage($pageData['id'] ,$pageData['crop_image2']);
-//        $thirdImage = ImageController::getImage($pageData['id'] ,$pageData['farm_image']);
+        $cropImage1 = self::getImage($pageData['uuid'] ,$pageData['crop_image1']);
+        $cropImage2 = self::getImage($pageData['uuid'] ,$pageData['crop_image2']);
+        $formImage = self::getImage($pageData['uuid'] ,$pageData['farm_image']);
 //
 
 
@@ -180,7 +191,7 @@ class LossCalculationController extends Controller
                         </tr>
                         <tr>
                             <th width="200px">Cause of loss:</th><td>' . $pageData['cause_of_loss'] . '</td>
-                            <th width="200px">Inspection Number:</th><td>' . $pageData['inspection_number'] . '1</td>
+                            <th width="200px">Inspection Number:</th><td>' . $pageData['inspection_number'] . '</td>
                         </tr>
                         <tr>
                             <th>Size of Land:</th><td>' . $pageData['size_of_land'] . ' Hectares</td>
@@ -261,8 +272,8 @@ class LossCalculationController extends Controller
 
         $the_imgs = '<table class="ze-head border=1 cellspacing=0 cellpadding="5" align="center">
                     <tr>
-                    <td><img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['crop_image1'] . '" width="350px" height="350px"></td>
-                    <td><img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['crop_image2'] . '" width="350px" height="350px"></td>
+                    <td><img src="'.$cropImage1.'" width="350px" height="350px"></td>
+                    <td><img src="'.$cropImage2.'" width="350px" height="350px"></td>
                     </tr>
                     <tr>
                     <td> <p style="text-align: center">Farm Photo A</p></td>
@@ -270,7 +281,7 @@ class LossCalculationController extends Controller
                     </tr>                 
                     <tr>                  
                      <td style="align-content: center"> 
-                     <img src="img/inspection_images/' . $pageData['uuid'] . '/' . $pageData['farm_image'] . '"  width="350px" height="350px"></td>
+                     <img src="'.$formImage.'"  width="350px" height="350px"></td>
                      <td><p style="text-align: center">Loss Assessment Form</p></td>
                     </tr>
                     <tr>
