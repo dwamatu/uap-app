@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use Illuminate\Http\Request;
 use Validator;
+use Auth;
+use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
