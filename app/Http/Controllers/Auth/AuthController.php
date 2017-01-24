@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Http\Request;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -69,4 +70,65 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+    /**
+     * Handle a login request to the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    protected function login(Request $request)
+    {
+        $this->validateLogin($request);
+
+        // If the class is using the ThrottlesLogins trait, we can automatically throttle
+        // the login attempts for this application. We'll key this by the username and
+        // the IP address of the client making these requests into this application.
+        $throttles = $this->isUsingThrottlesLoginsTrait();
+
+        if ($throttles && $lockedOut = $this->hasTooManyLoginAttempts($request)) {
+            $this->fireLockoutEvent($request);
+
+            return $this->sendLockoutResponse($request);
+        }
+
+        $credentials = $this->getCredentials($request);
+
+        if (Auth::guard($this->getGuard())->attempt($credentials, $request->has('remember'))) {
+
+            $userId = Auth::user()->id;
+            $active = DB::table('users')->where('id', $userId)->value('active');
+            $deleted = DB::table('users')->where('id', $userId)->value('is_deleted');
+
+
+            if ($deleted != false) {
+                $this->getLogout();
+                flash('Could not sign you in. Your account has been deleted.');
+                return redirect('/login');
+            }
+
+            if ($active != true) {
+                $this->getLogout();
+
+
+                flash('Could not sign you in. Please Ask the Administrator to Activate your Account.');
+
+                return redirect('/login');
+            } else {
+                $user = Auth::user();
+                $user->update(['last_login' => \Carbon\Carbon::now()->toDateTimeString()]);
+                return $this->handleUserWasAuthenticated($request, $throttles);
+            }
+
+        }
+
+        // If the login attempt was unsuccessful we will increment the number of attempts
+        // to login and redirect the user back to the login form. Of course, when this
+        // user surpasses their maximum number of attempts they will get locked out.
+        if ($throttles && ! $lockedOut) {
+            $this->incrementLoginAttempts($request);
+        }
+
+        return $this->sendFailedLoginResponse($request);
+    }
+
 }
