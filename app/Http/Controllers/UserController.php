@@ -41,8 +41,14 @@ class UserController extends Controller
     public static function CheckIfOldPasswordMatches($user,$password){
         $status = booleanValue();
         $oldpassword = ($password);
-        $hash = $user->password;
 
+        \Log::info('oldpassword',['oldpassword'=>$oldpassword]);
+        \Log::info('$status',['$status'=>$status]);
+
+
+
+        $hash = $user->password;
+        \Log::info('$hash',['$hash'=>$hash]);
 
             if (Hash::check($oldpassword, $hash)) {
                 $status = true;
@@ -66,6 +72,9 @@ class UserController extends Controller
 
         //Check if Old Password True
         $oldpasswordCheck = Self::CheckIfOldPasswordMatches($user, $request['old_password']);
+
+
+
         if ($oldpasswordCheck != true) {
             flash('Could not Change Password. You Old Password Does not Match Password Stored');
             return redirect('auth/reset/old');
