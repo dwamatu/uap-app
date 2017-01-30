@@ -138,7 +138,7 @@
 <script src="{{ URL::asset('vendor/datatables/buttons.server-side.js') }}"></script>
 <script src="{{ URL::asset('js/bootstrap-select.min.js') }}"></script>
 <script src="{{ URL::asset('js/utilities.js') }}"></script>
-<script src="{{ URL::asset('js/numberTowords.js') }}"></script>
+<script src="{{ URL::asset('js/numberToWords.js') }}"></script>
 <script src="https://cdn.datatables.net/buttons/1.1.0/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.1.0/js/buttons.print.min.js"></script>
 <script src="{{ URL::asset('js/bootstrap-slider.js') }}"></script>
