@@ -39,7 +39,19 @@ class LossCalculationController extends Controller
         }
         return $path;
     }
+    public function numToOrdinalWord($num)
+    {
+        $first_word = array('eth','First','Second','Third','Fouth','Fifth','Sixth','Seventh','Eighth','Ninth','Tenth','Elevents','Twelfth','Thirteenth','Fourteenth','Fifteenth','Sixteenth','Seventeenth','Eighteenth','Nineteenth','Twentieth');
+        $second_word =array('','','Twenty','Thirty','Forty','Fifty');
 
+        if($num <= 20)
+            return $first_word[$num];
+
+        $first_num = substr($num,-1,1);
+        $second_num = substr($num,-2,1);
+
+        return $string = str_replace('y-eth','ieth',$second_word[$second_num].'-'.$first_word[$first_num]);
+    }
 
     /**
      * @return Loss Calculations as Json
@@ -97,6 +109,8 @@ class LossCalculationController extends Controller
         $cropImage1 = self::getImage($pageData['uuid'] ,$pageData['crop_image1']);
         $cropImage2 = self::getImage($pageData['uuid'] ,$pageData['crop_image2']);
         $formImage = self::getImage($pageData['uuid'] ,$pageData['farm_image']);
+
+        $inspection_number = self::numToOrdinalWord( $pageData['inspection_number'] );
 
         $the_style = '<style>
                             @page {
@@ -188,7 +202,7 @@ class LossCalculationController extends Controller
                         </tr>
                         <tr>
                             <th width="200px">Cause of loss:</th><td>' . $pageData['cause_of_loss'] . '</td>
-                            <th width="200px">Inspection Number:</th><td>' . $pageData['inspection_number'] . '</td>
+                            <th width="200px">Inspection Number:</th><td>' . $inspection_number . '</td>
                         </tr>
                         <tr>
                             <th>Size of Land:</th><td>' . $pageData['size_of_land'] . ' Hectares</td>
@@ -291,6 +305,7 @@ class LossCalculationController extends Controller
 
         $the_footer = '<table class="my_footer"><tr><td></td></tr></table>';
         $the_html = $the_style . '<div class="bordered">' . $the_title . $the_header . $the_firsttable . $the_secondtable . $the_comments . $the_footer . $the_imgs . '</div>';
+
 
         return $the_html;
 

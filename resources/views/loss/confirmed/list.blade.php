@@ -43,6 +43,7 @@
                                     <th>Cause Of Loss</th>
                                     <th>Lat/Lng</th>
                                     <th>% Loss</th>
+                                    <th>Inspection</th>
                                     <th>Inspection Date</th>
                                     <th>Action</th>
 
@@ -59,6 +60,7 @@
                                     <th>Cause Of Loss</th>
                                     <th>Lat/Lng</th>
                                     <th>% Loss</th>
+                                    <th>Inspection</th>
                                     <th>Inspection Date</th>
                                     <th>Action</th>
 
@@ -88,6 +90,7 @@
 <script src="{{ URL::asset('js/datatables.min.js') }}"></script>
 <script src="{{ URL::asset('vendor/datatables/buttons.server-side.js') }}"></script>
 <script src="{{ URL::asset('js/bootstrap-select.min.js') }}"></script>
+<script src="{{ URL::asset('js/numberTowords.js') }}"></script>
 <script src="https://cdn.datatables.net/buttons/1.1.0/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.1.0/js/buttons.print.min.js"></script>
 
@@ -112,6 +115,7 @@
                 {data: 'cause_of_loss'},
                 {data: 'latitude'},
                 {data: 'percentage_loss'},
+                {data: 'inspection_number'},
                 {data: 'inspection_date'},
                 {data: 'loss_assessment_id'},
 
@@ -177,10 +181,19 @@
             },
                 {
                     render: function (data, type, row) {
+                        data = numberToWords.toWordsOrdinal(parseInt(row.inspection_number));
+
+                        return  toTitleCase(data);
+
+                    },
+                    "targets": 6
+                },
+                {
+                    render: function (data, type, row) {
                         data = row.inspection_date;
                         return (moment(data).format('lll'));
                     },
-                    "targets": 6
+                    "targets": 7
                 },
                 {
                 render: function (data, type, row) {
@@ -190,7 +203,7 @@
                     return "<a  target='_blank' class='btn btn-uap btn-block' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>"
 
                 },
-                "targets": 7
+                "targets": 8
             }
                ]
         });

@@ -93,9 +93,9 @@
                                     <th>Farmer Name</th>
                                     <th>Crop Inspector</th>
                                     <th>Cause Of Loss</th>
-                                    <th>Latitude</th>
-                                    <th>Longitude</th>
+                                    <th>Lat/Lng</th>
                                     <th>Percentage Loss</th>
+                                    <th>Inspection</th>
                                     <th>Inspection Date</th>
                                     <th>Action</th>
                                 </tr>
@@ -107,9 +107,9 @@
                                     <th>Farmer Name</th>
                                     <th>Crop Inspector</th>
                                     <th>Cause Of Loss</th>
-                                    <th>Latitude</th>
-                                    <th>Longitude</th>
+                                    <th>Lat/Lng</th>
                                     <th>Percentage Loss</th>
+                                    <th>Inspection</th>
                                     <th>Inspection Date</th>
                                     <th>Action</th>
                                 </tr>
@@ -138,6 +138,7 @@
 <script src="{{ URL::asset('vendor/datatables/buttons.server-side.js') }}"></script>
 <script src="{{ URL::asset('js/bootstrap-select.min.js') }}"></script>
 <script src="{{ URL::asset('js/utilities.js') }}"></script>
+<script src="{{ URL::asset('js/numberTowords.js') }}"></script>
 <script src="https://cdn.datatables.net/buttons/1.1.0/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.1.0/js/buttons.print.min.js"></script>
 <script src="{{ URL::asset('js/bootstrap-slider.js') }}"></script>
@@ -174,7 +175,7 @@
             success: function (data) {
 
                 dataSet = data;
-                console.log(dataSet);
+//                console.log(dataSet);
                 var dataTable = $('#reports-table').DataTable({
                     dom: "<'row table-controls'<'col-sm-4 col-md-2 page-length'l><'col-sm-4 col-md-8 search'f><'col-sm-4 col-md-2 text-right'B>><'row'<'col-md-12'rt>><'row space-up-10'<'col-md-6'i><'col-md-6'p>>",
                     destroy: true,
@@ -188,8 +189,8 @@
                         {data: 'crop_inspector_name'},
                         {data: 'cause_of_loss'},
                         {data: 'latitude'},
-                        {data: 'longitude'},
                         {data: 'percentage_loss'},
+                        {data: 'inspection_number'},
                         {data: 'inspection_date'},
                         {data: 'loss_assessment_id'}
                     ],
@@ -228,21 +229,38 @@
                                 }
                             ]
                         }],
-                    "columnDefs": [{
-                        render: function (data, type, row) {
+                    "columnDefs": [
 
+                        {
+                            render: function (data, type, row) {
 
-                            return "<a  target='_blank' class='btn btn-success btn-block' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>"
+                                return "<p>"+ Number(row.latitude).toFixed(4) + " / " + Number(row.longitude).toFixed(4)+ "</p>"
 
-                        },
-                        "targets": 8
-                    }, {
+                            },
+                            "targets": 4
+                        }, {
+                            render: function (data, type, row) {
+                                data = numberToWords.toWordsOrdinal(parseInt(row.inspection_number));
+
+                                return  toTitleCase(data);
+
+                            },
+                            "targets": 6
+                        }, {
                         render: function (data, type, row) {
                             data = row.inspection_date;
-                            return (moment(data).format('LLLL'));
+                            return (moment(data).format('lll'));
                         },
                         "targets": 7
-                    }]
+                    },{
+                            render: function (data, type, row) {
+
+
+                                return "<a  target='_blank' class='btn btn-success btn-block' href='/download/loss/assessment/" + row.loss_assessment_id + "'>Download LAS</a>"
+
+                            },
+                            "targets": 8
+                        }]
                 });
 
 

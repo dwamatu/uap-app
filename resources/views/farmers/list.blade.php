@@ -38,9 +38,10 @@
                                 <thead>
                                 <tr>
                                     <th class="first">Farmer BAT Account No.</th>
-                                    <th> Farmer Name</th>
+                                    <th>Farmer Name</th>
                                     <th>Farmer Zone</th>
                                     <th>ALM Manger</th>
+                                    <th>Hectares</th>
                                     <th class="last"> Expected KG</th>
                                 </tr>
                                 </thead>
@@ -49,9 +50,10 @@
                                 <tr>
 
                                     <th class="first">Farmer BAT Account No.</th>
-                                    <th> Farmer Name</th>
+                                    <th>Farmer Name</th>
                                     <th>Farmer Zone</th>
                                     <th>ALM Manger</th>
+                                    <th>Hectares</th>
                                     <th class="last"> Expected KG</th>
                                 </tr>
                                 </tfoot>
@@ -99,6 +101,7 @@
                 {data: 'farmer_name'},
                 {data: 'farmer_zone'},
                 {data: 'alm_manager'},
+                {data: 'land_ha'},
                 {data: 'expected_kg'}
             ],
 //            order: [[1, "asc"]],
