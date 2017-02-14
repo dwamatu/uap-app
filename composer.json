@@ -28,7 +28,7 @@
                     "version": "1.0.0",
                     "type": "package",
                     "source": {
-                        "url": "ssh://git@rack.netcengroup.com:4529/opt/git/dev-composer-watchtower.git",
+                        "url": "ssh://git@git.netcengroup.com:4529/opt/git/dev-composer-watchtower.git",
                         "type": "git",
                         "reference": "bugfix"
                     }
