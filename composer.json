@@ -7,7 +7,7 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "smarch/watchtower": "dev-bugfix",
+        "netcen/smarch": "*",
         "barryvdh/laravel-dompdf": "^0.7.0",
         "guzzlehttp/guzzle": "^6.2",
         "yajra/laravel-datatables-oracle": "^6.22",
@@ -22,8 +22,17 @@
     },
     "repositories": [
         {
-            "type": "vcs",
-            "url": "ssh://git@rack.netcengroup.com:4529/opt/git/dev-composer-watchtower.git"
+            "type": "package",
+            "package": {
+                    "name": "netcen/smarch",
+                    "version": "1.0.0",
+                    "type": "package",
+                    "source": {
+                        "url": "ssh://git@rack.netcengroup.com:4529/opt/git/dev-composer-watchtower.git",
+                        "type": "git",
+                        "reference": "master"
+                    }
+            }
         }
     ],
     "autoload": {
