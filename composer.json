@@ -24,7 +24,7 @@
         {
             "type": "package",
             "package": {
-                    "name": "netcen/smarch",
+                    "name": "smarch/watchtower",
                     "version": "1.0.0",
                     "type": "package",
                     "source": {
