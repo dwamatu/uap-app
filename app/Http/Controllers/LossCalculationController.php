@@ -247,12 +247,12 @@ class LossCalculationController extends Controller
                             <th colspan="4">Land damage (number of plants damaged on the land parcel)</th>
                         </tr>
                         <tr>
-                            <th style=" text-indent: 30px;">Average no. of plants on the land <b>(e)</b></th><td style=" text-indent: 80px;"  colspan="3">' . $pageData['normal_leaves_on_plant'] . '</td>
+                            <th style=" text-indent: 30px;">Average no. of plants on the land <b>(e)</b></th><td style=" text-indent: 80px;"  colspan="3">' . $pageData['average_no_of_plants_on_land'] . '</td>
                         
                         </tr>
                          <tr>
                            
-                             <th style=" text-indent: 30px;">Established no. of plants <b>(f)</b></th><td style=" text-indent: 80px;"  colspan="3">' . $pageData['average_no_of_plants_on_land'] . '</td>
+                             <th style=" text-indent: 30px;">Established no. of plants <b>(f)</b></th><td style=" text-indent: 80px;"  colspan="3">' . $pageData['established_plant_no'] . '</td>
                         </tr>
                         <tr>
                             <th>Percentage Loss (%)</th><td style=" text-indent: 80px;" colspan="3">' . number_format((float)$pageData['percentage_loss'] , 2, '.', '').' %</td>
