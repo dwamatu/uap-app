@@ -15,7 +15,7 @@ class AppMailer
      *
      * @var string
      */
-    protected $from = 'keypes@gmail.com';
+    protected $from = 'uapbatapp@gmail.com';
     /**
      * The recipient of the email.
      *
