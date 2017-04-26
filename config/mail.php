@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'keypes@gmail.com', 'name' => 'UAP Old Mutual'],
+    'from' => ['address' => 'uapbatapp@gmail.com', 'name' => 'UAP Old Mutual'],
 
     /*
     |--------------------------------------------------------------------------
