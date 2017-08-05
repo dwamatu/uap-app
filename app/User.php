@@ -45,9 +45,9 @@ class User extends Eloquent implements AuthenticatableContract,
      *
      * @param string $password
      */
-    public function setPasswordAttribute($password)
-    {
-        $this->attributes['password'] = bcrypt($password);
-    }
+//    public function setPasswordAttribute($password)
+//    {
+//        $this->attributes['password'] = bcrypt($password);
+//    }
 
 }
