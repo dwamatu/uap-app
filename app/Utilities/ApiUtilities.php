@@ -14,7 +14,8 @@ define('PAGE_OFFSET', 0);
 // define('API_URL', 'http://api.pricing');
 // define('API_URL', 'http://pricing_api.local/index.php');
 if (!defined('API_URL')) {
-    define('API_URL', 'http://s-cld-agri-dev.cloudapp.net/uap-las-api');
+//    define('API_URL', 'http://s-cld-agri-dev.cloudapp.net/uap-las-api');
+    define('API_URL', 'http://45.55.247.59:28080/UAP/');
 }
 
 class ApiUtilities {
