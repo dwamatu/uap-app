@@ -6,6 +6,7 @@ use App\LossCalculation;
 
 use App\Utilities\LossUtilities;
 use DB;
+use File;
 use Log;
 
 
@@ -33,6 +34,11 @@ class LossCalculationController extends Controller
         if (($uuid !=null)&&($image!=null))
         {
             $path = "img/inspection_images/$uuid/$image";
+
+            if (!File::exists($path)) {
+
+             $path = null;
+            }
         }
         else{
             $path = null;
