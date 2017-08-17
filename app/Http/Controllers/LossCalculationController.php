@@ -310,7 +310,7 @@ class LossCalculationController extends Controller
 
 
         $the_footer = '<table class="my_footer"><tr><td></td></tr></table>';
-        $the_html = $the_style . '<div class="bordered">' . $the_title . $the_header . $the_firsttable . $the_secondtable . $the_comments . $the_footer . $the_imgs . '</div>';
+        $the_html = $the_style . '<div class="bordered">' . $the_title . $the_header . $the_firsttable . $the_secondtable . $the_comments . $the_footer .'<div style="page-break-before: always"><div/>'. $the_imgs . '</div>';
 
 
         return $the_html;
